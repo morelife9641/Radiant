@@ -1,0 +1,9 @@
+{
+  "name": "content-asr",
+  "version": "1.0.0",
+  "description": "语音转文字代理",
+  "main": "index.js",
+  "dependencies": {
+    "wx-server-sdk": "~2.6.3"
+  }
+}

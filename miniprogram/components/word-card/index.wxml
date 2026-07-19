@@ -1,0 +1,93 @@
+<view class="word-card {{hideHeading ? 'is-heading-external' : ''}}" wx:if="{{word}}">
+  <view class="word-card__head">
+    <word-heading
+      wx:if="{{!hideHeading && (question.type === 'word_to_zh' || !question.type)}}"
+      word="{{word.word}}"
+      phonetic="{{wordPhoneticText}}"
+      show-recovery="{{question.meta && question.meta.recoveryStep ? true : false}}"
+      recovery-passed="{{question.meta.recoveryPassed || 0}}"
+      bind:play="onPlay"
+    />
+
+    <view wx:if="{{question.type === 'zh_to_word' || question.type === 'sense_to_word' || question.type === 'definition_to_word'}}" class="word-card__prompt">
+      <view class="word-card__prompt-line">
+        <text wx:if="{{question.prompt.posLabel}}" class="word-card__prompt-pos">{{question.prompt.posLabel}}</text>
+        <view
+          class="word-card__prompt-main {{promptChineseText ? 'is-translatable' : ''}} {{promptChineseVisible ? 'is-translation-visible' : ''}}"
+          bindtap="onTogglePromptTranslation"
+        >
+          <text
+            class="word-card__prompt-text {{question.prompt.lang === 'en' ? 'is-english' : ''}}"
+            lang="{{question.prompt.lang === 'en' ? 'en' : 'zh-CN'}}"
+          >{{promptDisplayText || question.prompt.text}}</text>
+          <text wx:if="{{promptChineseText}}" class="word-card__prompt-translation">{{promptChineseText}}</text>
+        </view>
+        <view wx:if="{{question.meta && question.meta.recoveryStep}}" class="word-card__recovery">
+          <view class="word-card__recovery-dot {{question.meta.recoveryPassed >= 1 ? 'is-active' : ''}}"></view>
+          <view class="word-card__recovery-dot {{question.meta.recoveryPassed >= 2 ? 'is-active' : ''}}"></view>
+          <view class="word-card__recovery-dot {{question.meta.recoveryPassed >= 3 ? 'is-active' : ''}}"></view>
+        </view>
+      </view>
+    </view>
+
+    <view wx:if="{{question.type === 'spelling'}}" class="word-card__prompt">
+      <view class="word-card__prompt-line">
+        <text class="word-card__prompt-text">{{question.prompt.translation}}</text>
+        <view wx:if="{{question.meta && question.meta.recoveryStep}}" class="word-card__recovery">
+          <view class="word-card__recovery-dot {{question.meta.recoveryPassed >= 1 ? 'is-active' : ''}}"></view>
+          <view class="word-card__recovery-dot {{question.meta.recoveryPassed >= 2 ? 'is-active' : ''}}"></view>
+          <view class="word-card__recovery-dot {{question.meta.recoveryPassed >= 3 ? 'is-active' : ''}}"></view>
+        </view>
+      </view>
+      <view class="word-card__pron-row" wx:if="{{promptPhoneticText}}">
+        <text class="word-card__phonetic muted">{{promptPhoneticText}}</text>
+        <view class="word-card__play" catchtap="onPlay" aria-label="播放发音">
+          <image class="word-card__play-icon" src="/assets/icons/ear.svg" mode="aspectFit" />
+        </view>
+      </view>
+      <view class="word-card__letters" wx:if="{{question.prompt.letters && question.prompt.letters.length}}">
+        <view
+          wx:for="{{question.prompt.letters}}"
+          wx:key="index"
+          wx:for-item="letter"
+          class="word-card__letter {{letter === null ? 'is-blank' : ''}}"
+        >{{letter === null ? '' : letter}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view wx:if="{{question.type !== 'spelling'}}" class="word-card__quiz">
+    <view
+      wx:for="{{question.choices || choices}}"
+      wx:key="value"
+      wx:for-item="choice"
+      class="word-card__option {{answered && selectedValue === choice.value ? 'is-selected' : ''}} {{answered && choice.correct ? 'is-correct' : ''}} {{answered && selectedValue === choice.value && !choice.correct ? 'is-wrong' : ''}} {{revealedOptionValues[choice.value] ? 'is-detail' : 'is-default'}}"
+      data-value="{{choice.value}}"
+      data-correct="{{choice.correct ? 1 : 0}}"
+      bindtap="onChooseOption"
+    >
+      <view class="word-card__option-content">
+        <text wx:if="{{choice.posLabel}}" class="word-card__option-pos">{{choice.posLabel}}</text>
+        <view class="word-card__option-face word-card__option-face--front">
+          <text class="word-card__option-text">{{choice.text}}</text>
+        </view>
+        <view class="word-card__option-face word-card__option-face--detail">
+          <text class="word-card__option-word">{{choice.wordText || choice.text}}</text>
+          <text wx:if="{{choice.translationText}}" class="word-card__option-translation">{{choice.translationText}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view wx:if="{{question.type === 'spelling'}}" class="word-card__spelling">
+    <input
+      class="word-card__input {{answered && correct ? 'is-correct' : ''}} {{answered && !correct ? 'is-wrong' : ''}}"
+      value="{{textAnswer}}"
+      disabled="{{answered}}"
+      confirm-type="done"
+      placeholder="输入英文拼写"
+      bindinput="onInputSpelling"
+      bindconfirm="onSubmitSpelling"
+    />
+  </view>
+</view>

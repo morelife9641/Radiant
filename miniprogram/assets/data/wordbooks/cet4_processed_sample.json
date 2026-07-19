@@ -1,0 +1,264 @@
+{
+  "wordbook": {
+    "id": "cet4",
+    "name": "大学英语四级核心词",
+    "category": "exam",
+    "cefrLevel": "B1",
+    "totalWords": 3849,
+    "source": "ECDICT tags=cet4",
+    "version": 1
+  },
+  "words": [
+    {
+      "word": "government",
+      "phonetic": "ˈgʌvənmənt",
+      "translation": "政府, 内阁; [经] 政府, 政治, 政体",
+      "synonyms": [
+        "administration",
+        "authority",
+        "state",
+        "regime",
+        "governance"
+      ],
+      "synonyms_distinction": [
+        "administration: 侧重指行政部门，强调日常管理工作",
+        "authority: 强调权力机构，侧重权威",
+        "state: 指国家政府，更正式",
+        "regime: 指政权制度，有时含贬义",
+        "governance: 指治理行为，更抽象"
+      ],
+      "collins_definition": "The government of a country is the group of people who are responsible for governing it.",
+      "examples": [
+        "The government has announced new economic policies.",
+        "She works for the federal government.",
+        "The government will decide on the issue next week."
+      ],
+      "root": "govern (统治，管理)",
+      "derivatives": [
+        "govern",
+        "governor",
+        "governance",
+        "governmental"
+      ]
+    },
+    {
+      "word": "system",
+      "phonetic": "ˈsistəm",
+      "translation": "系统, 体系, 制度, 方式, 秩序, 分类原则; [计] 系统; 体制; 体系",
+      "synonyms": [
+        "method",
+        "procedure",
+        "structure",
+        "framework",
+        "arrangement"
+      ],
+      "synonyms_distinction": [
+        "method: 指有系统的方法，侧重步骤",
+        "procedure: 指程序，侧重流程",
+        "structure: 结构，侧重组织架构",
+        "framework: 框架，侧重基本结构",
+        "arrangement: 安排，侧重布局"
+      ],
+      "collins_definition": "A system is a way of working, organizing, or doing something which follows a fixed plan or set of rules.",
+      "examples": [
+        "The new system works efficiently.",
+        "We need a better system for organizing our work.",
+        "The education system needs reform."
+      ],
+      "root": "syst (站，放置)",
+      "derivatives": [
+        "systematic",
+        "systematize",
+        "systemic"
+      ]
+    },
+    {
+      "word": "might",
+      "phonetic": "mait",
+      "translation": "力量, 权力; 可能, 也许",
+      "synonyms": [
+        "may",
+        "could",
+        "power",
+        "strength",
+        "force"
+      ],
+      "synonyms_distinction": [
+        "may: 可能性稍大，更正式",
+        "could: 语气更委婉，可能性较小",
+        "power: 权力，能力",
+        "strength: 力量，体力",
+        "force: 武力，力量"
+      ],
+      "collins_definition": "You use might to indicate that something will possibly happen or be true in the future, but you are not certain.",
+      "examples": [
+        "It might rain later.",
+        "She might come to the party.",
+        "He tried with all his might."
+      ],
+      "root": "may (可能，可以)",
+      "derivatives": [
+        "may",
+        "mightily"
+      ]
+    },
+    {
+      "word": "part",
+      "phonetic": "pɑ:t",
+      "translation": "部分, 局部, 零件, 要素, 等分, 职责, 角色, 部位; 分开, 分离, 断绝, 区别, 分配; 分开, 断裂, 分手; 部分的, 局部的; 部分地, 有些",
+      "synonyms": [
+        "portion",
+        "section",
+        "segment",
+        "component",
+        "element"
+      ],
+      "synonyms_distinction": [
+        "portion: 指分享的部分",
+        "section: 指整体的划分的一部分",
+        "segment: 指分割的部分",
+        "component: 部件，组件",
+        "element: 元素，要素"
+      ],
+      "collins_definition": "A part of something is one of the pieces, sections, or pieces that it consists of.",
+      "examples": [
+        "That's the best part of the book.",
+        "She played an important part in the project.",
+        "Part of the problem is lack of communication."
+      ],
+      "root": "part (部分)",
+      "derivatives": [
+        "partial",
+        "partly",
+        "partiality",
+        "partition"
+      ]
+    },
+    {
+      "word": "however",
+      "phonetic": "hauˈevə",
+      "translation": "然而, 无论如何, 究竟怎样; 然而, 可是",
+      "synonyms": [
+        "but",
+        "yet",
+        "nevertheless",
+        "nonetheless",
+        "still"
+      ],
+      "synonyms_distinction": [
+        "but: 最常用，转折直接",
+        "yet: 书面语，语气稍强",
+        "nevertheless: 正式，尽管如此",
+        "nonetheless: 与nevertheless同义",
+        "still: 仍然，还"
+      ],
+      "collins_definition": "You use however when you are adding a comment which is surprising or which contrasts with what has just been said.",
+      "examples": [
+        "The plan was good; however, it was too expensive.",
+        "She is very talented; however, she is lazy.",
+        "However hard he tried, he couldn't succeed."
+      ],
+      "root": "how + ever",
+      "derivatives": []
+    },
+    {
+      "word": "area",
+      "phonetic": "ˈєəriə",
+      "translation": "区域, 面积, 范围, 空地; [计] 区域",
+      "synonyms": [
+        "region",
+        "zone",
+        "district",
+        "sector",
+        "territory"
+      ],
+      "synonyms_distinction": [
+        "region: 较大的区域，有地理特征的",
+        "zone: 特定用途的区域",
+        "district: 行政区域",
+        "sector: 领域，部门",
+        "territory: 领土，领地"
+      ],
+      "collins_definition": "An area is a particular part of a town, country, region, or world.",
+      "examples": [
+        "This is a residential area.",
+        "The area has a lot of parks.",
+        "She specializes in the area of finance."
+      ],
+      "root": "are (空地)",
+      "derivatives": []
+    },
+    {
+      "word": "against",
+      "phonetic": "əˈgeinst",
+      "translation": "反对, 对着, 倚靠",
+      "synonyms": [
+        "opposite",
+        "versus",
+        "counter",
+        "anti",
+        "contrary"
+      ],
+      "synonyms_distinction": [
+        "opposite: 对面，相反的",
+        "versus: 对抗，比赛中",
+        "counter: 反击，对抗",
+        "anti: 反对，前缀",
+        "contrary: 相反的"
+      ],
+      "collins_definition": "If one thing is leaning or presses against another, it is touching it or pressing it.",
+      "examples": [
+        "He leaned against the wall.",
+        "They voted against the proposal.",
+        "The rain beat against the window."
+      ],
+      "root": "again + st",
+      "derivatives": []
+    },
+    {
+      "word": "provide",
+      "phonetic": "prəˈvaid",
+      "translation": "提供, 供应, 规定, 预备; 作准备, 抚养, 规定",
+      "synonyms": [],
+      "synonyms_distinction": [],
+      "collins_definition": "provide: 提供, 供应, 规定, 预备; 作准备, 抚养, 规定",
+      "examples": [
+        "This is an example sentence with 'provide'.",
+        "Another example using 'provide'.",
+        "'provide' is a common word."
+      ],
+      "root": "",
+      "derivatives": []
+    },
+    {
+      "word": "point",
+      "phonetic": "pɒint",
+      "translation": "点, 小数点, 标点, 地点, 要点, 特点, 尖端, 分数, 得分, 穴位; 弄尖, 强调, 指出, 加标点于, 瞄准; 指, 指向, 表明",
+      "synonyms": [],
+      "synonyms_distinction": [],
+      "collins_definition": "point: 点, 小数点, 标点, 地点, 要点, 特点, 尖端, 分数, 得分, 穴位; 弄尖, 强调, 指出, 加标点于, 瞄准; 指, 指向, 表明",
+      "examples": [
+        "This is an example sentence with 'point'.",
+        "Another example using 'point'.",
+        "'point' is a common word."
+      ],
+      "root": "",
+      "derivatives": []
+    },
+    {
+      "word": "follow",
+      "phonetic": "ˈfɒləu",
+      "translation": "跟随, 沿行, 遵循, 追求; 跟随, 接着; 跟随, 追随",
+      "synonyms": [],
+      "synonyms_distinction": [],
+      "collins_definition": "follow: 跟随, 沿行, 遵循, 追求; 跟随, 接着; 跟随, 追随",
+      "examples": [
+        "This is an example sentence with 'follow'.",
+        "Another example using 'follow'.",
+        "'follow' is a common word."
+      ],
+      "root": "",
+      "derivatives": []
+    }
+  ]
+}

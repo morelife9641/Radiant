@@ -1,0 +1,9 @@
+<view
+  class="r-back-button"
+  bindtap="onTap"
+  hover-class="r-back-button--press"
+  hover-stay-time="70"
+  aria-label="返回"
+>
+  <image class="r-back-button__icon" src="/assets/icons/arrow-left.svg" mode="aspectFit" />
+</view>

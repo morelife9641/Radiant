@@ -1,0 +1,49 @@
+.r-navbar {
+  /* 文档流占位，自然把页面内容顶到下面，避免和模拟器/真机各种 safe-area 冲突 */
+  position: relative;
+  width: 100%;
+  background: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  box-sizing: content-box;
+  margin: 0 calc(-1 * var(--page-padding-x));
+  padding-left: var(--page-padding-x);
+  padding-right: var(--page-padding-x);
+}
+.r-navbar--transparent { background: transparent; }
+.r-navbar--spacer-only {
+  background: transparent;
+  justify-content: flex-start;
+}
+
+.r-navbar__bar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex: 1;
+  padding: 0 var(--page-padding-x);
+  position: relative;
+}
+
+.r-navbar__back {
+  width: 60rpx;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.r-navbar__title {
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 32rpx;
+  font-weight: 600;
+  color: var(--color-ink);
+  pointer-events: none;
+}
+
+.r-navbar__right { width: 64rpx; height: 64rpx; margin-left: auto; }

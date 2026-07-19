@@ -1,0 +1,55 @@
+/* Radiant.AI Design Tokens */
+page {
+  /* === Colors === */
+  --color-primary: #E63946;
+  --color-primary-deep: #B7202E;
+  --color-primary-light: #FFE3E6;
+
+  --color-white: #FFFFFF;
+  --color-bg: #FAFAFA;
+
+  --color-ink: #1A1A1A;
+  --color-graphite: #4A4A4A;
+  --color-mist: #9CA3AF;
+  --color-hairline: #E5E7EB;
+
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-info: #3B82F6;
+
+  /* === Typography === */
+  --font-h1: 56rpx;
+  --font-h2: 40rpx;
+  --font-h3: 32rpx;
+  --font-body: 28rpx;
+  --font-caption: 24rpx;
+  --font-display: 96rpx;
+
+  /* === Spacing (8 grid) === */
+  --space-1: 8rpx;
+  --space-2: 16rpx;
+  --space-3: 24rpx;
+  --space-4: 32rpx;
+  --space-6: 48rpx;
+  --space-8: 64rpx;
+
+  --page-padding-x: 32rpx;
+
+  /* 自定义导航栏让位：iPhone 状态栏 ~44px + 胶囊 ~44px = 88px。
+     真实高度通过 r-navbar 内部 wx.getWindowInfo 测量。
+     这里 .page 的 padding-top 用估值，留点余量。 */
+  --nav-h: 176rpx;
+
+  /* === Radius === */
+  --radius-card: 20rpx;
+  --radius-btn: 16rpx;
+  --radius-pill: 999rpx;
+
+  /* === Shadow === */
+  --shadow-soft: 0 6rpx 16rpx rgba(26, 26, 26, 0.06);
+
+  /* === Motion === */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 120ms;
+  --dur-base: 220ms;
+}

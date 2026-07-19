@@ -1,0 +1,173 @@
+
+[
+  {
+    "word": "control",
+    "phonetic": "/kənˈtrəʊl/",
+    "senses": [
+      {
+        "pos": "n.",
+        "translation": "控制；管理；操纵；抑制",
+        "collins_definition": {
+          "en": "Control of an organization, place, or person is the power to make decisions relating to what they do.",
+          "zh": "对一个组织、地方或人的控制是做出与他们所做的事情相关的决定的权力。"
+        },
+        "synonyms": [
+          {
+            "word": "manage",
+            "nuance_explanation": "Refers to being in charge of or controlling something or someone.",
+            "example_en": "Managing your team's utility usage is key to winning rounds.",
+            "example_zh": "管理你团队的辅助道具使用是赢得回合的关键。"
+          },
+          {
+            "word": "govern",
+            "nuance_explanation": "More formal, means controlling or directing the affairs of something.",
+            "example_en": "The team captain governs the strategy and decides what to do each round.",
+            "example_zh": "队长管理战术，决定每一轮做什么。"
+          }
+        ],
+        "antonyms": [],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "Taking control of the mid lane gives your team more options for attacking or defending.",
+          "zh": "拿下中路的控制权给你的团队更多进攻或防守的选择。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "action",
+    "phonetic": "/ˈækʃn/",
+    "senses": [
+      {
+        "pos": "n.",
+        "translation": "行动；动作；作用；战斗",
+        "collins_definition": {
+          "en": "Action is doing something for a particular purpose.",
+          "zh": "行动是为了特定目的做某事。"
+        },
+        "synonyms": [
+          {
+            "word": "act",
+            "nuance_explanation": "Refers to doing something or taking action.",
+            "example_en": "We need to act quickly before the enemy team plants the Spike.",
+            "example_zh": "我们需要在敌方团队安放爆能器之前迅速采取行动。"
+          },
+          {
+            "word": "deed",
+            "nuance_explanation": "More formal, refers to an action that is done intentionally.",
+            "example_en": "A good deed in Valorant is reviving a teammate or giving them a weapon.",
+            "example_zh": "无畏契约中的好事是复活队友或给他们一把武器。"
+          }
+        ],
+        "antonyms": [],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "Taking quick action to smoke the site can prevent the enemy from pushing.",
+          "zh": "迅速采取行动封住点位可以防止敌人推进。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "issue",
+    "phonetic": "/ˈɪʃuː/",
+    "senses": [
+      {
+        "pos": "n.",
+        "translation": "问题；议题；发行；v.发行；发布；流出",
+        "collins_definition": {
+          "en": "An issue is a problem or subject that people discuss or argue about.",
+          "zh": "问题是人们讨论或争论的问题或话题。"
+        },
+        "synonyms": [
+          {
+            "word": "problem",
+            "nuance_explanation": "General term for something that needs to be solved or dealt with.",
+            "example_en": "The problem with our strategy is that we're not using enough utility.",
+            "example_zh": "我们战术的问题是我们没有使用足够的辅助道具。"
+          },
+          {
+            "word": "topic",
+            "nuance_explanation": "Refers to a subject that people talk or write about.",
+            "example_en": "The topic of this strategy guide is how to win on Bind.",
+            "example_zh": "这本战术指南的话题是如何在Bind上获胜。"
+          }
+        ],
+        "antonyms": [],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "One big issue with playing aggressively is that you can get picked off easily.",
+          "zh": "激进打法的一个大问题是你很容易被击杀。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "process",
+    "phonetic": "/ˈprəʊses/",
+    "senses": [
+      {
+        "pos": "n.",
+        "translation": "过程；进程；工序；v.处理；加工；审阅",
+        "collins_definition": {
+          "en": "A process is a series of actions that are done in order to achieve a particular result.",
+          "zh": "过程是一系列为了达到特定结果而采取的行动。"
+        },
+        "synonyms": [
+          {
+            "word": "procedure",
+            "nuance_explanation": "Refers to a series of steps followed in a particular order.",
+            "example_en": "The procedure for planting the Spike is to clear the site first, then plant.",
+            "example_zh": "安放爆能器的步骤是先清理点位，然后安放。"
+          },
+          {
+            "word": "method",
+            "nuance_explanation": "Refers to a way of doing something, especially a systematic way.",
+            "example_en": "The best method for taking a site is to use smoke and flash to blind the enemy.",
+            "example_zh": "拿下点位的最佳方法是使用烟雾和闪光弹致盲敌人。"
+          }
+        ],
+        "antonyms": [],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "The process of winning a match involves good communication, teamwork, and strategy.",
+          "zh": "赢得比赛的过程包括良好的沟通、团队合作和战术。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "remain",
+    "phonetic": "/rɪˈmeɪn/",
+    "senses": [
+      {
+        "pos": "v.",
+        "translation": "保持；依然；留下；剩余；逗留",
+        "collins_definition": {
+          "en": "If someone or something remains in a particular state or condition, they stay in that state or condition and do not change.",
+          "zh": "如果某人或某物保持在特定状态或条件下，他们会停留在那个状态或条件下，不会改变。"
+        },
+        "synonyms": [
+          {
+            "word": "stay",
+            "nuance_explanation": "Refers to continuing to be in a particular place or condition.",
+            "example_en": "Stay near the Spike plant site to protect it from the enemy.",
+            "example_zh": "待在爆能器安放点附近，保护它免受敌人的攻击。"
+          },
+          {
+            "word": "continue",
+            "nuance_explanation": "Refers to keeping doing something or being in a particular state.",
+            "example_en": "Even if we lose a round, we should continue to play our best.",
+            "example_zh": "即使我们输了一回合，我们也应该继续发挥我们的最佳水平。"
+          }
+        ],
+        "antonyms": ["leave", "depart", "change"],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "Even if things are going badly, try to remain calm and focused on the game.",
+          "zh": "即使事情进展不顺利，也要尽力保持冷静并专注于游戏。"
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,105 @@
+<view class="page settings" style="padding-top: {{navTopPx}}px">
+  <r-loading
+    wx:if="{{actionLoading}}"
+    fullscreen
+    title="{{actionLoadingTitle}}"
+    description="正在同步本机与云端数据"
+  />
+
+  <view class="settings__header">
+    <r-back-button bind:back="onBack" />
+    <view class="settings__heading">
+      <text class="settings__title">设置</text>
+      <text class="settings__subtitle">学习节奏与账号偏好</text>
+    </view>
+  </view>
+
+  <view class="settings__panel">
+    <view class="settings__section">
+      <text class="settings__section-title">学习</text>
+      <view class="settings__item" bindtap="onChangeDailyGoal" hover-class="settings__item--press" hover-stay-time="80">
+        <view class="settings__item-main">
+          <text class="settings__item-title">每日单词数</text>
+          <text class="settings__item-desc">控制每一组学习的数量</text>
+        </view>
+        <view class="settings__item-value">
+          <text>{{dailyGoal}} 个</text>
+          <text class="settings__chevron">›</text>
+        </view>
+      </view>
+      <view class="settings__item settings__item--switch">
+        <view class="settings__item-main">
+          <text class="settings__item-title">拼写检查</text>
+          <text class="settings__item-desc">开启后，学习和复习中会出现拼写题</text>
+        </view>
+        <switch
+          class="settings__switch"
+          checked="{{enableSpellingQuestions}}"
+          color="#F45B4F"
+          bindchange="onToggleSpellingQuestions"
+        />
+      </view>
+      <view class="settings__item" bindtap="onResetTodayLearning" hover-class="settings__item--press" hover-stay-time="80">
+        <view class="settings__item-main">
+          <text class="settings__item-title">重置今日学习</text>
+          <text class="settings__item-desc">清空今天答题队列和完成记录</text>
+        </view>
+        <text class="settings__chevron">›</text>
+      </view>
+      <view class="settings__item" bindtap="onResetLearningProgress" hover-class="settings__item--press" hover-stay-time="80">
+        <view class="settings__item-main">
+          <text class="settings__item-title">清空学习进度</text>
+          <text class="settings__item-desc">删除单词进度、复习队列和答题记录</text>
+        </view>
+        <text class="settings__chevron">›</text>
+      </view>
+    </view>
+
+    <view class="settings__section">
+      <text class="settings__section-title">账号</text>
+      <view class="settings__item" bindtap="onChangeNickname" hover-class="settings__item--press" hover-stay-time="80">
+        <view class="settings__item-main">
+          <text class="settings__item-title">我的称呼</text>
+          <text class="settings__item-desc">用于生成学习提示</text>
+        </view>
+        <view class="settings__item-value">
+          <text>{{nickname}}</text>
+          <text class="settings__chevron">›</text>
+        </view>
+      </view>
+      <view class="settings__item" bindtap="onPrivacy" hover-class="settings__item--press" hover-stay-time="80">
+        <view class="settings__item-main">
+          <text class="settings__item-title">数据与隐私</text>
+          <text class="settings__item-desc">同步范围与清理说明</text>
+        </view>
+        <text class="settings__chevron">›</text>
+      </view>
+    </view>
+
+    <view class="settings__section">
+      <text class="settings__section-title">关于</text>
+      <view class="settings__item" bindtap="onAbout" hover-class="settings__item--press" hover-stay-time="80">
+        <view class="settings__item-main">
+          <text class="settings__item-title">关于 Radiant.AI</text>
+          <text class="settings__item-desc">Light up your English</text>
+        </view>
+        <text class="settings__version">v{{version}}</text>
+      </view>
+      <view class="settings__item" bindtap="onContactDeveloper" hover-class="settings__item--press" hover-stay-time="80">
+        <view class="settings__item-main">
+          <text class="settings__item-title">联系开发者</text>
+          <text class="settings__item-desc">{{contactEmail}}</text>
+        </view>
+        <text class="settings__chevron">›</text>
+      </view>
+    </view>
+
+    <view class="settings__danger" bindtap="onDeleteAccountData" hover-class="settings__danger--press" hover-stay-time="80">
+      <view class="settings__danger-main">
+        <text class="settings__danger-title">清除账号与学习数据</text>
+        <text class="settings__danger-desc">永久删除云端资料和学习进度</text>
+      </view>
+      <text class="settings__danger-arrow">›</text>
+    </view>
+  </view>
+</view>

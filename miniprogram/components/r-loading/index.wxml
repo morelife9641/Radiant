@@ -1,0 +1,15 @@
+<view
+  class="r-loading r-loading--{{tone}} {{fullscreen ? 'is-fullscreen' : ''}} {{compact ? 'is-compact' : ''}} {{fill ? 'is-fill' : ''}} {{raised ? 'is-raised' : ''}}"
+  role="status"
+  aria-label="{{title}}"
+>
+  <view class="r-loading__stage" aria-hidden="true">
+    <view class="r-loading__loader">
+      <view class="r-loading__shadow"></view>
+    </view>
+  </view>
+  <view class="r-loading__copy">
+    <text class="r-loading__title">{{title}}</text>
+    <text wx:if="{{description}}" class="r-loading__description">{{description}}</text>
+  </view>
+</view>

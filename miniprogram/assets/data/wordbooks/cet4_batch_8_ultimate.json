@@ -1,0 +1,173 @@
+
+[
+  {
+    "word": "appear",
+    "phonetic": "/əˈpɪə(r)/",
+    "senses": [
+      {
+        "pos": "v.",
+        "translation": "出现；显得；似乎；出庭",
+        "collins_definition": {
+          "en": "If you appear, you come into view or become visible.",
+          "zh": "如果你出现，你会进入视野或变得可见。"
+        },
+        "synonyms": [
+          {
+            "word": "seem",
+            "nuance_explanation": "Focuses on giving a particular impression or feeling.",
+            "example_en": "It seems like the enemy team is going to push B site this round.",
+            "example_zh": "看起来敌方团队这一轮要攻打B点。"
+          },
+          {
+            "word": "emerge",
+            "nuance_explanation": "Refers to coming out from a hidden or covered place.",
+            "example_en": "Omen can emerge from his shadows to surprise the enemy team.",
+            "example_zh": "幽影可以从他的阴影中出现，突袭敌方团队。"
+          }
+        ],
+        "antonyms": ["disappear", "vanish", "fade"],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "Omen's From the Shadows teleport lets him appear behind enemy lines for a surprise attack.",
+          "zh": "幽影的“暗影传送”能让他出现在敌军后方，发动突袭。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "political",
+    "phonetic": "/pəˈlɪtɪkl/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "translation": "政治的；政党的；政府的",
+        "collins_definition": {
+          "en": "Political means relating to the government or public affairs of a country.",
+          "zh": "政治的指与国家的政府或公共事务有关。"
+        },
+        "synonyms": [
+          {
+            "word": "governmental",
+            "nuance_explanation": "Refers specifically to the government or its activities.",
+            "example_en": "The governmental system in Valorant's lore is made up of several competing factions.",
+            "example_zh": "无畏契约背景中的政府系统由几个相互竞争的派系组成。"
+          },
+          {
+            "word": "state",
+            "nuance_explanation": "As an adjective, refers to the government or country as a whole.",
+            "example_en": "The state of the game right now favors aggressive play styles over passive ones.",
+            "example_zh": "游戏目前的状态偏好激进的游戏风格而非保守的。"
+          }
+        ],
+        "antonyms": ["non-political", "apolitical"],
+        "gaming_link": {
+          "game": "Dota 2",
+          "context": "The political struggle between Radiant and Dire has raged across the battlefield for millennia.",
+          "zh": "天辉与夜魇之间的政治斗争已在战场上肆虐了数千年。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "minister",
+    "phonetic": "/ˈmɪnɪstə(r)/",
+    "senses": [
+      {
+        "pos": "n.",
+        "translation": "部长；大臣；牧师；公使",
+        "collins_definition": {
+          "en": "In Britain and some other countries, a minister is a person who is in charge of a government department.",
+          "zh": "在英国和其他一些国家，部长是负责政府部门的人。"
+        },
+        "synonyms": [
+          {
+            "word": "secretary",
+            "nuance_explanation": "In government contexts, refers to a high-ranking official in charge of a department.",
+            "example_en": "The Secretary of Defense in Valorant's lore is in charge of the Kingdom Corporation.",
+            "example_zh": "无畏契约背景中的国防部长负责Kingdom Corporation。"
+          },
+          {
+            "word": "official",
+            "nuance_explanation": "General term for a person holding a position of authority in an organization.",
+            "example_en": "Tournament officials make sure all players follow the rules and play fairly.",
+            "example_zh": "锦标赛官员确保所有玩家都遵守规则并公平竞争。"
+          }
+        ],
+        "antonyms": [],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "As the team's in-game leader, Brimstone acts as the minister of strategy, calling all the shots.",
+          "zh": "作为团队的游戏内指挥，炼狱担任着“战术部长”的角色，负责发号施令。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "produce",
+    "phonetic": "/prəˈdjuːs/",
+    "senses": [
+      {
+        "pos": "v.",
+        "translation": "生产；制造；引起；创作；出示",
+        "collins_definition": {
+          "en": "To produce something means to make it or create it.",
+          "zh": "生产某物意味着制造它或创造它。"
+        },
+        "synonyms": [
+          {
+            "word": "make",
+            "nuance_explanation": "General term for creating or producing something.",
+            "example_en": "We need to make sure we have enough utility to take the site.",
+            "example_zh": "我们需要确保我们有足够的辅助道具来拿下点位。"
+          },
+          {
+            "word": "create",
+            "nuance_explanation": "Focuses on bringing something new into existence.",
+            "example_en": "Smokes create a safe area for your team to move through without being seen.",
+            "example_zh": "烟雾为你的团队创造了一个安全的区域，可以在不被发现的情况下移动。"
+          }
+        ],
+        "antonyms": ["destroy", "ruin", "break"],
+        "gaming_link": {
+          "game": "Dota 2",
+          "context": "Lina's Dragon Slave produces a wave of fire that burns through multiple enemy units at once.",
+          "zh": "莉娜的“龙破斩”能产生一道火浪，一次性烧穿多个敌方单位。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "rate",
+    "phonetic": "/reɪt/",
+    "senses": [
+      {
+        "pos": "n.",
+        "translation": "率；比率；速度；价格；v.评价；评估；分级",
+        "collins_definition": {
+          "en": "A rate is the speed at which something happens or changes.",
+          "zh": "率是某事发生或变化的速度。"
+        },
+        "synonyms": [
+          {
+            "word": "speed",
+            "nuance_explanation": "Focuses on how fast something moves or happens.",
+            "example_en": "Jett's Tailwind ability increases her movement speed, making her hard to catch.",
+            "example_zh": "捷风的“顺风行”技能提高了她的移动速度，使她很难被抓到。"
+          },
+          {
+            "word": "pace",
+            "nuance_explanation": "Refers to the speed or rhythm of something, especially a process or activity.",
+            "example_en": "Controlling the pace of the game is key to winning against aggressive teams.",
+            "example_zh": "控制比赛节奏是对抗激进团队的关键。"
+          }
+        ],
+        "antonyms": [],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "Jett's high attack rate makes her deadly with a Vandal when she hits headshots.",
+          "zh": "捷风的高射速让她用幻影爆头时极具杀伤力。"
+        }
+      }
+    ]
+  }
+]

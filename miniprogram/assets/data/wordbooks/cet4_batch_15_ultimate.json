@@ -1,0 +1,173 @@
+
+[
+  {
+    "word": "research",
+    "phonetic": "/rɪˈsɜːtʃ/",
+    "senses": [
+      {
+        "pos": "n.",
+        "translation": "研究；调查；v.研究；调查",
+        "collins_definition": {
+          "en": "Research is the study and investigation of something in order to discover new facts or information about it.",
+          "zh": "研究是对某物的研究和调查，以发现关于它的新事实或信息。"
+        },
+        "synonyms": [
+          {
+            "word": "study",
+            "nuance_explanation": "Refers to learning about something by reading, investigating, or practicing.",
+            "example_en": "Study the map layout to know all the good hiding spots and angles.",
+            "example_zh": "研究地图布局，了解所有好的隐藏点和角度。"
+          },
+          {
+            "word": "investigate",
+            "nuance_explanation": "Refers to trying to find out the facts about something, especially a crime or incident.",
+            "example_en": "Use Sova's drone to investigate the enemy's position before pushing.",
+            "example_zh": "在推进之前，使用索瓦的无人机调查敌人的位置。"
+          }
+        ],
+        "antonyms": [],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "Doing some research on pro players' strategies can help you improve your own gameplay.",
+          "zh": "对职业玩家的战术做一些研究可以帮助你提高自己的游戏水平。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "value",
+    "phonetic": "/ˈvæljuː/",
+    "senses": [
+      {
+        "pos": "n.",
+        "translation": "价值；重要性；价格；v.重视；估价；评价",
+        "collins_definition": {
+          "en": "The value of something is how much it is worth, either in money or in importance.",
+          "zh": "某物的价值是它值多少钱，无论是在金钱上还是在重要性上。"
+        },
+        "synonyms": [
+          {
+            "word": "worth",
+            "nuance_explanation": "Refers to the value or importance of something.",
+            "example_en": "Is it worth using your ultimate this early in the round?",
+            "example_zh": "在回合这么早的时候使用你的大招值得吗？"
+          },
+          {
+            "word": "importance",
+            "nuance_explanation": "Refers to the quality of being important or significant.",
+            "example_en": "Don't underestimate the importance of good communication in team fights.",
+            "example_zh": "不要低估团队战斗中良好沟通的重要性。"
+          }
+        ],
+        "antonyms": [],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "Getting value out of your utility means using it effectively to help your team win.",
+          "zh": "从你的辅助道具中获得价值意味着有效地使用它来帮助你的团队获胜。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "force",
+    "phonetic": "/fɔːs/",
+    "senses": [
+      {
+        "pos": "n.",
+        "translation": "力；力量；暴力；军队；v.强迫；迫使；强取",
+        "collins_definition": {
+          "en": "Force is the power or strength that makes something move or happen.",
+          "zh": "力是使某物移动或发生的力量或强度。"
+        },
+        "synonyms": [
+          {
+            "word": "power",
+            "nuance_explanation": "General term for the ability or strength to do something.",
+            "example_en": "Using your abilities at the right time gives you power over the enemy.",
+            "example_zh": "在正确的时间使用你的技能会给你对敌人的力量优势。"
+          },
+          {
+            "word": "strength",
+            "nuance_explanation": "Refers to the quality of being physically or mentally strong.",
+            "example_en": "Your team's strength comes from working together and supporting each other.",
+            "example_zh": "你团队的力量来自于共同努力和互相支持。"
+          }
+        ],
+        "antonyms": [],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "You can force the enemy to make mistakes by applying pressure and attacking together.",
+          "zh": "你可以通过施加压力和一起进攻来迫使敌人犯错误。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "act",
+    "phonetic": "/ækt/",
+    "senses": [
+      {
+        "pos": "v.",
+        "translation": "行动；表现；扮演；起作用；n.行为；法案；一幕",
+        "collins_definition": {
+          "en": "When you act, you do something for a particular purpose.",
+          "zh": "当你行动时，你为了特定目的做某事。"
+        },
+        "synonyms": [
+          {
+            "word": "do",
+            "nuance_explanation": "General term for performing an action or activity.",
+            "example_en": "What should we do now that the enemy has planted the Spike?",
+            "example_zh": "既然敌人已经安放了爆能器，我们现在该怎么办？"
+          },
+          {
+            "word": "behave",
+            "nuance_explanation": "Refers to acting or conducting oneself in a particular way.",
+            "example_en": "Behave calmly and communicate clearly during team fights.",
+            "example_zh": "在团队战斗中保持冷静并清晰沟通。"
+          }
+        ],
+        "antonyms": [],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "You need to act quickly if you want to surprise the enemy and catch them off guard.",
+          "zh": "如果你想让敌人措手不及，你需要迅速行动。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "main",
+    "phonetic": "/meɪn/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "translation": "主要的；最重要的；n.主管道；总管道",
+        "collins_definition": {
+          "en": "The main thing is the most important one of several things.",
+          "zh": "主要的事情是几件事中最重要的一件。"
+        },
+        "synonyms": [
+          {
+            "word": "primary",
+            "nuance_explanation": "Refers to the most important or main thing.",
+            "example_en": "Our primary goal this round is to plant the Spike.",
+            "example_zh": "我们这一轮的主要目标是安放爆能器。"
+          },
+          {
+            "word": "chief",
+            "nuance_explanation": "More formal, refers to the most important or highest-ranking person or thing.",
+            "example_en": "The chief reason we won is because we communicated well and worked as a team.",
+            "example_zh": "我们获胜的主要原因是因为我们沟通良好，作为一个团队合作。"
+          }
+        ],
+        "antonyms": ["secondary", "minor"],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "The main thing to remember is to stay calm and communicate with your team.",
+          "zh": "要记住的主要事情是保持冷静并与你的团队沟通。"
+        }
+      }
+    ]
+  }
+]

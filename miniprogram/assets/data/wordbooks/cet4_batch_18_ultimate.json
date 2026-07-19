@@ -1,0 +1,167 @@
+
+[
+  {
+    "word": "reach",
+    "phonetic": "/riːtʃ/",
+    "senses": [
+      {
+        "pos": "v.",
+        "translation": "到达；达到；伸出手；n.范围；河段",
+        "collins_definition": {
+          "en": "When you reach a place, you arrive there.",
+          "zh": "当你到达一个地方时，你到那里。"
+        },
+        "synonyms": [
+          {
+            "word": "arrive",
+            "nuance_explanation": "Refers to reaching a place at the end of a journey.",
+            "example_en": "We need to arrive at the Spike plant site before the enemy does.",
+            "example_zh": "我们需要在敌人之前到达爆能器安放点。"
+          },
+          {
+            "word": "get to",
+            "nuance_explanation": "More informal, used to indicate reaching a place.",
+            "example_en": "Let's get to A site quickly before they set up their defense.",
+            "example_zh": "让我们在他们建立防守之前迅速到达A点。"
+          }
+        ],
+        "antonyms": ["leave", "depart"],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "Reach the Spike plant site quickly to get there before the enemy can set up a defense.",
+          "zh": "迅速到达爆能器安放点，在敌人建立防守之前到达那里。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "upon",
+    "phonetic": "/əˈpɒn/",
+    "senses": [
+      {
+        "pos": "prep.",
+        "translation": "在…之上；一…就；即将来临",
+        "collins_definition": {
+          "en": "Upon means the same as 'on' or 'onto'; it is more formal.",
+          "zh": "Upon 与 'on' 或 'onto' 意思相同；它更正式。"
+        },
+        "synonyms": [
+          {
+            "word": "on",
+            "nuance_explanation": "More common, used to indicate position or time.",
+            "example_en": "Let's plan our attack on the enemy's position.",
+            "example_zh": "让我们计划对敌人位置的进攻。"
+          },
+          {
+            "word": "onto",
+            "nuance_explanation": "Used to indicate movement to a position on something.",
+            "example_en": "Let's jump onto the box to get a better angle on the enemy.",
+            "example_zh": "让我们跳到箱子上，获得对敌人更好的角度。"
+          }
+        ],
+        "antonyms": [],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "Once the Spike is planted, the pressure is on to defend it until it explodes.",
+          "zh": "一旦爆能器被安放，压力就来了，要防守它直到爆炸。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "century",
+    "phonetic": "/ˈsentʃəri/",
+    "senses": [
+      {
+        "pos": "n.",
+        "translation": "世纪；百年",
+        "collins_definition": {
+          "en": "A century is a period of 100 years.",
+          "zh": "一个世纪是100年的时期。"
+        },
+        "synonyms": [
+          {
+            "word": "100 years",
+            "nuance_explanation": "More direct, refers to a period of a century.",
+            "example_en": "In 100 years, Valorant might be a very different game or not even exist anymore.",
+            "example_zh": "在100年后，无畏契约可能是一个非常不同的游戏，甚至可能不再存在。"
+          }
+        ],
+        "antonyms": [],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "Even though esports are still young compared to a century, Valorant has already become a major competitive game.",
+          "zh": "尽管与一个世纪相比电竞仍然年轻，无畏契约已经成为一个主要的竞技游戏。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "therefore",
+    "phonetic": "/ˈðeəfɔː(r)/",
+    "senses": [
+      {
+        "pos": "adv.",
+        "translation": "因此；所以；因而",
+        "collins_definition": {
+          "en": "Therefore is used to indicate that the following statement is a result of the previous one.",
+          "zh": "Therefore 用于表示以下陈述是前一陈述的结果。"
+        },
+        "synonyms": [
+          {
+            "word": "so",
+            "nuance_explanation": "More informal, used to indicate a result or conclusion.",
+            "example_en": "We lost the last round, so we need to play more carefully this time.",
+            "example_zh": "我们输了上一回合，所以这次我们需要打得更小心。"
+          },
+          {
+            "word": "thus",
+            "nuance_explanation": "More formal, similar to 'therefore'.",
+            "example_en": "We have a big advantage in weapons, thus we should push aggressively.",
+            "example_zh": "我们在武器上有很大优势，因此我们应该激进地推进。"
+          }
+        ],
+        "antonyms": [],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "The enemy team has no more utility left, therefore we should push now and take the site.",
+          "zh": "敌方团队没有更多辅助道具了，因此我们现在应该推进并拿下点位。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "section",
+    "phonetic": "/ˈsekʃn/",
+    "senses": [
+      {
+        "pos": "n.",
+        "translation": "部分；章节；部门；v.分割；把…分成段",
+        "collins_definition": {
+          "en": "A section of something is one of the parts that it is divided into.",
+          "zh": "某物的 section 是它被分成的部分之一。"
+        },
+        "synonyms": [
+          {
+            "word": "part",
+            "nuance_explanation": "General term for a piece or portion of something.",
+            "example_en": "Let's split up and each take a part of the map to control.",
+            "example_zh": "让我们分开，每个人控制地图的一部分。"
+          },
+          {
+            "word": "segment",
+            "nuance_explanation": "Refers to a separate or distinct part of something.",
+            "example_en": "Let's focus on this segment of the map to gain control.",
+            "example_zh": "让我们专注于地图的这个部分以获得控制权。"
+          }
+        ],
+        "antonyms": [],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "On the Bind map, the 'A Short' and 'A Long' sections are two common ways to attack A site.",
+          "zh": "在Bind地图上，“A短”和“A长”部分是进攻A点的两种常见方式。"
+        }
+      }
+    ]
+  }
+]

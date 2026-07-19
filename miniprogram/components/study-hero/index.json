@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "styleIsolation": "isolated",
+  "usingComponents": {
+    "r-back-button": "../r-back-button/index",
+    "word-heading": "../word-heading/index"
+  }
+}

@@ -1,0 +1,173 @@
+
+[
+  {
+    "word": "happen",
+    "phonetic": "/ˈhæpən/",
+    "senses": [
+      {
+        "pos": "v.",
+        "translation": "发生；出现；碰巧",
+        "collins_definition": {
+          "en": "Something that happens occurs or is done without being planned.",
+          "zh": "发生的事情是在没有计划的情况下发生或完成的。"
+        },
+        "synonyms": [
+          {
+            "word": "occur",
+            "nuance_explanation": "More formal, often used for events or situations that happen.",
+            "example_en": "Team fights occur most often in the mid lane or at spike sites.",
+            "example_zh": "团战最常发生在中路或爆能器点位。"
+          },
+          {
+            "word": "take place",
+            "nuance_explanation": "Refers to an event or activity that happens at a specific time or place.",
+            "example_en": "The VCT tournament will take place in Los Angeles this year.",
+            "example_zh": "VCT锦标赛今年将在洛杉矶举行。"
+          }
+        ],
+        "antonyms": [],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "If you push A Site too aggressively, a clutch play might happen when you least expect it.",
+          "zh": "如果你过于激进地攻打A点，可能会在最意想不到的时候发生一场精彩的残局对决。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "line",
+    "phonetic": "/laɪn/",
+    "senses": [
+      {
+        "pos": "n.",
+        "translation": "线；线条；排；行列；路线；线路",
+        "collins_definition": {
+          "en": "A line is a long thin mark made by a pen, pencil, or brush.",
+          "zh": "线是钢笔、铅笔或刷子画出的长而细的标记。"
+        },
+        "synonyms": [
+          {
+            "word": "strip",
+            "nuance_explanation": "Refers to a long, narrow piece of something.",
+            "example_en": "A strip of smoke blocks the enemy's vision, making it hard for them to shoot us.",
+            "example_zh": "一条烟雾阻挡了敌人的视野，使他们很难射击我们。"
+          },
+          {
+            "word": "thread",
+            "nuance_explanation": "A thin strand of something, often used metaphorically for connection.",
+            "example_en": "The thread of communication between teammates is crucial for winning matches.",
+            "example_zh": "队友之间的交流线索对于赢得比赛至关重要。"
+          }
+        ],
+        "antonyms": [],
+        "gaming_link": {
+          "game": "Dota 2",
+          "context": "Crystal Maiden draws a Frostbite line across the battlefield, trapping enemy heroes who cross it.",
+          "zh": "水晶室女在战场上画出一道冰封禁制线，困住所有穿过它的敌方英雄。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "law",
+    "phonetic": "/lɔː/",
+    "senses": [
+      {
+        "pos": "n.",
+        "translation": "法律；法规；法则；定律",
+        "collins_definition": {
+          "en": "A law is one of the rules in a game or sport.",
+          "zh": "法律是游戏或运动中的规则之一。"
+        },
+        "synonyms": [
+          {
+            "word": "rule",
+            "nuance_explanation": "General term for a set of guidelines or instructions that must be followed.",
+            "example_en": "The most important rule in Valorant is to communicate with your teammates.",
+            "example_zh": "无畏契约中最重要的规则是与你的队友交流。"
+          },
+          {
+            "word": "regulation",
+            "nuance_explanation": "More formal, refers to official rules made by an organization or authority.",
+            "example_en": "The tournament regulations state that all players must use the same settings.",
+            "example_zh": "锦标赛规则规定所有玩家必须使用相同的设置。"
+          }
+        ],
+        "antonyms": [],
+        "gaming_link": {
+          "game": "Dota 2",
+          "context": "The unwritten law of ganking: always wait for crowd control before diving the tower.",
+          "zh": "Gank的不成文法则：越塔强杀前一定要等控制技能到位。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "later",
+    "phonetic": "/ˈleɪtə(r)/",
+    "senses": [
+      {
+        "pos": "adv.",
+        "translation": "后来；稍后；随后",
+        "collins_definition": {
+          "en": "You use later to refer to a time or situation that is after the present or after another time that has been mentioned.",
+          "zh": "你用 later 来指代现在之后或另一个被提及的时间之后的时间或情况。"
+        },
+        "synonyms": [
+          {
+            "word": "afterward",
+            "nuance_explanation": "More formal, means at a later time or after an event.",
+            "example_en": "Let's play passively now and save our ultimates for afterward.",
+            "example_zh": "我们现在打得保守些，把我们的大招留到之后用。"
+          },
+          {
+            "word": "subsequently",
+            "nuance_explanation": "Very formal, means after something else has happened.",
+            "example_en": "We lost the first round, but subsequently won the next four in a row.",
+            "example_zh": "我们输了第一回合，但随后连续赢了接下来的四个回合。"
+          }
+        ],
+        "antonyms": ["earlier", "beforehand", "previously"],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "Save your Sage walls for later—you'll need them to block retakes on the Spike.",
+          "zh": "把贤者的冰墙留到后面用——你需要用它们来阻挡敌人对爆能器的反扑。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "authority",
+    "phonetic": "/ɔːˈθɒrəti/",
+    "senses": [
+      {
+        "pos": "n.",
+        "translation": "权力；权威；当局；官方",
+        "collins_definition": {
+          "en": "The authorities are the people who have the power to make decisions and ensure that rules are obeyed.",
+          "zh": "当局是有权做出决定并确保规则被遵守的人。"
+        },
+        "synonyms": [
+          {
+            "word": "power",
+            "nuance_explanation": "General term for the ability or right to do something.",
+            "example_en": "The team captain has the power to decide which strategy we'll use this round.",
+            "example_zh": "队长有权决定我们这一轮将使用哪种战术。"
+          },
+          {
+            "word": "jurisdiction",
+            "nuance_explanation": "Refers to the official power to make legal decisions and judgments.",
+            "example_en": "The in-game report system is under the jurisdiction of Riot Games.",
+            "example_zh": "游戏内举报系统属于Riot Games的管辖范围。"
+          }
+        ],
+        "antonyms": [],
+        "gaming_link": {
+          "game": "Dota 2",
+          "context": "As the team's hard support, Witch Doctor holds the authority to initiate team fights with his ultimate.",
+          "zh": "作为团队的硬辅助，巫医拥有用大招开启团战的权威。"
+        }
+      }
+    ]
+  }
+]

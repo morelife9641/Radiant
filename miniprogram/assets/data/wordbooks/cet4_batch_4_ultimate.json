@@ -1,0 +1,173 @@
+
+[
+  {
+    "word": "social",
+    "phonetic": "/ˈsəʊʃl/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "translation": "社会的；社交的；群居的",
+        "collins_definition": {
+          "en": "Social means relating to society or to the way society is organized.",
+          "zh": "社会的指与社会或社会的组织方式有关。"
+        },
+        "synonyms": [
+          {
+            "word": "communal",
+            "nuance_explanation": "Refers to shared activities or spaces used by a group of people.",
+            "example_en": "The communal spike site area is where both teams will fight for control.",
+            "example_zh": "公共的爆能器点位区域是两队争夺控制权的地方。"
+          },
+          {
+            "word": "community",
+            "nuance_explanation": "As an adjective, refers to a group of people with shared interests or characteristics.",
+            "example_en": "The community Discord server is a great place to find teammates and practice.",
+            "example_zh": "社区Discord服务器是找队友和练习的好地方。"
+          }
+        ],
+        "antonyms": ["unsocial", "antisocial", "solitary"],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "Social media has changed the way we communicate with each other.",
+          "zh": "社交媒体改变了我们彼此交流的方式。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "business",
+    "phonetic": "/ˈbɪznəs/",
+    "senses": [
+      {
+        "pos": "n.",
+        "translation": "商业；生意；企业；业务；事情",
+        "collins_definition": {
+          "en": "Business is work relating to the production, buying, and selling of goods or services.",
+          "zh": "商业是与商品或服务的生产、购买和销售有关的工作。"
+        },
+        "synonyms": [
+          {
+            "word": "commerce",
+            "nuance_explanation": "More formal, refers to large-scale buying and selling activities.",
+            "example_en": "The in-game store's commerce system lets you buy skins and weapon upgrades.",
+            "example_zh": "游戏内商店的商业系统允许你购买皮肤和武器升级。"
+          },
+          {
+            "word": "company",
+            "nuance_explanation": "Refers to a specific business organization or enterprise.",
+            "example_en": "Riot Games is the company that developed and published Valorant.",
+            "example_zh": "Riot Games是开发和发行无畏契约的公司。"
+          }
+        ],
+        "antonyms": ["leisure", "hobby"],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "She started her own business after graduating from university.",
+          "zh": "她大学毕业后创办了自己的企业。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "power",
+    "phonetic": "/ˈpaʊə(r)/",
+    "senses": [
+      {
+        "pos": "n.",
+        "translation": "力量；能力；权力；电力",
+        "collins_definition": {
+          "en": "Power is the ability or capacity to do something or to act in a certain way.",
+          "zh": "力量是做某事或以某种方式行动的能力或才能。"
+        },
+        "synonyms": [
+          {
+            "word": "strength",
+            "nuance_explanation": "Focuses on physical or mental power, often implying endurance or resilience.",
+            "example_en": "Tiny's strength grows as he gains levels, making his attacks hit harder.",
+            "example_zh": "小小的力量随着等级提升而增强，让他的攻击更具威力。"
+          },
+          {
+            "word": "authority",
+            "nuance_explanation": "Emphasizes the power or right to give orders and make decisions.",
+            "example_en": "As the shot caller, you have the authority to decide when to push or fall back.",
+            "example_zh": "作为指挥者，你有权决定何时推进或撤退。"
+          }
+        ],
+        "antonyms": ["weakness", "powerlessness"],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "The power went out during the storm, leaving us in the dark.",
+          "zh": "暴风雨期间停电了，让我们陷入黑暗中。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "interest",
+    "phonetic": "/ˈɪntrəst/",
+    "senses": [
+      {
+        "pos": "n.",
+        "translation": "兴趣；爱好；利息；利益",
+        "collins_definition": {
+          "en": "If you have an interest in something or someone, you want to learn or hear more about them.",
+          "zh": "如果你对某事或某人感兴趣，你想更多地了解或听到他们。"
+        },
+        "synonyms": [
+          {
+            "word": "curiosity",
+            "nuance_explanation": "Focuses on a desire to learn or know something new.",
+            "example_en": "If you're curious about pro play, watch VCT matches to learn new strategies.",
+            "example_zh": "如果你对职业比赛感兴趣，看VCT比赛来学习新战术。"
+          },
+          {
+            "word": "hobby",
+            "nuance_explanation": "Refers to an activity done for pleasure in one's free time.",
+            "example_en": "Playing Valorant is a fun hobby that also helps improve your teamwork skills.",
+            "example_zh": "玩无畏契约是一个有趣的爱好，也有助于提高你的团队合作技能。"
+          }
+        ],
+        "antonyms": ["boredom", "indifference"],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "He has a great interest in history and loves visiting museums.",
+          "zh": "他对历史很感兴趣，喜欢参观博物馆。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "national",
+    "phonetic": "/ˈnæʃnəl/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "translation": "国家的；民族的；全国的",
+        "collins_definition": {
+          "en": "National means relating to the whole of a country or nation rather than to part of it or to other nations.",
+          "zh": "国家的指与整个国家或民族有关，而不是与它的一部分或其他国家有关。"
+        },
+        "synonyms": [
+          {
+            "word": "federal",
+            "nuance_explanation": "Refers to a system of government where power is split between a central authority and smaller regions.",
+            "example_en": "The federal government in Dota 2's lore is made up of several different factions.",
+            "example_zh": "Dota 2背景中的联邦政府由几个不同的派系组成。"
+          },
+          {
+            "word": "public",
+            "nuance_explanation": "Refers to something that is open or available to all people in a community or nation.",
+            "example_en": "The national holiday event in Valorant gives out free skins and rewards to all players.",
+            "example_zh": "无畏契约的全国性节日活动向所有玩家发放免费皮肤和奖励。"
+          }
+        ],
+        "antonyms": ["local", "international", "private"],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "The national holiday is celebrated with parades and fireworks.",
+          "zh": "这个全国性节日以游行和烟火来庆祝。"
+        }
+      }
+    ]
+  }
+]

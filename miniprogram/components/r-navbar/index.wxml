@@ -1,0 +1,12 @@
+<view
+  class="r-navbar {{transparent ? 'r-navbar--transparent' : ''}} {{hasContent ? '' : 'r-navbar--spacer-only'}}"
+  style="height:{{actualHeightPx}}px;padding-top:{{hasContent ? statusBarHeight : 0}}px"
+>
+  <view wx:if="{{hasContent}}" class="r-navbar__bar">
+    <view wx:if="{{showBack}}" class="r-navbar__back">
+      <r-back-button bind:back="onBack" />
+    </view>
+    <text class="r-navbar__title">{{title}}</text>
+    <view class="r-navbar__right"></view>
+  </view>
+</view>

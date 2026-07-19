@@ -1,0 +1,173 @@
+
+[
+  {
+    "word": "level",
+    "phonetic": "/ˈlevl/",
+    "senses": [
+      {
+        "pos": "n.",
+        "translation": "水平；等级；层次；高度",
+        "collins_definition": {
+          "en": "A level is a point on a scale, for example, a scale of amount, quality, or difficulty.",
+          "zh": "水平是刻度上的一个点，例如，数量、质量或难度的刻度。"
+        },
+        "synonyms": [
+          {
+            "word": "stage",
+            "nuance_explanation": "Refers to a distinct period or step in a process or development.",
+            "example_en": "The early game stage is for farming gold and experience to get your core items.",
+            "example_zh": "前期阶段是为了打钱和经验来获得你的核心装备。"
+          },
+          {
+            "word": "grade",
+            "nuance_explanation": "Often used for levels of quality, ability, or academic performance.",
+            "example_en": "Playing against higher rank players is a great way to improve your skill grade.",
+            "example_zh": "和更高段位的玩家对战是提高你技能等级的好方法。"
+          }
+        ],
+        "antonyms": [],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "The company aims to improve the quality of its products to a higher level.",
+          "zh": "公司旨在将其产品质量提升到更高水平。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "include",
+    "phonetic": "/ɪnˈkluːd/",
+    "senses": [
+      {
+        "pos": "v.",
+        "translation": "包括；包含；计入",
+        "collins_definition": {
+          "en": "If one thing includes another thing, it has the other thing as one of its parts.",
+          "zh": "如果某物包含另一物，它将另一物作为其一部分。"
+        },
+        "synonyms": [
+          {
+            "word": "contain",
+            "nuance_explanation": "Refers to holding or having something inside, often physical objects or larger groups.",
+            "example_en": "This loadout contains a Vandal, Ghost, and full utility for maximum flexibility.",
+            "example_zh": "这个装备配置包括一把幻影、一把鬼魅和全套辅助道具，以获得最大的灵活性。"
+          },
+          {
+            "word": "incorporate",
+            "nuance_explanation": "More formal, means including something as part of a larger whole.",
+            "example_en": "We should incorporate more smokes into our strategy to block enemy vision.",
+            "example_zh": "我们应该在我们的战术中加入更多烟雾弹，以阻挡敌人的视野。"
+          }
+        ],
+        "antonyms": ["exclude", "omit", "leave out"],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "The price includes accommodation and breakfast for two people.",
+          "zh": "价格包括两人的住宿和早餐。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "perhaps",
+    "phonetic": "/pəˈhæps/",
+    "senses": [
+      {
+        "pos": "adv.",
+        "translation": "可能；也许；大概",
+        "collins_definition": {
+          "en": "You use perhaps to express uncertainty or to make a suggestion or statement sound less definite.",
+          "zh": "你用 perhaps 来表达不确定性，或者使建议或陈述听起来不那么确定。"
+        },
+        "synonyms": [
+          {
+            "word": "maybe",
+            "nuance_explanation": "More informal and conversational, often used in everyday speech.",
+            "example_en": "Maybe we should rotate to A site instead of staying on B.",
+            "example_zh": "也许我们应该转去A点，而不是待在B点。"
+          },
+          {
+            "word": "possibly",
+            "nuance_explanation": "More formal, suggests something could happen but isn't certain.",
+            "example_en": "We could possibly win this round if we all stick together and communicate.",
+            "example_zh": "如果我们都团结在一起并交流，我们可能会赢得这一回合。"
+          }
+        ],
+        "antonyms": ["definitely", "certainly", "surely"],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "Perhaps we should postpone the meeting until next week.",
+          "zh": "也许我们应该把会议推迟到下周。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "policy",
+    "phonetic": "/ˈpɒləsi/",
+    "senses": [
+      {
+        "pos": "n.",
+        "translation": "政策；方针；策略；保险单",
+        "collins_definition": {
+          "en": "A policy is a set of ideas or plans that is used as a basis for making decisions, especially in politics, economics, or business.",
+          "zh": "政策是一套想法或计划，用作决策的基础，尤其是在政治、经济或商业中。"
+        },
+        "synonyms": [
+          {
+            "word": "plan",
+            "nuance_explanation": "General term for a detailed proposal for doing or achieving something.",
+            "example_en": "Our game plan for this round is to take mid control and then push A site.",
+            "example_zh": "我们这一轮的游戏计划是拿下中路控制权，然后推进A点。"
+          },
+          {
+            "word": "strategy",
+            "nuance_explanation": "Refers to a long-term plan or approach for achieving a goal.",
+            "example_en": "The best strategy for attacking Bind is to use smokes to block off the enemy's angles.",
+            "example_zh": "进攻Bind的最佳策略是使用烟雾弹来阻挡敌人的角度。"
+          }
+        ],
+        "antonyms": [],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "The government has introduced a new policy to reduce air pollution.",
+          "zh": "政府出台了一项减少空气污染的新政策。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "council",
+    "phonetic": "/ˈkaʊnsl/",
+    "senses": [
+      {
+        "pos": "n.",
+        "translation": "委员会；理事会；政务委员会；地方议会",
+        "collins_definition": {
+          "en": "A council is a group of people who are elected or chosen to make decisions or give advice on a particular subject.",
+          "zh": "委员会是一群被选举或被选中来就特定主题做出决定或提供建议的人。"
+        },
+        "synonyms": [
+          {
+            "word": "committee",
+            "nuance_explanation": "A small group of people chosen to make decisions or organize something.",
+            "example_en": "The team's strategy committee meets before each match to plan their approach.",
+            "example_zh": "团队的战术委员会在每场比赛前开会，规划他们的方案。"
+          },
+          {
+            "word": "board",
+            "nuance_explanation": "Refers to a group of people who manage or direct a company or organization.",
+            "example_en": "The balance board in Valorant decides which heroes to buff or nerf each patch.",
+            "example_zh": "无畏契约的平衡委员会决定每个版本要加强或削弱哪些英雄。"
+          }
+        ],
+        "antonyms": [],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "The local council approved the plan to build a new library.",
+          "zh": "地方议会批准了建造新图书馆的计划。"
+        }
+      }
+    ]
+  }
+]

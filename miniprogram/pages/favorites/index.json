@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "r-back-button": "/components/r-back-button/index"
+  }
+}

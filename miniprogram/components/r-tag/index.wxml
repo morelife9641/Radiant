@@ -1,0 +1,1 @@
+<view class="r-tag r-tag--{{type}}"><text>{{text}}</text></view>

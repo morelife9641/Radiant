@@ -1,0 +1,16 @@
+.DS_Store
+**/.DS_Store
+project.private.config.json
+tmp/
+**/__pycache__/
+*.pyc
+
+# Local development environments and tool-specific settings
+.venv/
+.claude/
+
+# Large external dictionary source; keep it outside this repository
+ECDICT-master
+
+# Local reference material excluded from the mini program release package
+miniprogram/assets/大学英语四级词汇带音标-乱序版.pdf

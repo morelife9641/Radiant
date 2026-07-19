@@ -1,0 +1,173 @@
+
+[
+  {
+    "word": "term",
+    "phonetic": "/tɜːm/",
+    "senses": [
+      {
+        "pos": "n.",
+        "translation": "术语；学期；期限；条款",
+        "collins_definition": {
+          "en": "A term is a word or expression that has a precise meaning in some context.",
+          "zh": "术语是在某些上下文中具有精确含义的词或表达。"
+        },
+        "synonyms": [
+          {
+            "word": "word",
+            "nuance_explanation": "General term for a single unit of language.",
+            "example_en": "Learn the key words related to Valorant to understand strategy guides better.",
+            "example_zh": "学习与无畏契约相关的关键词，以便更好地理解战术指南。"
+          },
+          {
+            "word": "expression",
+            "nuance_explanation": "Refers to a group of words that have a particular meaning.",
+            "example_en": "The expression 'save your utility' means keeping your abilities for later in the round.",
+            "example_zh": "“保留你的辅助道具”这个表达的意思是把你的技能留到回合后期使用。"
+          }
+        ],
+        "antonyms": [],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "In Valorant terms, 'peeking' means quickly exposing yourself to get a shot at an enemy.",
+          "zh": "在无畏契约的术语中，“peeking”（探身）指的是快速暴露自己以向敌人射击。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "towards",
+    "phonetic": "/təˈwɔːdz/",
+    "senses": [
+      {
+        "pos": "prep.",
+        "translation": "朝；向；关于；接近",
+        "collins_definition": {
+          "en": "If you go towards a place, you move in the direction of that place.",
+          "zh": "如果你朝某个地方去，你会向那个地方的方向移动。"
+        },
+        "synonyms": [
+          {
+            "word": "to",
+            "nuance_explanation": "More common, indicates movement in the direction of a place or person.",
+            "example_en": "Let's head to A site and try to plant the Spike there.",
+            "example_zh": "让我们前往A点，尝试在那里安放爆能器。"
+          },
+          {
+            "word": "in the direction of",
+            "nuance_explanation": "More formal, explicitly states the direction of movement.",
+            "example_en": "Move in the direction of the smoke to avoid being seen by the enemy.",
+            "example_zh": "向烟雾的方向移动，以避免被敌人看到。"
+          }
+        ],
+        "antonyms": ["away from"],
+        "gaming_link": {
+          "game": "Dota 2",
+          "context": "Tiny's Toss throws an enemy towards his teammates, setting up a perfect gank.",
+          "zh": "小小的“投掷”技能把一个敌人朝他的队友扔过去，为完美的gank做好准备。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "public",
+    "phonetic": "/ˈpʌblɪk/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "translation": "公众的；公共的；公开的；n.公众；民众",
+        "collins_definition": {
+          "en": "Public means relating to all the people in a country or community.",
+          "zh": "公共的指与一个国家或社区中的所有人有关。"
+        },
+        "synonyms": [
+          {
+            "word": "common",
+            "nuance_explanation": "Refers to something shared by or affecting many people.",
+            "example_en": "It's common practice to save your ultimate for important team fights.",
+            "example_zh": "把你的大招留到重要的团战是常见的做法。"
+          },
+          {
+            "word": "open",
+            "nuance_explanation": "Refers to something that is not closed or secret.",
+            "example_en": "The open area in the middle of the map is a dangerous place to be without support.",
+            "example_zh": "地图中间的开阔区域是一个没有支援的危险地方。"
+          }
+        ],
+        "antonyms": ["private", "personal", "secret"],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "The public voice chat is a great way to communicate with random teammates in unrated matches.",
+          "zh": "公共语音聊天是在非排位赛中与随机队友交流的好方式。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "require",
+    "phonetic": "/rɪˈkwaɪə(r)/",
+    "senses": [
+      {
+        "pos": "v.",
+        "translation": "需要；要求；命令",
+        "collins_definition": {
+          "en": "If you require something, you need it or it is necessary for you.",
+          "zh": "如果你需要某物，你需要它或者它对你来说是必要的。"
+        },
+        "synonyms": [
+          {
+            "word": "need",
+            "nuance_explanation": "General term for requiring something because it is essential or important.",
+            "example_en": "We need at least one smoke to safely push into the site.",
+            "example_zh": "我们需要至少一个烟雾弹来安全地推进点位。"
+          },
+          {
+            "word": "demand",
+            "nuance_explanation": "More forceful, means requiring something as if by right.",
+            "example_en": "Winning this match demands good communication and teamwork from everyone.",
+            "example_zh": "赢得这场比赛需要每个人都有良好的沟通和团队合作。"
+          }
+        ],
+        "antonyms": ["supply", "provide", "give"],
+        "gaming_link": {
+          "game": "Dota 2",
+          "context": "Invoker's complex combo requires quick fingers and perfect timing to execute.",
+          "zh": "祈求者的复杂连招需要快速的手指和完美的时机来执行。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "continue",
+    "phonetic": "/kənˈtɪnjuː/",
+    "senses": [
+      {
+        "pos": "v.",
+        "translation": "继续；连续；持续",
+        "collins_definition": {
+          "en": "If someone or something continues to do something, they keep doing it and do not stop.",
+          "zh": "如果某人或某物继续做某事，他们会继续做，不会停止。"
+        },
+        "synonyms": [
+          {
+            "word": "keep going",
+            "nuance_explanation": "Informal, means continuing to do something despite difficulties.",
+            "example_en": "Even if we lose this round, let's keep going and try to win the next one.",
+            "example_zh": "即使我们输了这一回合，让我们继续努力，尝试赢下下一回合。"
+          },
+          {
+            "word": "proceed",
+            "nuance_explanation": "More formal, means continuing to do something after a pause or interruption.",
+            "example_en": "After we plant the Spike, we can proceed to hold the site and wait for the enemy to retake.",
+            "example_zh": "在我们安放了爆能器之后，我们可以继续守住点位，等待敌人反扑。"
+          }
+        ],
+        "antonyms": ["stop", "cease", "pause"],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "Even if you lose the first round, continue playing—you can still win the match with a comeback.",
+          "zh": "即使你输了第一回合，也要继续玩——你仍然可以通过逆转赢得比赛。"
+        }
+      }
+    ]
+  }
+]

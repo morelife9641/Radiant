@@ -1,0 +1,57 @@
+<view class="page search" style="padding-top: {{navTopPx}}px">
+  <view class="search__bar">
+    <r-back-button bind:back="onBack" />
+    <text class="search__title">搜索</text>
+    <view class="search__bar-spacer"></view>
+  </view>
+
+  <view class="search__box">
+    <view class="search__input-wrap">
+      <image class="search__icon" src="/assets/icons/search.svg" mode="aspectFit" />
+      <input
+        class="search__input"
+        value="{{keyword}}"
+        placeholder="搜索单词、短语、例句"
+        confirm-type="search"
+        focus="{{true}}"
+        bindinput="onInput"
+        bindconfirm="onConfirm"
+      />
+      <view wx:if="{{keyword}}" class="search__clear" bindtap="onClear">×</view>
+    </view>
+  </view>
+
+  <r-loading wx:if="{{loading}}" compact title="正在搜索" />
+
+  <view wx:elif="{{searched && !results.length}}" class="search__state">
+    <text class="search__empty-title">没有找到</text>
+    <text class="caption muted">试试输入更短的前缀，比如 acc</text>
+  </view>
+
+  <view wx:elif="{{results.length}}" class="search__list">
+    <view
+      wx:for="{{results}}"
+      wx:key="wordId"
+      wx:for-item="item"
+      class="search__item"
+      data-word="{{item.word}}"
+      bindtap="onOpenWord"
+      hover-class="search__item--press"
+      hover-stay-time="60"
+    >
+      <view class="search__item-main">
+        <view class="search__word-row">
+          <text class="search__word">{{item.word}}</text>
+          <r-tag wx:if="{{item.important}}" text="重点" type="primary" />
+        </view>
+        <text wx:if="{{item.phonetic}}" class="search__phonetic">{{item.phonetic}}</text>
+      </view>
+      <text wx:if="{{item.senses && item.senses[0]}}" class="search__translation">{{item.senses[0].translation}}</text>
+    </view>
+  </view>
+
+  <view wx:else class="search__state">
+    <text class="search__empty-title">查一个词</text>
+    <text class="caption muted">支持当前词书内英文前缀搜索</text>
+  </view>
+</view>

@@ -1,0 +1,173 @@
+
+[
+  {
+    "word": "likely",
+    "phonetic": "/ˈlaɪkli/",
+    "senses": [
+      {
+        "pos": "adj./adv.",
+        "translation": "可能的；适合的；很可能",
+        "collins_definition": {
+          "en": "Likely means that something is probably going to happen or is probably true.",
+          "zh": "Likely 意味着某事很可能发生或很可能是真的。"
+        },
+        "synonyms": [
+          {
+            "word": "probably",
+            "nuance_explanation": "Refers to something that is likely to happen or be true.",
+            "example_en": "The enemy is probably going to push A site since they've been there the last few rounds.",
+            "example_zh": "敌人可能会进攻A点，因为他们在过去的几个回合里都在那里。"
+          },
+          {
+            "word": "possible",
+            "nuance_explanation": "Refers to something that can happen or be done.",
+            "example_en": "It's possible that they'll fake a push on A and then go to B instead.",
+            "example_zh": "他们可能会假装进攻A点，然后去B点。"
+          }
+        ],
+        "antonyms": ["unlikely", "impossible"],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "If the enemy has a lot of money, it's likely they'll buy strong weapons like the Vandal or Phantom.",
+          "zh": "如果敌人有很多钱，他们很可能会买强力武器，比如Vandal或Phantom。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "staff",
+    "phonetic": "/stɑːf/",
+    "senses": [
+      {
+        "pos": "n.",
+        "translation": "职员；员工；全体人员；权杖；v.配备职员；给…配备员工",
+        "collins_definition": {
+          "en": "The staff of an organization are the people who work there.",
+          "zh": "组织的 staff 是在那里工作的人。"
+        },
+        "synonyms": [
+          {
+            "word": "team",
+            "nuance_explanation": "Refers to a group of people who work together or play together.",
+            "example_en": "Our team has great communication and works well together.",
+            "example_zh": "我们的团队有很好的沟通，合作得很好。"
+          },
+          {
+            "word": "crew",
+            "nuance_explanation": "Refers to a group of people who work together on a ship, plane, or project.",
+            "example_en": "The crew of pro players works hard to win tournaments.",
+            "example_zh": "职业玩家的团队努力工作以赢得锦标赛。"
+          }
+        ],
+        "antonyms": [],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "The staff of a pro Valorant team includes coaches, analysts, and managers to help the players perform their best.",
+          "zh": "职业无畏契约团队的工作人员包括教练、分析师和经理，以帮助玩家发挥最佳水平。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "real",
+    "phonetic": "/riːəl/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "translation": "真实的；实际存在的；真的；真正的；adv.非常；很",
+        "collins_definition": {
+          "en": "Real means that something actually exists and is not imaginary or made up.",
+          "zh": "Real 意味着某物实际存在，不是想象或编造的。"
+        },
+        "synonyms": [
+          {
+            "word": "actual",
+            "nuance_explanation": "Refers to something that is real and exists in fact.",
+            "example_en": "Let's see the actual enemy position before we make a move.",
+            "example_zh": "在我们行动之前，让我们看看实际的敌人位置。"
+          },
+          {
+            "word": "genuine",
+            "nuance_explanation": "Refers to something that is real and not fake or a copy.",
+            "example_en": "It's important to have genuine communication with your team.",
+            "example_zh": "与你的团队进行真诚的沟通很重要。"
+          }
+        ],
+        "antonyms": ["fake", "unreal", "imaginary"],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "The real key to winning is not just good aim, but good communication and teamwork.",
+          "zh": "获胜的真正关键不只是好的枪法，还有好的沟通和团队合作。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "team",
+    "phonetic": "/tiːm/",
+    "senses": [
+      {
+        "pos": "n.",
+        "translation": "队；组；团队；v.协同工作；组队",
+        "collins_definition": {
+          "en": "A team is a group of people who work together or play together for a particular purpose.",
+          "zh": "Team 是为了特定目的一起工作或一起玩的一群人。"
+        },
+        "synonyms": [
+          {
+            "word": "group",
+            "nuance_explanation": "Refers to a number of people or things together.",
+            "example_en": "Our group needs to work together to win the round.",
+            "example_zh": "我们的团队需要共同努力以赢得回合。"
+          },
+          {
+            "word": "squad",
+            "nuance_explanation": "Refers to a small group of people who work or fight together.",
+            "example_en": "Let's stick with our squad and not get separated from each other.",
+            "example_zh": "让我们和我们的小队在一起，不要互相分开。"
+          }
+        ],
+        "antonyms": [],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "Playing as a team and supporting each other is more important than trying to get all the kills yourself.",
+          "zh": "作为一个团队游戏并互相支持比试图自己拿所有击杀更重要。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "experience",
+    "phonetic": "/ɪkˈspɪəriəns/",
+    "senses": [
+      {
+        "pos": "n.",
+        "translation": "经验；经历；体验；v.经历；体验；感受",
+        "collins_definition": {
+          "en": "Experience is knowledge or skill that you get from doing something for a long time, or something that happens to you.",
+          "zh": "Experience 是你通过长时间做某事获得的知识或技能，或者是发生在你身上的事情。"
+        },
+        "synonyms": [
+          {
+            "word": "practice",
+            "nuance_explanation": "Refers to doing something many times in order to get better at it.",
+            "example_en": "Practice your aim and learn the maps to improve your gameplay.",
+            "example_zh": "练习你的枪法，学习地图以提高你的游戏水平。"
+          },
+          {
+            "word": "knowledge",
+            "nuance_explanation": "Refers to the information or skills that you have.",
+            "example_en": "Having knowledge of the map and the enemy's play style can help you win.",
+            "example_zh": "了解地图和敌人的游戏风格可以帮助你获胜。"
+          }
+        ],
+        "antonyms": ["inexperience", "ignorance"],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "Gaining experience by playing many matches will help you learn from your mistakes and improve.",
+          "zh": "通过玩很多比赛来获得经验将帮助你从错误中学习并进步。"
+        }
+      }
+    ]
+  }
+]

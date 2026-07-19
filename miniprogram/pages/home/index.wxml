@@ -1,0 +1,84 @@
+<view
+  class="page home"
+  bindtouchstart="onHomeTouchStart"
+  bindtouchmove="onHomeTouchMove"
+  bindtouchend="onHomeTouchEnd"
+  bindtouchcancel="onHomeTouchEnd"
+>
+  <image
+    wx:if="{{dailyVisual && dailyVisual.image && dailyVisual.image.url}}"
+    class="home__bg {{visualImageReady ? 'is-ready' : ''}}"
+    src="{{dailyVisual.image.url}}"
+    mode="aspectFill"
+    fade-in="{{true}}"
+    bindload="onVisualImageLoad"
+    binderror="onVisualImageError"
+  />
+  <view class="home__veil {{visualImageReady ? 'is-ready' : ''}}"></view>
+
+  <view
+    wx:if="{{pullSearchVisible}}"
+    class="home__pull-search"
+    style="transform: translateY({{pullSearchOffset}}px); opacity: {{pullSearchOpacity}};"
+  >
+    <image class="home__pull-search-icon" src="/assets/icons/search-white.svg" mode="aspectFit" />
+    <text>搜索单词、短语、例句</text>
+  </view>
+
+  <r-loading
+    wx:if="{{isLoading}}"
+    fullscreen
+    title="欢迎回来"
+    description="正在点亮今日学习"
+  />
+
+  <r-navbar wx:if="{{!isLoading}}" title="" showBack="{{false}}" />
+
+  <view wx:if="{{!isLoading}}" class="home__content is-ready">
+    <view
+      class="home__history-entry"
+      bindtap="onOpenLearningHistory"
+      hover-class="home__history-entry--press"
+      hover-stay-time="80"
+      aria-label="查看学习轨迹"
+    >
+      <image class="home__history-entry-icon" src="/assets/icons/line-chart-home.svg" mode="aspectFit" />
+      <text>学习轨迹</text>
+    </view>
+
+    <view class="home__center">
+      <view class="home__visual">
+        <text class="home__visual-word">{{dailyVisual ? dailyVisual.word : activeBook.name}}</text>
+        <view
+          wx:if="{{homeExample && homeExample.text}}"
+          class="home__example {{homeShortDefinitionRevealed ? 'is-revealed' : ''}}"
+          bindtap="onToggleHomeShortDefinition"
+          hover-class="home__example--press"
+          hover-stay-time="80"
+        >
+          <text class="home__example-text">{{homeExample.text}}</text>
+          <text wx:if="{{homeExample.translationZh && homeShortDefinitionRevealed}}" class="home__example-zh">{{homeExample.translationZh}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="home__bottom">
+      <view class="home__start-group">
+        <view class="home__study-status">
+          <text>新学 {{studyQueueCount}}</text>
+          <text class="home__study-status-dot">·</text>
+          <text bindtap="onStartReview">待复习 {{reviewCount}}</text>
+        </view>
+        <view class="home__dock-action" bindtap="onOpenSettings" hover-class="home__dock-action--press" hover-stay-time="80" aria-label="设置">
+          <image class="home__dock-icon" src="/assets/icons/layout-dashboard-home.svg" mode="aspectFit" />
+        </view>
+        <view class="home__dock-start" bindtap="onStartLearn" hover-class="home__dock-start--press" hover-stay-time="80">
+          <text class="home__start-text">开 始</text>
+        </view>
+        <view class="home__favorite-mini" bindtap="onOpenFavorites" hover-class="home__favorite-mini--press" hover-stay-time="80" aria-label="收藏">
+          <image class="home__favorite-mini-icon" src="/assets/icons/astroid-home.svg" mode="aspectFit" />
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

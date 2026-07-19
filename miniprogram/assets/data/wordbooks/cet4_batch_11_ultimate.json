@@ -1,0 +1,173 @@
+
+[
+  {
+    "word": "period",
+    "phonetic": "/ˈpɪəriəd/",
+    "senses": [
+      {
+        "pos": "n.",
+        "translation": "时期；阶段；周期；句号",
+        "collins_definition": {
+          "en": "A period is a length of time.",
+          "zh": "时期是一段时间的长度。"
+        },
+        "synonyms": [
+          {
+            "word": "time",
+            "nuance_explanation": "General term for a period or point in time.",
+            "example_en": "The early game time is for farming gold and experience to get core items.",
+            "example_zh": "前期时间是为了打钱和经验来获得核心装备。"
+          },
+          {
+            "word": "phase",
+            "nuance_explanation": "Refers to a distinct stage in a process or development.",
+            "example_en": "The laning phase is one of the most important parts of the game.",
+            "example_zh": "对线阶段是游戏中最重要的部分之一。"
+          }
+        ],
+        "antonyms": [],
+        "gaming_link": {
+          "game": "Dota 2",
+          "context": "The laning phase is crucial for farming gold and experience to get your core items.",
+          "zh": "对线阶段对于打钱获取经验和核心装备至关重要。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "figure",
+    "phonetic": "/ˈfɪɡə(r)/",
+    "senses": [
+      {
+        "pos": "n.",
+        "translation": "数字；人物；图形；身材；v.认为；计算；描绘",
+        "collins_definition": {
+          "en": "A figure is a particular amount expressed as a number.",
+          "zh": "数字是用数字表示的特定数量。"
+        },
+        "synonyms": [
+          {
+            "word": "number",
+            "nuance_explanation": "General term for a word or symbol representing a count.",
+            "example_en": "The number of enemies alive is important to know before pushing.",
+            "example_zh": "在推进之前，知道活着的敌人数量很重要。"
+          },
+          {
+            "word": "character",
+            "nuance_explanation": "Refers to a person in a book, play, or game.",
+            "example_en": "Jett is one of the most popular characters in Valorant.",
+            "example_zh": "捷风是无畏契约中最受欢迎的角色之一。"
+          }
+        ],
+        "antonyms": [],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "Reyna's signature figure moves quickly, making her hard to pin down in fights.",
+          "zh": "芮娜的标志性身影移动迅速，让她在战斗中很难被锁定。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "society",
+    "phonetic": "/səˈsaɪəti/",
+    "senses": [
+      {
+        "pos": "n.",
+        "translation": "社会；社团；协会",
+        "collins_definition": {
+          "en": "Society is people in general, thought of as a large organized group.",
+          "zh": "社会是一般人，被认为是一个大型有组织的群体。"
+        },
+        "synonyms": [
+          {
+            "word": "community",
+            "nuance_explanation": "Refers to a group of people living in the same place or having similar interests.",
+            "example_en": "The Valorant community is very active and creates lots of fan content.",
+            "example_zh": "无畏契约社区非常活跃，创造了很多粉丝内容。"
+          },
+          {
+            "word": "group",
+            "nuance_explanation": "General term for a number of people or things together.",
+            "example_en": "A group of five players is needed to form a full team in Valorant.",
+            "example_zh": "在无畏契约中，需要五名玩家组成一支完整的队伍。"
+          }
+        ],
+        "antonyms": [],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "The Valorant pro scene has built a society of competitive players and fans worldwide.",
+          "zh": "无畏契约职业圈已经建立了一个遍布全球的竞技玩家和粉丝的社群。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "centre",
+    "phonetic": "/ˈsentə(r)/",
+    "senses": [
+      {
+        "pos": "n.",
+        "translation": "中心；中央；中心点；v.集中；以…为中心",
+        "collins_definition": {
+          "en": "The centre of something is the middle of it.",
+          "zh": "某物的中心是它的中间部分。"
+        },
+        "synonyms": [
+          {
+            "word": "middle",
+            "nuance_explanation": "General term for the point or part at an equal distance from the ends.",
+            "example_en": "The middle of the map is often where most of the fighting happens.",
+            "example_zh": "地图的中间通常是大多数战斗发生的地方。"
+          },
+          {
+            "word": "core",
+            "nuance_explanation": "Refers to the most important or central part of something.",
+            "example_en": "The core of our strategy this round is to take mid control first.",
+            "example_zh": "我们这一轮战术的核心是先拿下中路控制权。"
+          }
+        ],
+        "antonyms": ["edge", "periphery", "border"],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "In Bind, the shower area is the centre of many fights and rotations.",
+          "zh": "在Bind地图上，淋浴区是许多战斗和转点的核心。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "police",
+    "phonetic": "/pəˈliːs/",
+    "senses": [
+      {
+        "pos": "n.",
+        "translation": "警察；警方；v.维护治安；监督",
+        "collins_definition": {
+          "en": "The police are the official organization that is responsible for making sure people obey the law.",
+          "zh": "警方是负责确保人们遵守法律的官方组织。"
+        },
+        "synonyms": [
+          {
+            "word": "law enforcement",
+            "nuance_explanation": "Refers to the people and organizations responsible for enforcing laws.",
+            "example_en": "The in-game report system is like law enforcement, making sure players follow the rules.",
+            "example_zh": "游戏内举报系统就像执法部门，确保玩家遵守规则。"
+          },
+          {
+            "word": "cops",
+            "nuance_explanation": "Informal term for police officers.",
+            "example_en": "The cops in Valorant's lore keep the peace between the different factions.",
+            "example_zh": "无畏契约背景中的警察在不同派系之间维持和平。"
+          }
+        ],
+        "antonyms": [],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "Chamber's French accent and elegant style make him look like a member of the elite police force.",
+          "zh": "钱博尔的法国口音和优雅风格让他看起来像是精英警察部队的一员。"
+        }
+      }
+    ]
+  }
+]

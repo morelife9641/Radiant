@@ -1,0 +1,18 @@
+.r-tag {
+  display: inline-flex;
+  align-items: center;
+  height: 40rpx;
+  padding: 0 var(--space-2);
+  border-radius: var(--radius-pill);
+  font-size: 22rpx;
+  background: var(--color-hairline);
+  color: var(--color-graphite);
+}
+.r-tag--primary {
+  background: var(--color-primary-light);
+  color: var(--color-primary-deep);
+}
+.r-tag--success {
+  background: rgba(16,185,129,0.12);
+  color: var(--color-success);
+}

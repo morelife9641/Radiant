@@ -1,0 +1,22 @@
+<view class="word-heading">
+  <view class="word-heading__title-row">
+    <text class="word-heading__word">{{word}}</text>
+    <view wx:if="{{showRecovery}}" class="word-heading__recovery">
+      <view class="word-heading__recovery-dot {{recoveryPassed >= 1 ? 'is-active' : ''}}"></view>
+      <view class="word-heading__recovery-dot {{recoveryPassed >= 2 ? 'is-active' : ''}}"></view>
+      <view class="word-heading__recovery-dot {{recoveryPassed >= 3 ? 'is-active' : ''}}"></view>
+    </view>
+  </view>
+  <view class="word-heading__pron-row" wx:if="{{phonetic || word}}">
+    <text class="word-heading__phonetic" wx:if="{{phonetic}}">{{phonetic}}</text>
+    <view class="word-heading__play" catchtap="onPlay" aria-label="播放发音">
+      <image class="word-heading__play-icon" src="/assets/icons/ear.svg" mode="aspectFit" />
+    </view>
+  </view>
+  <view wx:if="{{translations && translations.length}}" class="word-heading__translations">
+    <view wx:for="{{translations}}" wx:key="index" class="word-heading__translation-line">
+      <text wx:if="{{item.pos}}" class="word-heading__translation-pos">{{item.pos}}</text>
+      <text class="word-heading__translation-text">{{item.text}}</text>
+    </view>
+  </view>
+</view>

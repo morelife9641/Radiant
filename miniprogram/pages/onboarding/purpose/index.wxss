@@ -1,0 +1,56 @@
+.onboarding {
+  display: flex;
+  flex-direction: column;
+  padding-top: var(--space-4);
+  padding-bottom: 200rpx;
+  min-height: 100vh;
+  position: relative;
+}
+.onboarding__step {
+  font-size: 24rpx;
+  letter-spacing: 4rpx;
+  color: var(--color-primary);
+  font-weight: 700;
+  margin-bottom: var(--space-2);
+}
+.onboarding__title {
+  margin-bottom: var(--space-2);
+}
+.onboarding__sub {
+  font-size: 26rpx;
+  margin-bottom: var(--space-6);
+}
+
+.picker {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.picker__card {
+  background: var(--color-white);
+  border: 4rpx solid transparent;
+  border-radius: var(--radius-card);
+  padding: var(--space-4);
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  transition: transform var(--dur-fast) var(--ease-out), border-color var(--dur-fast);
+}
+.picker__card.is-active {
+  border-color: var(--color-primary);
+  background: var(--color-primary-light);
+}
+.picker__card--press { transform: scale(0.98); }
+.picker__emoji { font-size: 56rpx; line-height: 1; }
+.picker__title { font-size: 36rpx; font-weight: 700; color: var(--color-ink); margin-top: var(--space-1); }
+.picker__desc { font-size: 26rpx; }
+
+.onboarding__footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: var(--space-4) var(--page-padding-x);
+  background: linear-gradient(180deg, rgba(250,250,250,0) 0%, var(--color-bg) 30%);
+}

@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "选择词书",
+  "usingComponents": {
+    "r-button": "/components/r-button/index",
+    "r-tag": "/components/r-tag/index",
+    "r-navbar": "/components/r-navbar/index"
+  }
+}

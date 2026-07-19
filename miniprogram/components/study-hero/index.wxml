@@ -1,0 +1,30 @@
+<view class="study-hero">
+  <view class="study-hero__bar">
+    <view class="study-hero__back">
+      <r-back-button bind:back="onBack" />
+    </view>
+
+    <view class="study-hero__center">
+      <slot name="center"></slot>
+    </view>
+
+    <view class="study-hero__actions">
+      <slot name="actions"></slot>
+    </view>
+  </view>
+
+  <view wx:if="{{showProgress}}" class="study-hero__progress">
+    <view class="study-hero__progress-fill" style="width:{{progressPercent}}%"></view>
+  </view>
+
+  <view wx:if="{{showHeading}}" class="study-hero__heading">
+    <word-heading
+      word="{{word}}"
+      phonetic="{{phoneticText}}"
+      translations="{{translations}}"
+      show-recovery="{{showRecovery}}"
+      recovery-passed="{{recoveryPassed}}"
+      bind:play="onPlay"
+    />
+  </view>
+</view>

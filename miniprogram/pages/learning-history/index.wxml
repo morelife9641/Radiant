@@ -1,0 +1,107 @@
+<view class="history-page" style="padding-top: {{navTopPx}}px">
+  <view class="history-page__glow"></view>
+
+  <view class="history-page__bar">
+    <r-back-button bind:back="onBack" />
+    <view class="history-page__bar-copy">
+      <text class="history-page__title">学习轨迹</text>
+      <text class="history-page__subtitle">每一次积累，都让光更亮一点</text>
+    </view>
+    <view class="history-page__bar-spacer"></view>
+  </view>
+
+  <r-loading
+    wx:if="{{loading}}"
+    fill
+    title="正在整理学习记录"
+    description="正在同步近期的学习轨迹"
+  />
+
+  <block wx:else>
+    <view class="history-page__streak-summary">
+      <view class="history-page__streak-light" aria-hidden="true"></view>
+      <text class="history-page__streak-copy">已连续学习</text>
+      <text class="history-page__streak-number">{{summary.currentStreak}}</text>
+      <text class="history-page__streak-copy">天</text>
+      <text class="history-page__streak-divider">·</text>
+      <text class="history-page__streak-note">最长 {{summary.longestStreak}} 天</text>
+    </view>
+
+    <view class="history-page__metrics">
+      <view class="history-page__metric">
+        <text class="history-page__metric-value">{{summary.activeDays}}</text>
+        <text class="history-page__metric-label">活跃天数</text>
+      </view>
+      <view class="history-page__metric">
+        <text class="history-page__metric-value">{{summary.periodLearned}}</text>
+        <text class="history-page__metric-label">区间新学</text>
+      </view>
+      <view class="history-page__metric">
+        <text class="history-page__metric-value">{{summary.totalLearned}}</text>
+        <text class="history-page__metric-label">累计词汇</text>
+      </view>
+    </view>
+
+    <view class="history-page__trend">
+      <view class="history-page__range" aria-label="趋势范围">
+        <view
+          wx:for="{{rangeOptions}}"
+          wx:key="value"
+          class="history-page__range-item {{rangeDays === item.value ? 'is-active' : ''}}"
+          data-days="{{item.value}}"
+          bindtap="onChangeRange"
+        >{{item.label}}</view>
+      </view>
+
+      <view class="history-page__selected">
+        <view>
+          <text class="history-page__selected-date">{{selectedDay.dateText}}</text>
+          <text class="history-page__selected-copy">{{selectedDay.detailText}}</text>
+        </view>
+        <text class="history-page__selected-value">{{selectedDay.newLearned}}</text>
+      </view>
+
+      <view class="history-page__chart-wrap">
+        <canvas
+          type="2d"
+          id="trendChart"
+          class="history-page__chart"
+          bindtouchstart="onChartTouch"
+          aria-label="最近{{rangeDays}}天每日新学单词折线图"
+        ></canvas>
+        <view class="history-page__chart-labels">
+          <text>{{chartLabels.start}}</text>
+          <text>{{chartLabels.middle}}</text>
+          <text>{{chartLabels.end}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="history-page__records">
+      <view wx:if="{{!historyRows.length}}" class="history-page__empty">
+        <view class="history-page__empty-light"></view>
+        <text class="history-page__empty-title">第一束光还在路上</text>
+        <text class="history-page__empty-copy">完成今天的学习后，记录会出现在这里</text>
+      </view>
+
+      <view wx:else class="history-page__record-list">
+        <view wx:for="{{historyRows}}" wx:key="dateKey" class="history-page__record">
+          <view class="history-page__record-date">
+            <text class="history-page__record-day">{{item.dayText}}</text>
+            <text class="history-page__record-week">{{item.weekText}}</text>
+          </view>
+          <view class="history-page__record-main">
+            <text class="history-page__record-title">{{item.recordTitle}}</text>
+            <text class="history-page__record-detail">{{item.recordDetail}}</text>
+          </view>
+          <view class="history-page__record-total">
+            <text>{{item.activityCount}}</text>
+            <text>次</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <text wx:if="{{dataNote}}" class="history-page__data-note">{{dataNote}}</text>
+  </block>
+</view>

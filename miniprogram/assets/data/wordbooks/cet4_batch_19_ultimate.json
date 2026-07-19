@@ -1,0 +1,173 @@
+
+[
+  {
+    "word": "activity",
+    "phonetic": "/ækˈtɪvəti/",
+    "senses": [
+      {
+        "pos": "n.",
+        "translation": "活动；行动；活跃",
+        "collins_definition": {
+          "en": "Activity is the state of doing things, or the things that people do.",
+          "zh": "Activity 是做事情的状态，或者是人们做的事情。"
+        },
+        "synonyms": [
+          {
+            "word": "action",
+            "nuance_explanation": "Refers to doing something for a particular purpose.",
+            "example_en": "Taking quick action is important when the enemy is pushing.",
+            "example_zh": "当敌人推进时，迅速采取行动很重要。"
+          },
+          {
+            "word": "movement",
+            "nuance_explanation": "Refers to the act of moving or changing position.",
+            "example_en": "Controlling your movement and position is key to winning fights.",
+            "example_zh": "控制你的移动和位置是赢得战斗的关键。"
+          }
+        ],
+        "antonyms": ["inactivity", "stillness"],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "Keeping track of enemy activity on the minimap can give you clues about what they're planning.",
+          "zh": "在小地图上跟踪敌人的活动可以给你关于他们计划的线索。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "death",
+    "phonetic": "/deθ/",
+    "senses": [
+      {
+        "pos": "n.",
+        "translation": "死亡；死神；毁灭",
+        "collins_definition": {
+          "en": "Death is the end of life, or the state of being dead.",
+          "zh": "Death 是生命的终结，或死亡的状态。"
+        },
+        "synonyms": [
+          {
+            "word": "demise",
+            "nuance_explanation": "More formal, refers to the death of a person or the end of something.",
+            "example_en": "The demise of one of your teammates can put your team at a big disadvantage.",
+            "example_zh": "你队友之一的死亡会让你的团队处于巨大劣势。"
+          },
+          {
+            "word": "end",
+            "nuance_explanation": "Refers to the final part of something or the point where it stops.",
+            "example_en": "The end of the round comes when one team eliminates the other or the Spike explodes.",
+            "example_zh": "当一支队伍消灭另一支队伍或爆能器爆炸时，回合结束。"
+          }
+        ],
+        "antonyms": ["life", "birth"],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "Death in Valorant is not the end—wait for the next round and try again.",
+          "zh": "无畏契约中的死亡不是结束——等待下一回合并再试一次。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "sense",
+    "phonetic": "/sens/",
+    "senses": [
+      {
+        "pos": "n.",
+        "translation": "感官；感觉；意识；意义；v.感觉到；意识到",
+        "collins_definition": {
+          "en": "Sense is one of the five abilities to see, hear, smell, taste, or feel, or the feeling that you get from something.",
+          "zh": "Sense 是看、听、闻、尝或感觉的五种能力之一，或者是你从某物中获得的感觉。"
+        },
+        "synonyms": [
+          {
+            "word": "feeling",
+            "nuance_explanation": "Refers to something that you feel through your emotions or your body.",
+            "example_en": "I have a feeling that the enemy is going to push A site this round.",
+            "example_zh": "我有一种感觉，敌人这一轮会进攻A点。"
+          },
+          {
+            "word": "awareness",
+            "nuance_explanation": "Refers to knowing about something or being conscious of it.",
+            "example_en": "Good map awareness can help you predict where the enemy is going to be.",
+            "example_zh": "良好的地图意识可以帮助你预测敌人会在哪里。"
+          }
+        ],
+        "antonyms": [],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "Use your sense of hearing to listen for enemy footsteps and figure out where they are.",
+          "zh": "用你的听觉来听敌人的脚步声，弄清楚他们在哪里。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "involve",
+    "phonetic": "/ɪnˈvɒlv/",
+    "senses": [
+      {
+        "pos": "v.",
+        "translation": "涉及；包含；卷入；参与",
+        "collins_definition": {
+          "en": "If something involves a person or thing, that person or thing is part of it or included in it.",
+          "zh": "如果某物涉及一个人或物，那个人或物是它的一部分或包含在其中。"
+        },
+        "synonyms": [
+          {
+            "word": "include",
+            "nuance_explanation": "Refers to making something part of a larger group or set.",
+            "example_en": "Our plan includes using smoke to block the enemy's vision.",
+            "example_zh": "我们的计划包括使用烟雾阻挡敌人的视野。"
+          },
+          {
+            "word": "engage",
+            "nuance_explanation": "Refers to becoming involved in something or taking part in an activity.",
+            "example_en": "Engage the enemy only when you have a good position and a clear shot.",
+            "example_zh": "只有在你有好位置和清晰射击时才与敌人交火。"
+          }
+        ],
+        "antonyms": ["exclude", "avoid"],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "Make sure all your teammates are involved in the plan so everyone knows what to do.",
+          "zh": "确保你的所有队友都参与到计划中，这样每个人都知道该做什么。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "sort",
+    "phonetic": "/sɔːt/",
+    "senses": [
+      {
+        "pos": "n.",
+        "translation": "种类；类别；v.分类；整理；解决",
+        "collins_definition": {
+          "en": "A sort of something is a type or kind of it.",
+          "zh": "A sort of something 是它的类型或种类。"
+        },
+        "synonyms": [
+          {
+            "word": "kind",
+            "nuance_explanation": "General term for a type or category of something.",
+            "example_en": "What kind of play style do you prefer—aggressive or passive?",
+            "example_zh": "你喜欢哪种游戏风格——激进还是保守？"
+          },
+          {
+            "word": "type",
+            "nuance_explanation": "Refers to a group of things that have similar characteristics.",
+            "example_en": "Each type of hero has a different role in the game.",
+            "example_zh": "每种类型的英雄在游戏中都有不同的角色。"
+          }
+        ],
+        "antonyms": [],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "Sort your strategy based on the map and the enemy team's composition.",
+          "zh": "根据地图和敌方团队的阵容来整理你的战术。"
+        }
+      }
+    ]
+  }
+]

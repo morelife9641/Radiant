@@ -1,0 +1,173 @@
+
+[
+  {
+    "word": "court",
+    "phonetic": "/kɔːt/",
+    "senses": [
+      {
+        "pos": "n.",
+        "translation": "法院；法庭；球场；庭院",
+        "collins_definition": {
+          "en": "A court is a place where legal matters are decided by a judge and jury or by a magistrate.",
+          "zh": "法院是由法官和陪审团或由治安官决定法律事务的地方。"
+        },
+        "synonyms": [
+          {
+            "word": "tribunal",
+            "nuance_explanation": "More formal, often refers to a court or committee with special authority.",
+            "example_en": "The tribunal for in-game reports decides whether to ban players for cheating.",
+            "example_zh": "游戏内举报的法庭决定是否因作弊而封禁玩家。"
+          },
+          {
+            "word": "judiciary",
+            "nuance_explanation": "Refers to the system of courts and judges in a country.",
+            "example_en": "The judiciary in Valorant's lore maintains order between the different factions.",
+            "example_zh": "无畏契约背景中的司法机构在不同派系之间维持秩序。"
+          }
+        ],
+        "antonyms": [],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "The case will be heard in the high court next month.",
+          "zh": "该案件将于下月在高等法院审理。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "allow",
+    "phonetic": "/əˈlaʊ/",
+    "senses": [
+      {
+        "pos": "v.",
+        "translation": "允许；准许；允许进入；使有可能",
+        "collins_definition": {
+          "en": "If someone is allowed to do something, they are given permission to do it.",
+          "zh": "如果某人被允许做某事，他们被给予做某事的许可。"
+        },
+        "synonyms": [
+          {
+            "word": "permit",
+            "nuance_explanation": "More formal, often used in official or written contexts.",
+            "example_en": "The tournament rules permit using any skin, but not any external cheats.",
+            "example_zh": "锦标赛规则允许使用任何皮肤，但不允许任何外部作弊。"
+          },
+          {
+            "word": "let",
+            "nuance_explanation": "More informal and conversational, often used in everyday speech.",
+            "example_en": "Let me smoke the entrance so we can push into the site safely.",
+            "example_zh": "让我封住入口，这样我们就可以安全地推进点位了。"
+          }
+        ],
+        "antonyms": ["forbid", "prohibit", "disallow"],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "Smoking is not allowed in this building.",
+          "zh": "这栋楼内禁止吸烟。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "effect",
+    "phonetic": "/ɪˈfekt/",
+    "senses": [
+      {
+        "pos": "n.",
+        "translation": "影响；效果；作用；印象",
+        "collins_definition": {
+          "en": "The effect of one thing on another is the change that the first thing causes in the second thing.",
+          "zh": "一个事物对另一个事物的影响是第一个事物在第二个事物中引起的变化。"
+        },
+        "synonyms": [
+          {
+            "word": "result",
+            "nuance_explanation": "Refers to the outcome or consequence of an action or event.",
+            "example_en": "The result of our great team fight was winning the round and planting the Spike.",
+            "example_zh": "我们精彩团战的结果是赢得了这一回合并安放了爆能器。"
+          },
+          {
+            "word": "impact",
+            "nuance_explanation": "Emphasizes a strong or powerful effect on something.",
+            "example_en": "Buying a Sage has a huge impact on our team's ability to survive team fights.",
+            "example_zh": "买一个贤者对我们团队在团战中存活的能力有巨大影响。"
+          }
+        ],
+        "antonyms": ["cause", "source"],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "The new law had a positive effect on the economy.",
+          "zh": "新法律对经济产生了积极影响。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "lead",
+    "phonetic": "/liːd/",
+    "senses": [
+      {
+        "pos": "v.",
+        "translation": "领导；引导；导致；通向",
+        "collins_definition": {
+          "en": "If you lead a group of people, you are the first person in the group or the person who is in charge of it.",
+          "zh": "如果你领导一群人，你是这群人中的第一个或是负责这群人的人。"
+        },
+        "synonyms": [
+          {
+            "word": "guide",
+            "nuance_explanation": "Focuses on showing someone the way or helping them understand something.",
+            "example_en": "Let me guide you through the site to make sure you know where to plant the Spike.",
+            "example_zh": "让我带你穿过点位，确保你知道在哪里安放爆能器。"
+          },
+          {
+            "word": "direct",
+            "nuance_explanation": "More authoritative, means giving instructions or orders to someone.",
+            "example_en": "I'll direct the team from the back—you guys push in first and I'll cover you.",
+            "example_zh": "我会在后面指挥团队——你们先推进，我会掩护你们。"
+          }
+        ],
+        "antonyms": ["follow", "trail"],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "She was chosen to lead the research team.",
+          "zh": "她被选中领导这个研究团队。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "result",
+    "phonetic": "/rɪˈzʌlt/",
+    "senses": [
+      {
+        "pos": "n.",
+        "translation": "结果；后果；成果；成绩",
+        "collins_definition": {
+          "en": "A result is something that happens or exists because of something else that has happened.",
+          "zh": "结果是因为其他事情发生而发生或存在的事情。"
+        },
+        "synonyms": [
+          {
+            "word": "outcome",
+            "nuance_explanation": "More formal, refers to the final result of a process or event.",
+            "example_en": "The outcome of this match will determine whether we make it to the playoffs.",
+            "example_zh": "这场比赛的结果将决定我们是否能进入季后赛。"
+          },
+          {
+            "word": "consequence",
+            "nuance_explanation": "Often implies a negative or serious result of an action.",
+            "example_en": "The consequence of pushing too early was losing three of our teammates.",
+            "example_zh": "过早推进的后果是失去了我们的三名队友。"
+          }
+        ],
+        "antonyms": ["cause", "reason"],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "The accident resulted in three people being injured.",
+          "zh": "这次事故导致三人受伤。"
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,58 @@
+<view class="page favorites" style="padding-top: {{navTopPx}}px">
+  <view class="favorites__bar">
+    <r-back-button bind:back="onBack" />
+    <text class="favorites__title">收藏</text>
+    <view class="favorites__bar-spacer"></view>
+  </view>
+
+  <r-loading wx:if="{{loading}}" fill title="正在整理收藏" />
+
+  <view wx:elif="{{!items.length}}" class="favorites__state">
+    <text class="favorites__empty-title">还没有收藏</text>
+    <text class="caption muted">在学习或详情页点亮星标后会出现在这里</text>
+  </view>
+
+  <view wx:else class="favorites__list">
+    <view
+      wx:for="{{items}}"
+      wx:key="wordId"
+      wx:for-item="item"
+      wx:for-index="index"
+      class="favorites__swipe"
+      data-index="{{index}}"
+      bindtouchstart="onTouchStart"
+      bindtouchmove="onTouchMove"
+      bindtouchend="onTouchEnd"
+      bindtouchcancel="onTouchEnd"
+    >
+      <view
+        class="favorites__delete"
+        style="width: {{item.actionWidth}}px; opacity: {{item.actionWidth ? 1 : 0}};"
+        data-index="{{index}}"
+        catchtap="onCancelFavorite"
+      >取消收藏</view>
+      <view
+        class="favorites__item"
+        data-word="{{item.word}}"
+        bindtap="onOpenWord"
+        hover-class="favorites__item--press"
+        hover-stay-time="60"
+      >
+        <view class="favorites__head">
+          <text class="favorites__word">{{item.word}}</text>
+          <view class="favorites__audio-group">
+            <text wx:if="{{item.phoneticText}}" class="favorites__phonetic">{{item.phoneticText}}</text>
+            <view class="favorites__play" data-word="{{item.word}}" catchtap="onPlayWord" aria-label="播放发音">
+              <image class="favorites__play-icon" src="/assets/icons/ear.svg" mode="aspectFit" />
+            </view>
+          </view>
+        </view>
+        <text wx:if="{{item.translationText}}" class="favorites__translation">{{item.translationText}}</text>
+        <view class="favorites__meta-row">
+          <text wx:if="{{item.extraText}}" class="favorites__extra">{{item.extraText}}</text>
+          <text class="favorites__time">{{item.favoriteTimeText}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

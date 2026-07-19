@@ -1,0 +1,229 @@
+
+[
+  {
+    "word": "government",
+    "phonetic": "/ˈɡʌvənmənt/",
+    "senses": [
+      {
+        "pos": "n.",
+        "translation": "政府；内阁；政体；治理",
+        "collins_definition": {
+          "en": "The government of a country is the group of people who are responsible for governing it.",
+          "zh": "一个国家的政府是负责治理该国的一群人。"
+        },
+        "synonyms": [
+          {
+            "word": "administration",
+            "nuance_explanation": "Refers specifically to the executive branch or the period when a particular group is in power. More formal and often used in political contexts.",
+            "example_en": "The new administration has promised to lower taxes and improve healthcare.",
+            "example_zh": "新政府承诺降低税收并改善医疗保健。"
+          },
+          {
+            "word": "authority",
+            "nuance_explanation": "Emphasizes the power or right to give orders and make decisions, rather than the group itself.",
+            "example_en": "The local authority approved the plan to build a new park in the neighborhood.",
+            "example_zh": "地方当局批准了在该社区建造新公园的计划。"
+          }
+        ],
+        "antonyms": ["anarchy", "chaos"],
+        "gaming_link": {
+          "game": "Dota 2",
+          "context": "In a way, the neutral camp is like a small government, offering resources to those who can defeat them.",
+          "zh": "在某种程度上，中立营地就像一个小政府，为能够击败它们的人提供资源。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "system",
+    "phonetic": "/ˈsɪstəm/",
+    "senses": [
+      {
+        "pos": "n.",
+        "translation": "系统；体系；制度；体制",
+        "collins_definition": {
+          "en": "A system is a way of working, organizing, or doing something which follows a fixed plan or set of rules.",
+          "zh": "系统是遵循固定计划或一组规则的工作、组织或做事的方式。"
+        },
+        "synonyms": [
+          {
+            "word": "structure",
+            "nuance_explanation": "Focuses on the arrangement or organization of parts rather than the entire process or method.",
+            "example_en": "The team's structure has three supports, one carry, and one mid-laner.",
+            "example_zh": "该团队的结构包括三名辅助、一名核心和一名中单。"
+          },
+          {
+            "word": "framework",
+            "nuance_explanation": "Refers to the basic underlying structure that supports something, often used for planning or strategy.",
+            "example_en": "We need a solid framework for our map rotations to catch enemies off guard.",
+            "example_zh": "我们需要一个坚实的地图转点框架来让敌人措手不及。"
+          }
+        ],
+        "antonyms": ["disorganization", "chaos"],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "The Spike plant/defuse system is central to every round of competitive play.",
+          "zh": "爆能器安放/拆除系统是每一轮竞技比赛的核心。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "might",
+    "phonetic": "/maɪt/",
+    "senses": [
+      {
+        "pos": "modal verb",
+        "translation": "可能；也许",
+        "collins_definition": {
+          "en": "You use might to indicate that something is possible, but not certain.",
+          "zh": "你用 might 表示某事是可能的，但不确定。"
+        },
+        "synonyms": [
+          {
+            "word": "could",
+            "nuance_explanation": "Implies a slightly lower probability than 'might' or suggests ability or possibility in a conditional way.",
+            "example_en": "If we buy a Sage, she could heal us during the post-plant fight.",
+            "example_zh": "如果我们买个贤者，她可以在安放后的战斗中治疗我们。"
+          },
+          {
+            "word": "may",
+            "nuance_explanation": "More formal than 'might' and often used for permission or slightly more certain possibilities.",
+            "example_en": "You may want to save your flash for the retake instead of using it now.",
+            "example_zh": "你可能想把闪光弹留到反攻时再用，而不是现在就用。"
+          }
+        ],
+        "antonyms": ["definitely", "certainly"],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "Jett's Tailwind dash might save her from a sudden Operator shot if her reaction time is fast enough.",
+          "zh": "如果捷风的反应足够快，她的‘顺风行’突进也许能帮她躲过大狙的致命一击。"
+        }
+      },
+      {
+        "pos": "n.",
+        "translation": "力量；威力",
+        "collins_definition": {
+          "en": "Might is power or strength that someone or something has.",
+          "zh": "Might 指某人或某物拥有的力量或威力。"
+        },
+        "synonyms": [
+          {
+            "word": "power",
+            "nuance_explanation": "General term for ability or strength, can be physical, mental, or positional.",
+            "example_en": "Phoenix's ultimate gives him the power to revive himself once in a fight.",
+            "example_zh": "不死鸟（Phoenix）的大招赋予他在战斗中复活一次的能力。"
+          },
+          {
+            "word": "strength",
+            "nuance_explanation": "Focuses on physical or mental power, often implying endurance or resilience.",
+            "example_en": "Tiny's strength grows as he gains levels, making his attacks hit harder.",
+            "example_zh": "小小的力量随着等级提升而增强，让他的攻击更具威力。"
+          }
+        ],
+        "antonyms": ["weakness", "frailty"],
+        "gaming_link": {
+          "game": "Dota 2",
+          "context": "Sven activates God's Strength, channeling his rogue knight might to cleave through the entire enemy team.",
+          "zh": "斯温开启了‘神之力量’，引导他流浪剑客的无双威力，将敌方全队瞬间分裂斩碎。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "part",
+    "phonetic": "/pɑːt/",
+    "senses": [
+      {
+        "pos": "n.",
+        "translation": "部分；片段；角色；零件",
+        "collins_definition": {
+          "en": "A part of something is one of the pieces, sections, or elements that it consists of.",
+          "zh": "某物的一部分是它所组成的碎片、部分或元素之一。"
+        },
+        "synonyms": [
+          {
+            "word": "portion",
+            "nuance_explanation": "Refers to a share or part that is divided from a whole, often used for quantities.",
+            "example_en": "Each support takes a portion of the team's gold to buy wards and utility items.",
+            "example_zh": "每个辅助都分得一部分团队的金钱来购买眼和辅助道具。"
+          },
+          {
+            "word": "segment",
+            "nuance_explanation": "A part that is separated from a larger whole, often in a linear or structured way.",
+            "example_en": "The early game is just one segment of the match—don't give up if you fall behind.",
+            "example_zh": "前期只是比赛的一部分——如果你落后了不要放弃。"
+          }
+        ],
+        "antonyms": ["whole", "entirety"],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "Playing your part as a team player is more important than getting the most kills.",
+          "zh": "作为团队成员做好你的本职工作比拿最多的击杀更重要。"
+        }
+      },
+      {
+        "pos": "v.",
+        "translation": "分离；分开；断裂",
+        "collins_definition": {
+          "en": "If something parts or if you part it, it divides into two or more pieces.",
+          "zh": "如果某物分开或你把它分开，它会分成两个或多个部分。"
+        },
+        "synonyms": [
+          {
+            "word": "separate",
+            "nuance_explanation": "General term for putting or keeping things apart, often implies a clear division.",
+            "example_en": "We can separate the enemy team by blocking their retreat with a Sage wall.",
+            "example_zh": "我们可以用贤者的冰墙阻挡敌方的退路，将他们分开。"
+          },
+          {
+            "word": "split",
+            "nuance_explanation": "Implies dividing into parts, often used for groups or teams.",
+            "example_en": "Split push strategies force the enemy to divide their attention between multiple lanes.",
+            "example_zh": "分推战术迫使敌人在多条路线之间分散注意力。"
+          }
+        ],
+        "antonyms": ["join", "unite"],
+        "gaming_link": {
+          "game": "Dota 2",
+          "context": "Tidehunter's Ravage parts the enemy team, making them easy targets for your teammates.",
+          "zh": "潮汐猎人（Tidehunter）的‘毁灭’技能将敌方团队分开，让他们成为你队友的轻松目标。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "however",
+    "phonetic": "/haʊˈevə(r)/",
+    "senses": [
+      {
+        "pos": "adv.",
+        "translation": "然而；不过；无论如何",
+        "collins_definition": {
+          "en": "You use however to introduce a statement that contrasts with or contradicts what has just been said.",
+          "zh": "你用 however 来引出一个与刚才所说的形成对比或矛盾的陈述。"
+        },
+        "synonyms": [
+          {
+            "word": "nevertheless",
+            "nuance_explanation": "More formal and emphatic than 'however', often used in writing or formal speeches.",
+            "example_en": "We lost the first round. Nevertheless, we can still come back and win the match.",
+            "example_zh": "我们输了第一回合。尽管如此，我们仍然可以逆转并赢得比赛。"
+          },
+          {
+            "word": "nonetheless",
+            "nuance_explanation": "Almost identical to 'nevertheless', but slightly more common in spoken English in some contexts.",
+            "example_en": "The enemy has a big gold lead. Nonetheless, a well-executed team fight can turn the tide.",
+            "example_zh": "敌方有巨大的经济领先。尽管如此，一场执行完美的团战可以扭转局势。"
+          }
+        ],
+        "antonyms": ["similarly", "likewise"],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "This is a cheap plan; however, it has some budget limits.",
+          "zh": "这是一个便宜的方案；然而，它有一些预算限制。"
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,173 @@
+
+[
+  {
+    "word": "area",
+    "phonetic": "/ˈeəriə/",
+    "senses": [
+      {
+        "pos": "n.",
+        "translation": "地区；区域；面积；领域",
+        "collins_definition": {
+          "en": "An area is a particular part of a town, country, region, or the world.",
+          "zh": "地区是城镇、国家、区域或世界的特定部分。"
+        },
+        "synonyms": [
+          {
+            "word": "region",
+            "nuance_explanation": "More formal and often refers to larger, defined geographic areas.",
+            "example_en": "The mid region of the map is where most team fights happen in this meta.",
+            "example_zh": "地图的中部区域是这个版本大多数团战发生的地方。"
+          },
+          {
+            "word": "zone",
+            "nuance_explanation": "Refers to a specific, often controlled or marked area, common in gaming contexts.",
+            "example_en": "Stay out of the enemy's smoke zone—you won't be able to see anything.",
+            "example_zh": "待在敌方的烟雾区之外——你什么都看不见。"
+          }
+        ],
+        "antonyms": [],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "The A Site area on Bind has two entrances, making it a tough spot to defend.",
+          "zh": "Bind地图的A区有两个入口，使它成为一个难以防守的位置。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "against",
+    "phonetic": "/əˈɡenst/",
+    "senses": [
+      {
+        "pos": "prep.",
+        "translation": "反对；逆；违反；紧靠；对抗",
+        "collins_definition": {
+          "en": "If someone is against something, they oppose it or disagree with it.",
+          "zh": "如果某人反对某事，他们会反对或不同意它。"
+        },
+        "synonyms": [
+          {
+            "word": "opposing",
+            "nuance_explanation": "Actively fighting or disagreeing with something, often used as an adjective.",
+            "example_en": "Our opposing team has a strong Jett player, so we need to focus her.",
+            "example_zh": "我们的对手有一个很强的捷风玩家，所以我们需要针对她。"
+          },
+          {
+            "word": "anti",
+            "nuance_explanation": "Informal prefix meaning against, often used in compound words or casually.",
+            "example_en": "We need an anti-heal hero to counter their team's healing supports.",
+            "example_zh": "我们需要一个克制治疗的英雄来对抗他们团队的治疗辅助。"
+          }
+        ],
+        "antonyms": ["for", "supporting"],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "Many people are against the new law because it limits personal freedom.",
+          "zh": "许多人反对这项新法律，因为它限制了个人自由。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "provide",
+    "phonetic": "/prəˈvaɪd/",
+    "senses": [
+      {
+        "pos": "v.",
+        "translation": "提供；供应；给予",
+        "collins_definition": {
+          "en": "If you provide something that someone needs or wants, you give it to them or make it available to them.",
+          "zh": "如果你提供某人需要或想要的东西，你会把它给他们或让他们可以使用它。"
+        },
+        "synonyms": [
+          {
+            "word": "supply",
+            "nuance_explanation": "Refers to providing something regularly or in large quantities, often resources.",
+            "example_en": "Creeps supply gold and experience to help you get your items faster.",
+            "example_zh": "小兵提供金币和经验，帮助你更快地获得装备。"
+          },
+          {
+            "word": "offer",
+            "nuance_explanation": "More voluntary or polite; implies the recipient can choose to accept or not.",
+            "example_en": "I can offer to smoke the site if you want to push with me.",
+            "example_zh": "如果你想和我一起推进，我可以为你封烟。"
+          }
+        ],
+        "antonyms": ["withhold", "take away"],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "The hotel provides free breakfast for all guests.",
+          "zh": "酒店为所有客人提供免费早餐。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "point",
+    "phonetic": "/pɔɪnt/",
+    "senses": [
+      {
+        "pos": "n.",
+        "translation": "点；要点；观点；尖端；得分",
+        "collins_definition": {
+          "en": "A point is a particular detail or fact that you consider or discuss.",
+          "zh": "要点是你考虑或讨论的特定细节或事实。"
+        },
+        "synonyms": [
+          {
+            "word": "tip",
+            "nuance_explanation": "Refers to the pointed end of something or a small piece of advice.",
+            "example_en": "The tip of your knife should hit the enemy's head for maximum damage.",
+            "example_zh": "你的刀尖应该命中敌人的头部以获得最大伤害。"
+          },
+          {
+            "word": "dot",
+            "nuance_explanation": "A small, round mark or point, often used for positions or targets.",
+            "example_en": "Place the Spike on the dot in the center of the site for better coverage.",
+            "example_zh": "把爆能器放在点位中心的标记上，以便更好地覆盖。"
+          }
+        ],
+        "antonyms": [],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "The main point of the presentation is to introduce our new product.",
+          "zh": "这次演示的要点是介绍我们的新产品。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "follow",
+    "phonetic": "/ˈfɒləʊ/",
+    "senses": [
+      {
+        "pos": "v.",
+        "translation": "跟随；遵循；追随；理解",
+        "collins_definition": {
+          "en": "If you follow someone, you go after them or come after them.",
+          "zh": "如果你跟随某人，你会跟在他们后面或在他们后面来。"
+        },
+        "synonyms": [
+          {
+            "word": "trail",
+            "nuance_explanation": "Implies following at a distance, often secretly or cautiously.",
+            "example_en": "Trail the enemy Sage to see if she's going to revive a teammate.",
+            "example_zh": "跟踪敌方贤者，看看她是否要复活队友。"
+          },
+          {
+            "word": "obey",
+            "nuance_explanation": "Refers to following rules or orders, often with authority involved.",
+            "example_en": "Obey your team's shot caller to make sure everyone is on the same page.",
+            "example_zh": "听从你团队的指挥，确保每个人都步调一致。"
+          }
+        ],
+        "antonyms": ["lead", "precede"],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "Please follow the instructions carefully to complete the task.",
+          "zh": "请仔细遵循说明来完成任务。"
+        }
+      }
+    ]
+  }
+]

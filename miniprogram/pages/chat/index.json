@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "对话",
+  "usingComponents": {
+    "chat-bubble": "/components/chat-bubble/index",
+    "r-button": "/components/r-button/index"
+  }
+}

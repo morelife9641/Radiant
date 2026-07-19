@@ -1,0 +1,56 @@
+<view class="page wbd" wx:if="{{book}}">
+  <r-navbar title="{{book.name}}" />
+
+  <view class="wbd__hero">
+    <view class="wbd__cover" style="background:{{book.coverColor}}">
+      <image wx:if="{{book.coverImage}}" class="wbd__cover-image" src="{{book.coverImage}}" mode="aspectFill" />
+      <text wx:else>{{book.letter}}</text>
+    </view>
+    <view class="wbd__meta">
+      <text class="wbd__title">{{book.name}}</text>
+      <view class="row gap-1">
+        <r-tag wx:if="{{book.category}}" text="{{book.category}}" />
+        <r-tag wx:if="{{total}}" text="{{total}} 词" type="primary" />
+      </view>
+    </view>
+  </view>
+
+  <view class="wbd__sort">
+    <view class="wbd__sort-item {{sortMode === 'order' ? 'is-active' : ''}}" data-mode="order" bindtap="onSwitchSort">原书顺序</view>
+    <view class="wbd__sort-item {{sortMode === 'az' ? 'is-active' : ''}}" data-mode="az" bindtap="onSwitchSort">A-Z</view>
+  </view>
+
+  <view class="wbd__search" bindtap="onOpenSearch" hover-class="wbd__search--press" hover-stay-time="60">
+    <text class="wbd__search-icon">⌕</text>
+    <text class="wbd__search-placeholder">搜索 {{book.name}} 中的单词</text>
+  </view>
+
+  <scroll-view class="wbd__list" scroll-y lower-threshold="900" bindscroll="onListScroll" bindscrolltolower="onScrollToLower">
+    <view
+      wx:for="{{displayWords}}"
+      wx:key="wordId"
+      wx:for-item="item"
+      class="wbd__word"
+      data-word="{{item.word}}"
+      bindtap="onOpenWord"
+      hover-class="wbd__word--press"
+      hover-stay-time="60"
+    >
+      <view class="wbd__word-left">
+        <text class="wbd__word-text">{{item.word}}</text>
+        <text wx:if="{{item.phonetic}}" class="wbd__phonetic">{{item.phonetic}}</text>
+      </view>
+      <text wx:if="{{item.senses && item.senses[0]}}" class="wbd__translation">{{item.senses[0].translation}}</text>
+    </view>
+  </scroll-view>
+
+  <view class="wbd__footer">
+    <r-loading wx:if="{{loading}}" compact title="正在加载更多" />
+    <text wx:elif="{{finished}}" class="muted">已加载全部</text>
+  </view>
+</view>
+
+<view wx:else class="page wbd__loading">
+  <r-navbar title="词书详情" />
+  <r-loading fill title="正在打开词书" />
+</view>

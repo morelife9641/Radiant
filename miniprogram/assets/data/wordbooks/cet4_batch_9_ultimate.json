@@ -1,0 +1,173 @@
+
+[
+  {
+    "word": "general",
+    "phonetic": "/ˈdʒenrəl/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "translation": "总的；普遍的；一般的；常规的",
+        "collins_definition": {
+          "en": "You use general to describe something that concerns or includes most people or things in a group.",
+          "zh": "你用 general 来描述与群体中大多数人或事物有关或包括它们的事物。"
+        },
+        "synonyms": [
+          {
+            "word": "overall",
+            "nuance_explanation": "Focuses on the whole or total, rather than specific parts.",
+            "example_en": "Our overall strategy for this map is to take mid control first.",
+            "example_zh": "我们对这张地图的总体策略是先拿下中路控制权。"
+          },
+          {
+            "word": "common",
+            "nuance_explanation": "Refers to something that happens often or is shared by many people.",
+            "example_en": "It's common for teams to save their ultimates for late-game team fights.",
+            "example_zh": "团队通常会把他们的大招留到后期团战使用。"
+          }
+        ],
+        "antonyms": ["specific", "particular", "special"],
+        "gaming_link": {
+          "game": "Dota 2",
+          "context": "In the general laning phase, carry heroes focus on farming to get their core items.",
+          "zh": "在常规对线阶段，核心英雄专注于打钱来获得他们的核心装备。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "war",
+    "phonetic": "/wɔː(r)/",
+    "senses": [
+      {
+        "pos": "n.",
+        "translation": "战争；斗争；冲突",
+        "collins_definition": {
+          "en": "A war is a period of fighting or conflict between two or more countries or groups.",
+          "zh": "战争是两个或多个国家或团体之间战斗或冲突的时期。"
+        },
+        "synonyms": [
+          {
+            "word": "conflict",
+            "nuance_explanation": "General term for a serious disagreement or argument between two or more groups.",
+            "example_en": "The conflict between your team and the enemy team will be decided in the next team fight.",
+            "example_zh": "你的团队和敌方团队之间的冲突将在下一场团战中决定。"
+          },
+          {
+            "word": "battle",
+            "nuance_explanation": "Refers to a specific fight or conflict, often in a war or competition.",
+            "example_en": "The battle for A site will determine who wins this round.",
+            "example_zh": "对A点的争夺将决定谁赢得这一回合。"
+          }
+        ],
+        "antonyms": ["peace", "truce", "harmony"],
+        "gaming_link": {
+          "game": "Dota 2",
+          "context": "The ancient war between Radiant and Dire continues with every match played.",
+          "zh": "天辉与夜魇之间的远古战争随着每场比赛的进行而延续。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "offer",
+    "phonetic": "/ˈɒfə(r)/",
+    "senses": [
+      {
+        "pos": "v.",
+        "translation": "提供；给予；提议；出价",
+        "collins_definition": {
+          "en": "If you offer something to someone, you ask them if they would like to have it or use it.",
+          "zh": "如果你向某人提供某物，你会问他们是否想要拥有或使用它。"
+        },
+        "synonyms": [
+          {
+            "word": "provide",
+            "nuance_explanation": "Focuses on giving something that is needed or useful.",
+            "example_en": "Sage provides healing and revives to keep her teammates in the fight.",
+            "example_zh": "贤者提供治疗和复活，让她的队友保持在战斗中。"
+          },
+          {
+            "word": "suggest",
+            "nuance_explanation": "Refers to putting forward an idea or plan for consideration.",
+            "example_en": "I suggest we smoke the entrance before pushing into the site.",
+            "example_zh": "我建议我们在推进点位之前封住入口。"
+          }
+        ],
+        "antonyms": ["withhold", "refuse", "deny"],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "Sage can offer healing to her teammates to keep them in the fight longer.",
+          "zh": "贤者可以为她的队友提供治疗，让他们在战斗中坚持更久。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "view",
+    "phonetic": "/vjuː/",
+    "senses": [
+      {
+        "pos": "n.",
+        "translation": "看法；观点；视野；风景；v.看待；考虑；观看",
+        "collins_definition": {
+          "en": "Your views on something are the beliefs or opinions you have about it.",
+          "zh": "你对某事的看法是你对它的信念或观点。"
+        },
+        "synonyms": [
+          {
+            "word": "opinion",
+            "nuance_explanation": "General term for a belief or judgment about something.",
+            "example_en": "In my opinion, the best way to play this map is to take early control of mid.",
+            "example_zh": "在我看来，玩这张地图的最佳方法是尽早控制中路。"
+          },
+          {
+            "word": "perspective",
+            "nuance_explanation": "Refers to a particular way of looking at or thinking about something.",
+            "example_en": "From the support's perspective, the most important thing is to keep the team alive.",
+            "example_zh": "从辅助的角度来看，最重要的是保持团队存活。"
+          }
+        ],
+        "antonyms": [],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "Sova's drone gives the team a view of the enemy's position without putting anyone at risk.",
+          "zh": "索瓦的无人机让团队在不冒任何人风险的情况下获得敌方位置的视野。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "consider",
+    "phonetic": "/kənˈsɪdə(r)/",
+    "senses": [
+      {
+        "pos": "v.",
+        "translation": "考虑；认为；细想；体谅",
+        "collins_definition": {
+          "en": "If you consider something, you think about it carefully.",
+          "zh": "如果你考虑某事，你会仔细思考它。"
+        },
+        "synonyms": [
+          {
+            "word": "think about",
+            "nuance_explanation": "General term for thinking about something carefully.",
+            "example_en": "Think about which hero would work best with our team composition.",
+            "example_zh": "想想哪个英雄最适合我们的团队阵容。"
+          },
+          {
+            "word": "contemplate",
+            "nuance_explanation": "More formal, means thinking about something for a long time.",
+            "example_en": "Take a moment to contemplate your next move before making a decision.",
+            "example_zh": "在做出决定之前，花点时间思考你的下一步行动。"
+          }
+        ],
+        "antonyms": ["disregard", "ignore", "dismiss"],
+        "gaming_link": {
+          "game": "Dota 2",
+          "context": "Before choosing a hero, consider the team's composition to ensure balance.",
+          "zh": "在选择英雄之前，考虑团队的阵容以确保平衡。"
+        }
+      }
+    ]
+  }
+]

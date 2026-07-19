@@ -1,0 +1,173 @@
+
+[
+  {
+    "word": "major",
+    "phonetic": "/ˈmeɪdʒə(r)/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "translation": "主要的；重要的；大调的；n.少校；专业；v.主修",
+        "collins_definition": {
+          "en": "Major means very large, important, or serious.",
+          "zh": "Major 指非常大、重要或严重的。"
+        },
+        "synonyms": [
+          {
+            "word": "main",
+            "nuance_explanation": "Refers to the most important or largest thing.",
+            "example_en": "Our main goal this round is to plant the Spike on A site.",
+            "example_zh": "我们这一轮的主要目标是在A点安放爆能器。"
+          },
+          {
+            "word": "important",
+            "nuance_explanation": "Refers to something that has great meaning or value.",
+            "example_en": "It's important to communicate with your team during the match.",
+            "example_zh": "在比赛中与你的团队沟通是很重要的。"
+          }
+        ],
+        "antonyms": ["minor", "unimportant"],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "One major mistake can lose you the round, so be careful and think before you act.",
+          "zh": "一个大错误可能会让你输掉回合，所以要小心，三思而后行。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "church",
+    "phonetic": "/tʃɜːtʃ/",
+    "senses": [
+      {
+        "pos": "n.",
+        "translation": "教堂；教会；礼拜；adj.教会的；教堂的",
+        "collins_definition": {
+          "en": "A church is a building where Christians go to worship.",
+          "zh": "教堂是基督徒去做礼拜的建筑。"
+        },
+        "synonyms": [
+          {
+            "word": "chapel",
+            "nuance_explanation": "Refers to a small church or a place of worship in a larger building.",
+            "example_en": "In some Valorant maps, there are areas that look like a chapel.",
+            "example_zh": "在一些无畏契约地图中，有看起来像小教堂的区域。"
+          },
+          {
+            "word": "cathedral",
+            "nuance_explanation": "Refers to a large, important church, usually with a bishop.",
+            "example_en": "The design of some map areas is inspired by a cathedral.",
+            "example_zh": "一些地图区域的设计灵感来自大教堂。"
+          }
+        ],
+        "antonyms": [],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "On the Haven map, the 'A Site' area has a church-like design, which can be a good place to hide.",
+          "zh": "在Haven地图上，“A点”区域有一个教堂式的设计，这是一个很好的隐藏地方。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "describe",
+    "phonetic": "/dɪˈskraɪb/",
+    "senses": [
+      {
+        "pos": "v.",
+        "translation": "描述；形容；描绘；画（图形）",
+        "collins_definition": {
+          "en": "To describe something means to say what it is like, how it looks, sounds, feels, etc.",
+          "zh": "描述某物意味着说出它是什么样子，它看起来、听起来、感觉起来如何等。"
+        },
+        "synonyms": [
+          {
+            "word": "explain",
+            "nuance_explanation": "Refers to making something clear or easy to understand.",
+            "example_en": "Explain the enemy's position to your team so they know what to expect.",
+            "example_zh": "向你的团队解释敌人的位置，这样他们知道会发生什么。"
+          },
+          {
+            "word": "characterize",
+            "nuance_explanation": "Refers to describing the qualities or features of someone or something.",
+            "example_en": "Characterize your play style—are you aggressive or passive?",
+            "example_zh": "描述你的游戏风格——你是激进的还是保守的？"
+          }
+        ],
+        "antonyms": [],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "Describe the enemy's position and what weapons they have to help your team make good decisions.",
+          "zh": "描述敌人的位置和他们有什么武器，帮助你的团队做出好的决定。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "condition",
+    "phonetic": "/kənˈdɪʃn/",
+    "senses": [
+      {
+        "pos": "n.",
+        "translation": "条件；状况；状态；环境；v.调节；决定；使适应",
+        "collins_definition": {
+          "en": "The condition of something or someone is the state that they are in—how good or bad they are, how healthy, etc.",
+          "zh": "某物或某人的 condition 是他们所处的状态——他们有多好或多坏，有多健康等。"
+        },
+        "synonyms": [
+          {
+            "word": "state",
+            "nuance_explanation": "Refers to the condition or situation that someone or something is in.",
+            "example_en": "Check your team's state—are they low on health or ammo?",
+            "example_zh": "检查你团队的状态——他们生命值或弹药低吗？"
+          },
+          {
+            "word": "situation",
+            "nuance_explanation": "Refers to the set of circumstances that someone is in.",
+            "example_en": "Let's assess the situation before deciding what to do next.",
+            "example_zh": "让我们评估一下情况，然后再决定下一步做什么。"
+          }
+        ],
+        "antonyms": [],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "The condition of your team—health, ammo, utility—will determine what strategy you should use.",
+          "zh": "你团队的状况——生命值、弹药、辅助道具——将决定你应该使用什么战术。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "economic",
+    "phonetic": "/ˌiːkəˈnɒmɪk/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "translation": "经济的；经济学的；有利可图的",
+        "collins_definition": {
+          "en": "Economic means relating to the production, distribution, and consumption of goods and services, or to the economy of a country or region.",
+          "zh": "Economic 指与商品和服务的生产、分配和消费有关，或与一个国家或地区的经济有关。"
+        },
+        "synonyms": [
+          {
+            "word": "financial",
+            "nuance_explanation": "Refers to money or the management of money.",
+            "example_en": "Managing your financial resources in Valorant—your money—means buying the right weapons and utility.",
+            "example_zh": "在无畏契约中管理你的财务资源——你的钱——意味着购买正确的武器和辅助道具。"
+          },
+          {
+            "word": "monetary",
+            "nuance_explanation": "More formal, refers to money or currency.",
+            "example_en": "Your monetary situation in the game—how much money you have—determines what you can buy.",
+            "example_zh": "你在游戏中的财务状况——你有多少钱——决定了你可以买什么。"
+          }
+        ],
+        "antonyms": [],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "Your economic situation in the game—how much money you have—affects what weapons and utility you can buy each round.",
+          "zh": "你在游戏中的经济状况——你有多少钱——影响你每一轮可以买什么武器和辅助道具。"
+        }
+      }
+    ]
+  }
+]

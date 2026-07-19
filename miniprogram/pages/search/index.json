@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "r-back-button": "../../components/r-back-button/index",
+    "r-navbar": "../../components/r-navbar/index",
+    "r-tag": "../../components/r-tag/index"
+  }
+}

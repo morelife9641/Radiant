@@ -1,0 +1,173 @@
+
+[
+  {
+    "word": "within",
+    "phonetic": "/wɪˈðɪn/",
+    "senses": [
+      {
+        "pos": "prep.",
+        "translation": "在…之内；在…里面；不超过",
+        "collins_definition": {
+          "en": "If something is within a place, area, or object, it is inside it or surrounded by it.",
+          "zh": "如果某物在某个地方、区域或物体之内，它就在里面或被它包围。"
+        },
+        "synonyms": [
+          {
+            "word": "inside",
+            "nuance_explanation": "More common in everyday speech, can be used as a preposition, adverb, or adjective.",
+            "example_en": "Stay inside the smoke to avoid being seen by enemies on the other side.",
+            "example_zh": "待在烟雾里面，以免被另一边的敌人看到。"
+          },
+          {
+            "word": "in",
+            "nuance_explanation": "Shorter and more general, often used for location or time limits.",
+            "example_en": "We need to finish this retake in 30 seconds before the Spike explodes.",
+            "example_zh": "我们需要在30秒内完成这次反攻，在爆能器爆炸之前。"
+          }
+        ],
+        "antonyms": ["outside", "beyond"],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "You must complete the task within the given time limit.",
+          "zh": "你必须在规定的时间限制内完成任务。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "local",
+    "phonetic": "/ˈləʊkl/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "translation": "当地的；本地的；局部的",
+        "collins_definition": {
+          "en": "Local means existing in or belonging to the area where you live, or to the area that you are talking about.",
+          "zh": "当地的指存在于或属于你居住的地区，或你正在谈论的地区。"
+        },
+        "synonyms": [
+          {
+            "word": "regional",
+            "nuance_explanation": "Refers to a larger, defined area rather than a small local neighborhood.",
+            "example_en": "The regional meta on Chinese servers favors aggressive play styles.",
+            "example_zh": "中国服务器的区域版本偏好激进的游戏风格。"
+          },
+          {
+            "word": "community",
+            "nuance_explanation": "As an adjective, refers to a group of people living in the same area.",
+            "example_en": "The community Discord server helps organize scrims and practice matches.",
+            "example_zh": "社区Discord服务器帮助组织训练赛和练习赛。"
+          }
+        ],
+        "antonyms": ["global", "international", "foreign"],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "The local government is planning to build a new park.",
+          "zh": "当地政府正计划建造一个新公园。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "state",
+    "phonetic": "/steɪt/",
+    "senses": [
+      {
+        "pos": "n.",
+        "translation": "状态；状况；国家；州；政府",
+        "collins_definition": {
+          "en": "Your state is your mood or physical and mental condition at a particular time.",
+          "zh": "你的状态是你在特定时间的心情或身心状况。"
+        },
+        "synonyms": [
+          {
+            "word": "condition",
+            "nuance_explanation": "More general, can refer to physical, mental, or situational states.",
+            "example_en": "Check your teammate's health condition before pushing into a dangerous area.",
+            "example_zh": "在推进危险区域之前，检查你队友的健康状况。"
+          },
+          {
+            "word": "status",
+            "nuance_explanation": "More formal, often refers to official or recognized states.",
+            "example_en": "Check the status of your ultimate ability to see if it's ready to use.",
+            "example_zh": "检查你大招的状态，看看是否可以使用。"
+          }
+        ],
+        "antonyms": [],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "Please state your name and address clearly.",
+          "zh": "请清晰地陈述你的姓名和地址。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "although",
+    "phonetic": "/ɔːlˈðəʊ/",
+    "senses": [
+      {
+        "pos": "conj.",
+        "translation": "虽然；尽管；然而",
+        "collins_definition": {
+          "en": "You use although to introduce a subordinate clause that contains a statement that contrasts with the statement in the main clause.",
+          "zh": "你用 although 来引出一个包含与主句陈述形成对比的陈述的从句。"
+        },
+        "synonyms": [
+          {
+            "word": "though",
+            "nuance_explanation": "More informal and can be used at the end of a sentence, unlike 'although'.",
+            "example_en": "We lost the round, though we played really well as a team.",
+            "example_zh": "我们输了这一回合，尽管我们作为团队打得非常好。"
+          },
+          {
+            "word": "even though",
+            "nuance_explanation": "More emphatic than 'although', highlights a stronger contrast.",
+            "example_en": "Even though we have a big gold lead, don't get cocky—they can still come back.",
+            "example_zh": "尽管我们有巨大的经济领先，不要骄傲——他们仍然可以逆转。"
+          }
+        ],
+        "antonyms": [],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "Although it was raining, we still went for a walk.",
+          "zh": "虽然下雨了，我们还是去散步了。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "fact",
+    "phonetic": "/fækt/",
+    "senses": [
+      {
+        "pos": "n.",
+        "translation": "事实；真相；实际",
+        "collins_definition": {
+          "en": "Facts are pieces of information that can be proved to be true.",
+          "zh": "事实是可以被证明是真实的信息片段。"
+        },
+        "synonyms": [
+          {
+            "word": "truth",
+            "nuance_explanation": "More general, refers to the quality of being true, not just a specific piece of information.",
+            "example_en": "The truth is, we need to communicate more if we want to win this match.",
+            "example_zh": "事实是，如果我们想赢得这场比赛，我们需要更多地交流。"
+          },
+          {
+            "word": "reality",
+            "nuance_explanation": "Refers to the actual state of things, as opposed to what is imagined.",
+            "example_en": "The reality is, we can't win every round—just focus on the next one.",
+            "example_zh": "现实是，我们不能赢得每一轮——只专注于下一轮就好。"
+          }
+        ],
+        "antonyms": ["fiction", "lie", "falsehood"],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "It is a fact that the Earth revolves around the Sun.",
+          "zh": "地球围绕太阳旋转是一个事实。"
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,173 @@
+
+[
+  {
+    "word": "less",
+    "phonetic": "/les/",
+    "senses": [
+      {
+        "pos": "det./pron./adv.",
+        "translation": "较少的；更少；较不",
+        "collins_definition": {
+          "en": "You use less to indicate a smaller amount of something than before or than average.",
+          "zh": "你用 less 表示某物的数量比以前或比平均水平小。"
+        },
+        "synonyms": [
+          {
+            "word": "fewer",
+            "nuance_explanation": "Used for countable nouns, while 'less' is usually for uncountable nouns.",
+            "example_en": "Fewer mistakes mean a higher chance of winning the round.",
+            "example_zh": "更少的错误意味着更高的赢得回合的机会。"
+          },
+          {
+            "word": "not as much",
+            "nuance_explanation": "More informal, used to indicate a smaller amount.",
+            "example_en": "Let's spend not as much money this round and save for better weapons later.",
+            "example_zh": "让我们这一轮花更少的钱，为以后更好的武器存钱。"
+          }
+        ],
+        "antonyms": ["more", "greater"],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "Sometimes playing less aggressively and focusing on defense is the better strategy.",
+          "zh": "有时打得不那么激进，专注于防守是更好的战术。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "decision",
+    "phonetic": "/dɪˈsɪʒn/",
+    "senses": [
+      {
+        "pos": "n.",
+        "translation": "决定；抉择；决策；果断",
+        "collins_definition": {
+          "en": "A decision is a choice or judgment that you make after thinking about it carefully.",
+          "zh": "决定是你在仔细思考后做出的选择或判断。"
+        },
+        "synonyms": [
+          {
+            "word": "choice",
+            "nuance_explanation": "Refers to the act of choosing between two or more possibilities.",
+            "example_en": "You have a choice between saving your money or buying a better weapon.",
+            "example_zh": "你可以选择省钱或买更好的武器。"
+          },
+          {
+            "word": "judgment",
+            "nuance_explanation": "Refers to the ability to make considered decisions or come to sensible conclusions.",
+            "example_en": "Good judgment is needed to decide when to push and when to fall back.",
+            "example_zh": "需要良好的判断力来决定何时推进，何时撤退。"
+          }
+        ],
+        "antonyms": [],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "Making the right decision about when to use your ultimate can win you the round.",
+          "zh": "对何时使用你的大招做出正确的决定可以为你赢得回合。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "industry",
+    "phonetic": "/ˈɪndəstri/",
+    "senses": [
+      {
+        "pos": "n.",
+        "translation": "工业；产业；行业；勤奋",
+        "collins_definition": {
+          "en": "Industry is the work of making things in factories, or the people and companies that do this work.",
+          "zh": "工业是在工厂制造东西的工作，或是做这项工作的人和公司。"
+        },
+        "synonyms": [
+          {
+            "word": "business",
+            "nuance_explanation": "Refers to the activity of making, buying, or selling goods or services.",
+            "example_en": "The esports business has grown a lot in recent years, with many pro teams and tournaments.",
+            "example_zh": "近年来，电竞业务发展迅速，有许多职业队伍和锦标赛。"
+          },
+          {
+            "word": "trade",
+            "nuance_explanation": "Refers to the activity of buying and selling goods or services.",
+            "example_en": "The trade of in-game skins and items is a big part of many online games.",
+            "example_zh": "游戏内皮肤和物品的交易是许多在线游戏的重要组成部分。"
+          }
+        ],
+        "antonyms": [],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "The esports industry for Valorant has grown rapidly, with big tournaments and lots of prize money.",
+          "zh": "无畏契约的电竞行业发展迅速，有大型锦标赛和大量奖金。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "patient",
+    "phonetic": "/ˈpeɪʃnt/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "translation": "有耐心的；忍耐的；n.病人",
+        "collins_definition": {
+          "en": "If you are patient, you can wait calmly for a long time or deal with something difficult without getting angry.",
+          "zh": "如果你有耐心，你可以平静地等待很长时间，或者处理困难的事情而不生气。"
+        },
+        "synonyms": [
+          {
+            "word": "calm",
+            "nuance_explanation": "Refers to being peaceful and not worried or excited.",
+            "example_en": "Stay calm and focused even if things are not going well.",
+            "example_zh": "即使事情不顺利，也要保持冷静和专注。"
+          },
+          {
+            "word": "tolerant",
+            "nuance_explanation": "Refers to being able to accept or put up with something without getting angry.",
+            "example_en": "Be tolerant of your teammates' mistakes—they're trying their best too.",
+            "example_zh": "要宽容你队友的错误——他们也在尽力而为。"
+          }
+        ],
+        "antonyms": ["impatient", "angry"],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "Being patient and waiting for the right moment to attack can be more effective than rushing in.",
+          "zh": "耐心等待正确的进攻时机可能比冲进去更有效。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "win",
+    "phonetic": "/wɪn/",
+    "senses": [
+      {
+        "pos": "v.",
+        "translation": "获胜；赢得；获得；n.胜利；赢",
+        "collins_definition": {
+          "en": "If you win, you are the best or most successful in a game, competition, or fight.",
+          "zh": "如果你赢了，你是游戏、比赛或战斗中最好或最成功的。"
+        },
+        "synonyms": [
+          {
+            "word": "triumph",
+            "nuance_explanation": "More formal, refers to a great victory or achievement.",
+            "example_en": "Winning against a team with a much higher rank is a real triumph.",
+            "example_zh": "战胜一支段位更高的队伍是一个真正的胜利。"
+          },
+          {
+            "word": "succeed",
+            "nuance_explanation": "Refers to achieving a goal or doing what you set out to do.",
+            "example_en": "If we communicate well and work together, we will succeed in winning this match.",
+            "example_zh": "如果我们沟通良好并共同努力，我们将成功赢得这场比赛。"
+          }
+        ],
+        "antonyms": ["lose", "fail"],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "To win the round, you need to either eliminate all enemies or plant the Spike and defend it until it explodes.",
+          "zh": "要赢得回合，你需要要么消灭所有敌人，要么安放爆能器并防守到它爆炸。"
+        }
+      }
+    ]
+  }
+]

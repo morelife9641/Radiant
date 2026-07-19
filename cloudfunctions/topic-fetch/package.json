@@ -1,0 +1,9 @@
+{
+  "name": "topic-fetch",
+  "version": "1.0.0",
+  "description": "主题语料例句查询",
+  "main": "index.js",
+  "dependencies": {
+    "wx-server-sdk": "~2.6.3"
+  }
+}

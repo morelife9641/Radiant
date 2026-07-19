@@ -1,0 +1,138 @@
+<view class="page learn {{mode === 'review' ? 'is-review-mode' : 'is-daily-mode'}}" style="padding-top: {{navTopPx}}px">
+  <study-hero
+    wx:if="{{!finished || currentWord}}"
+    word="{{currentWord ? currentWord.word : ''}}"
+    phonetic="{{currentWord ? currentWord.phonetic : ''}}"
+    show-heading="{{!isLoading && currentWord && (!currentQuestion || currentQuestion.type === 'word_to_zh' || !currentQuestion.type)}}"
+    show-progress="{{true}}"
+    progress-percent="{{progressPercent}}"
+    show-recovery="{{currentQuestion && currentQuestion.meta && currentQuestion.meta.recoveryStep ? true : false}}"
+    recovery-passed="{{currentQuestion && currentQuestion.meta ? currentQuestion.meta.recoveryPassed : 0}}"
+    bind:back="onBack"
+    bind:play="onPlay"
+  >
+      <view slot="center" class="learn__meta">
+        <text class="learn__mode-label">{{mode === 'review' ? '复习队列' : '今日新学'}}</text>
+        <text class="learn__progress-text">{{barProgressText}}</text>
+      </view>
+      <view slot="actions" class="learn__state-actions">
+        <block wx:if="{{!isLoading && currentWord && !finished}}">
+          <view
+            class="learn__icon-button {{isFavorite ? 'is-active' : ''}}"
+            bindtap="onToggleFavorite"
+            aria-label="{{isFavorite ? '取消收藏' : '收藏'}}"
+          >
+            <image class="learn__action-icon" src="{{isFavorite ? '/assets/icons/star-filled.svg' : '/assets/icons/star-outline.svg'}}" mode="aspectFit" />
+          </view>
+          <view class="learn__icon-button is-danger" bindtap="onIgnoreCurrent" aria-label="删除">
+            <image class="learn__action-icon" src="/assets/icons/trash.svg" mode="aspectFit" />
+          </view>
+        </block>
+      </view>
+  </study-hero>
+
+  <view class="learn__card-wrap">
+    <r-loading
+      wx:if="{{isLoading}}"
+      fill
+      raised
+      tone="{{mode === 'review' ? 'review' : 'daily'}}"
+      title="{{mode === 'review' ? '正在整理复习队列' : '正在准备今日单词'}}"
+      description="正在同步词书和学习进度"
+    />
+
+    <word-card
+      wx:if="{{!isLoading && currentWord && !finished}}"
+      word="{{currentWord}}"
+      question="{{currentQuestion}}"
+      reveal-answer="{{answerRevealed}}"
+      answered-state="{{answered}}"
+      selected-value-state="{{answerValue}}"
+      correct-state="{{answerCorrect}}"
+      text-answer-state="{{answerText}}"
+      hide-heading="{{!currentQuestion || currentQuestion.type === 'word_to_zh' || !currentQuestion.type}}"
+      bind:answer="onAnswer"
+      bind:play="onPlay"
+      bind:detail="onOpenDetail"
+    />
+
+    <view wx:if="{{!isLoading && finished && total > 0}}" class="learn__empty">
+      <view class="learn__completion-head">
+        <text class="learn__empty-copy">庆祝完成</text>
+        <text class="learn__completion-total">完成 {{total}} 题</text>
+      </view>
+      <view class="learn__stats">
+        <view class="learn__stat">
+          <text class="learn__stat-num">{{stats.known}}</text>
+          <text class="caption muted">答对</text>
+        </view>
+        <view class="learn__stat">
+          <text class="learn__stat-num">{{stats.unknown}}</text>
+          <text class="caption muted">答错</text>
+        </view>
+      </view>
+      <view wx:if="{{answerHistory.length}}" class="learn__history">
+        <scroll-view class="learn__history-list" scroll-y="{{true}}" enhanced show-scrollbar="{{false}}">
+          <view
+            wx:for="{{answerHistory}}"
+            wx:key="index"
+            class="learn__history-item {{item.correct ? 'is-correct' : 'is-wrong'}}"
+            aria-label="{{item.resultText}}"
+          >
+            <view class="learn__history-main">
+              <text class="learn__history-word">{{item.word}}</text>
+              <text wx:if="{{item.summary}}" class="learn__history-summary">{{item.summary}}</text>
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+      <view class="learn__empty-actions">
+        <view wx:if="{{mode === 'daily'}}" class="learn__more-button" bindtap="onLearnMore">
+          <text>再来一组</text>
+        </view>
+        <view class="learn__home-button" bindtap="onBack">
+          <text>返回首页</text>
+        </view>
+      </view>
+    </view>
+
+    <view wx:if="{{!isLoading && !currentWord && total === 0}}" class="learn__empty">
+      <view class="learn__completion-head is-empty">
+        <text class="learn__empty-copy">{{mode === 'review' ? '现在没有到期的复习任务' : '当前词书里暂时没有更多可学单词'}}</text>
+      </view>
+      <view wx:if="{{answerHistory.length}}" class="learn__history">
+        <scroll-view class="learn__history-list" scroll-y="{{true}}" enhanced show-scrollbar="{{false}}">
+          <view
+            wx:for="{{answerHistory}}"
+            wx:key="index"
+            class="learn__history-item {{item.correct ? 'is-correct' : 'is-wrong'}}"
+            aria-label="{{item.resultText}}"
+          >
+            <view class="learn__history-main">
+              <text class="learn__history-word">{{item.word}}</text>
+              <text wx:if="{{item.summary}}" class="learn__history-summary">{{item.summary}}</text>
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+      <view class="learn__empty-actions">
+        <view wx:if="{{mode === 'daily'}}" class="learn__more-button" bindtap="onLearnMore">
+          <text>再来一组</text>
+        </view>
+        <view class="learn__home-button" bindtap="onBack">
+          <text>返回首页</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view wx:if="{{!isLoading && currentWord && !finished}}" class="learn__actions">
+    <view wx:if="{{!answered}}" class="learn__answer-button" bindtap="onRevealAnswer">
+      <text class="learn__answer-button-text">查看答案</text>
+    </view>
+    <view wx:else class="learn__view-button" bindtap="onOpenDetail">
+      <text class="learn__view-button-text">查 看</text>
+    </view>
+  </view>
+
+</view>

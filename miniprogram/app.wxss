@@ -1,0 +1,41 @@
+@import "styles/tokens.wxss";
+@import "styles/animations.wxss";
+
+page {
+  background: linear-gradient(180deg, #FFE8DC 0%, #F9F0E9 30%, #F5F2ED 62%, #F0EFEB 100%);
+  color: var(--color-ink);
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", Helvetica, sans-serif;
+  font-size: var(--font-body);
+  line-height: 1.6;
+}
+
+view, text { box-sizing: border-box; }
+
+.page {
+  min-height: 100vh;
+  padding: 0 var(--page-padding-x);
+}
+
+.h1 { font-size: var(--font-h1); font-weight: 700; line-height: 1.2; }
+.h2 { font-size: var(--font-h2); font-weight: 600; line-height: 1.3; }
+.h3 { font-size: var(--font-h3); font-weight: 600; line-height: 1.4; }
+.caption { font-size: var(--font-caption); color: var(--color-graphite); }
+.muted { color: var(--color-mist); }
+
+.card {
+  background: var(--color-white);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-soft);
+  padding: var(--space-4);
+}
+
+.row { display: flex; align-items: center; }
+.row-between { display: flex; align-items: center; justify-content: space-between; }
+.col { display: flex; flex-direction: column; }
+.gap-1 { gap: var(--space-1); }
+.gap-2 { gap: var(--space-2); }
+.gap-3 { gap: var(--space-3); }
+.gap-4 { gap: var(--space-4); }
+
+.safe-top { padding-top: env(safe-area-inset-top); }
+.safe-bottom { padding-bottom: env(safe-area-inset-bottom); }

@@ -1,0 +1,173 @@
+
+[
+  {
+    "word": "lose",
+    "phonetic": "/luːz/",
+    "senses": [
+      {
+        "pos": "v.",
+        "translation": "失去；丢失；输掉；失败",
+        "collins_definition": {
+          "en": "If you lose something, you no longer have it.",
+          "zh": "如果你失去了某物，你不再拥有它。"
+        },
+        "synonyms": [
+          {
+            "word": "mislay",
+            "nuance_explanation": "Refers to losing something by putting it in the wrong place and forgetting where.",
+            "example_en": "Don't mislay your focus—keep an eye on the minimap at all times.",
+            "example_zh": "不要丢失你的注意力——随时关注小地图。"
+          },
+          {
+            "word": "forfeit",
+            "nuance_explanation": "Refers to losing something as a penalty for doing something wrong.",
+            "example_en": "If you disconnect from the game, you might forfeit the match.",
+            "example_zh": "如果你从游戏中断线，你可能会输掉这场比赛。"
+          }
+        ],
+        "antonyms": ["find", "win", "gain"],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "Don't lose your composure after losing a round—focus on the next one.",
+          "zh": "输掉一回合后不要失去冷静——专注于下一回合。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "add",
+    "phonetic": "/æd/",
+    "senses": [
+      {
+        "pos": "v.",
+        "translation": "添加；增加；补充说",
+        "collins_definition": {
+          "en": "If you add one thing to another, you put them together or include them in something.",
+          "zh": "如果你把一物加到另一物上，你把它们放在一起或把它们包含在某物中。"
+        },
+        "synonyms": [
+          {
+            "word": "include",
+            "nuance_explanation": "Refers to making something part of a larger group or set.",
+            "example_en": "We should include at least one smoke in our loadout for this map.",
+            "example_zh": "我们应该在这张地图的装备配置中至少包含一个烟雾弹。"
+          },
+          {
+            "word": "increase",
+            "nuance_explanation": "Refers to making something larger or greater in size, amount, or degree.",
+            "example_en": "Buying a Phantom will increase your chances of winning long-range fights.",
+            "example_zh": "购买一把骇灵将增加你赢得远距离战斗的机会。"
+          }
+        ],
+        "antonyms": ["subtract", "remove", "take away"],
+        "gaming_link": {
+          "game": "Dota 2",
+          "context": "Adding a Black King Bar to your inventory can make you immune to most crowd control effects.",
+          "zh": "在你的物品栏中添加黑皇杖可以让你免疫大多数控制效果。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "probably",
+    "phonetic": "/ˈprɒbəbli/",
+    "senses": [
+      {
+        "pos": "adv.",
+        "translation": "大概；很可能；或许",
+        "collins_definition": {
+          "en": "If you say that something is probably the case, you think it is likely to be the case, but you are not sure.",
+          "zh": "如果你说某事大概如此，你认为它很可能是真的，但你不能完全肯定。"
+        },
+        "synonyms": [
+          {
+            "word": "likely",
+            "nuance_explanation": "More formal than 'probably' and often based on objective evidence or logical deduction rather than just a guess.",
+            "example_en": "Given their massive gold lead, Radiant is likely to win this match.",
+            "example_zh": "鉴于他们巨大的经济领先，天辉很可能会赢下这场比赛。"
+          },
+          {
+            "word": "maybe",
+            "nuance_explanation": "More informal and conversational. Represents a 50/50 chance or is used to politely suggest something.",
+            "example_en": "Maybe we should rush B site instead of playing slow.",
+            "example_zh": "也许我们应该直接冲B点，而不是打慢速控制。"
+          }
+        ],
+        "antonyms": ["unlikely", "impossibly"],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "The enemy Sage is probably hiding near the Spike plant site waiting to revive a teammate.",
+          "zh": "敌方贤者很可能藏在爆能器安放点附近，等待复活队友。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "available",
+    "phonetic": "/əˈveɪləbl/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "translation": "可获得的；可利用的；有空的",
+        "collins_definition": {
+          "en": "If something you want or need is available, you can find it or obtain it.",
+          "zh": "如果你想要或需要的东西是可获得的，你可以找到它或获得它。"
+        },
+        "synonyms": [
+          {
+            "word": "obtainable",
+            "nuance_explanation": "Refers to something that can be obtained or acquired.",
+            "example_en": "Check which heroes are obtainable before making your pick.",
+            "example_zh": "在做出选择之前，检查哪些英雄是可获得的。"
+          },
+          {
+            "word": "accessible",
+            "nuance_explanation": "Refers to something that can be reached or used easily.",
+            "example_en": "The Spike plant site is accessible via two different entrances.",
+            "example_zh": "爆能器安放点可以通过两个不同的入口到达。"
+          }
+        ],
+        "antonyms": ["unavailable", "inaccessible", "busy"],
+        "gaming_link": {
+          "game": "Dota 2",
+          "context": "Check which heroes are available before choosing one to fit the team's needs.",
+          "zh": "在选择英雄之前，先看看哪些英雄可用，以适应团队需求。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "community",
+    "phonetic": "/kəˈmjuːnəti/",
+    "senses": [
+      {
+        "pos": "n.",
+        "translation": "社区；社团；群体；群落",
+        "collins_definition": {
+          "en": "The community is all the people who live in a particular area or place.",
+          "zh": "社区是所有居住在特定区域或地方的人。"
+        },
+        "synonyms": [
+          {
+            "word": "society",
+            "nuance_explanation": "Refers to a large group of people who share a culture, laws, and traditions.",
+            "example_en": "The society of Valorant players is very diverse and includes people from all over the world.",
+            "example_zh": "无畏契约玩家的社会非常多样化，包括来自世界各地的人。"
+          },
+          {
+            "word": "group",
+            "nuance_explanation": "General term for a number of people or things together.",
+            "example_en": "A group of friends playing together is more likely to win than random players.",
+            "example_zh": "一群一起玩的朋友比随机玩家更有可能赢。"
+          }
+        ],
+        "antonyms": [],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "The Valorant community creates amazing fan art, cosplay, and strategies every day.",
+          "zh": "无畏契约社群每天都在创造精彩的同人艺术、cosplay和战术策略。"
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,173 @@
+
+[
+  {
+    "word": "position",
+    "phonetic": "/pəˈzɪʃn/",
+    "senses": [
+      {
+        "pos": "n.",
+        "translation": "位置；职位；姿态；处境；v.安置；决定…的位置",
+        "collins_definition": {
+          "en": "The position of someone or something is the place where they are in relation to other things.",
+          "zh": "某人或某物的位置是他们相对于其他事物所在的地方。"
+        },
+        "synonyms": [
+          {
+            "word": "location",
+            "nuance_explanation": "Refers to a particular place or position.",
+            "example_en": "Knowing the enemy's location is key to planning an attack.",
+            "example_zh": "知道敌人的位置是规划进攻的关键。"
+          },
+          {
+            "word": "place",
+            "nuance_explanation": "General term for a particular position or area.",
+            "example_en": "Find a good place to hide and defend the Spike.",
+            "example_zh": "找一个好地方隐藏并防守爆能器。"
+          }
+        ],
+        "antonyms": [],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "Choosing a good position to peek can give you a big advantage over the enemy.",
+          "zh": "选择一个好位置探身可以给你带来对敌人的巨大优势。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "course",
+    "phonetic": "/kɔːs/",
+    "senses": [
+      {
+        "pos": "n.",
+        "translation": "课程；过程；路线；一道菜；v.追赶；快速移动",
+        "collins_definition": {
+          "en": "Course is the direction that someone or something moves in.",
+          "zh": "路线是某人或某物移动的方向。"
+        },
+        "synonyms": [
+          {
+            "word": "route",
+            "nuance_explanation": "Refers to a way or course taken to get from one place to another.",
+            "example_en": "Let's take a different route to A site to surprise the enemy.",
+            "example_zh": "让我们走另一条路线去A点，让敌人措手不及。"
+          },
+          {
+            "word": "path",
+            "nuance_explanation": "Refers to a way or track that is made for walking or moving along.",
+            "example_en": "Stay on the path you've planned to avoid getting caught off guard.",
+            "example_zh": "待在你规划好的路线上，避免被打个措手不及。"
+          }
+        ],
+        "antonyms": [],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "Changing the course of your attack can keep the enemy guessing and off balance.",
+          "zh": "改变你进攻的路线可以让敌人猜测并失去平衡。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "education",
+    "phonetic": "/ˌedʒuˈkeɪʃn/",
+    "senses": [
+      {
+        "pos": "n.",
+        "translation": "教育；培养；教育学",
+        "collins_definition": {
+          "en": "Education is the process of learning and gaining knowledge, especially at a school or university.",
+          "zh": "教育是学习和获取知识的过程，尤其是在学校或大学。"
+        },
+        "synonyms": [
+          {
+            "word": "learning",
+            "nuance_explanation": "Refers to gaining knowledge or skills through study or experience.",
+            "example_en": "Learning the map layout is an important part of improving at Valorant.",
+            "example_zh": "学习地图布局是提高无畏契技术的重要部分。"
+          },
+          {
+            "word": "teaching",
+            "nuance_explanation": "Refers to the work of a teacher or the process of imparting knowledge.",
+            "example_en": "Watching pro players is a great way of teaching yourself new strategies.",
+            "example_zh": "观看职业玩家是自学新战术的好方法。"
+          }
+        ],
+        "antonyms": [],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "Getting an education in game sense and strategy will help you climb the ranks faster.",
+          "zh": "接受游戏意识和战术的教育将帮助你更快地提升段位。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "actually",
+    "phonetic": "/ˈæktʃuəli/",
+    "senses": [
+      {
+        "pos": "adv.",
+        "translation": "实际上；事实上；竟然",
+        "collins_definition": {
+          "en": "You use actually to indicate that something is true, especially when it is surprising.",
+          "zh": "你用 actually 来表示某事是真的，尤其是当它令人惊讶时。"
+        },
+        "synonyms": [
+          {
+            "word": "really",
+            "nuance_explanation": "Refers to something that is true or actual.",
+            "example_en": "Playing aggressively can really work if your team has good communication.",
+            "example_zh": "如果你的团队有良好的沟通，激进打法真的可以奏效。"
+          },
+          {
+            "word": "in fact",
+            "nuance_explanation": "More formal, used to emphasize the truth of something.",
+            "example_en": "In fact, playing passively can sometimes be more effective than playing aggressively.",
+            "example_zh": "事实上，保守打法有时比激进打法更有效。"
+          }
+        ],
+        "antonyms": ["theoretically", "supposedly"],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "Actually, saving your money for better weapons in the next round is often a good idea.",
+          "zh": "实际上，把你的钱存起来在下一轮买更好的武器通常是个好主意。"
+        }
+      }
+    ]
+  },
+  {
+    "word": "type",
+    "phonetic": "/taɪp/",
+    "senses": [
+      {
+        "pos": "n.",
+        "translation": "类型；种类；典型；v.打字；测定（血等的）类型",
+        "collins_definition": {
+          "en": "A type of something is a group of things that have similar characteristics.",
+          "zh": "某事物的类型是一组具有相似特征的事物。"
+        },
+        "synonyms": [
+          {
+            "word": "kind",
+            "nuance_explanation": "General term for a type or category of something.",
+            "example_en": "What kind of play style do you prefer—aggressive or passive?",
+            "example_zh": "你喜欢哪种游戏风格——激进还是保守？"
+          },
+          {
+            "word": "sort",
+            "nuance_explanation": "Similar to 'kind', used to refer to a type of something.",
+            "example_en": "What sort of hero do you like to play—duelist, initiator, controller, or sentinel?",
+            "example_zh": "你喜欢玩哪种类型的英雄——决斗者、发起者、控制者还是守卫者？"
+          }
+        ],
+        "antonyms": [],
+        "gaming_link": {
+          "game": "Valorant",
+          "context": "Each type of hero has a different role—duelists get kills, controllers block vision, sentinels defend, and initiators start fights.",
+          "zh": "每种类型的英雄都有不同的角色——决斗者击杀，控制者阻挡视野，守卫者防守，发起者开启战斗。"
+        }
+      }
+    ]
+  }
+]
