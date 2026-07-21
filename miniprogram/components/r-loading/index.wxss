@@ -1,11 +1,11 @@
 .r-loading {
-  --loading-orb: #FFF7EA;
+  --loading-orb: var(--warm-50, #FFF7EA);
   --loading-edge: rgba(255, 255, 255, 0.88);
   --loading-sweep: #EFB7A4;
   --loading-outline: rgba(232, 114, 95, 0.12);
   --loading-glow: rgba(232, 114, 95, 0.22);
-  --loading-text: rgba(33, 30, 28, 0.76);
-  --loading-muted: rgba(33, 30, 28, 0.4);
+  --loading-text: var(--text-primary, rgba(33, 30, 28, 0.76));
+  --loading-muted: var(--text-tertiary, rgba(33, 30, 28, 0.4));
   width: 100%;
   min-height: 300rpx;
   padding: 36rpx 28rpx;
@@ -47,9 +47,7 @@
   min-height: 100vh;
   padding-top: env(safe-area-inset-top);
   padding-bottom: env(safe-area-inset-bottom);
-  background:
-    radial-gradient(ellipse 100% 42% at 50% 0%, rgba(255, 249, 226, 0.86) 0%, rgba(255, 207, 179, 0.2) 52%, transparent 76%),
-    linear-gradient(180deg, #FFE3D6 0%, #F9EEE7 32%, #F5F2ED 66%, #F0EFEB 100%);
+  background: linear-gradient(180deg, #F3DED4 0%, #F0EEE9 38%, #E6EAE8 100%);
 }
 
 .r-loading.is-raised .r-loading__stage,

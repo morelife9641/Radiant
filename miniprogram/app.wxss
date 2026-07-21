@@ -2,7 +2,12 @@
 @import "styles/animations.wxss";
 
 page {
-  background: linear-gradient(180deg, #FFE8DC 0%, #F9F0E9 30%, #F5F2ED 62%, #F0EFEB 100%);
+  background: linear-gradient(
+    180deg,
+    var(--surface-canvas-top) 0%,
+    var(--surface-canvas-mid) 42%,
+    var(--surface-canvas-bottom) 100%
+  );
   color: var(--color-ink);
   font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", Helvetica, sans-serif;
   font-size: var(--font-body);
@@ -23,7 +28,8 @@ view, text { box-sizing: border-box; }
 .muted { color: var(--color-mist); }
 
 .card {
-  background: var(--color-white);
+  background: var(--surface-card);
+  border: 1rpx solid var(--border-subtle);
   border-radius: var(--radius-card);
   box-shadow: var(--shadow-soft);
   padding: var(--space-4);

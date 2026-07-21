@@ -198,7 +198,7 @@ r-navbar {
   overflow-wrap: anywhere;
 }
 .home__example {
-  margin-top: 0;
+  margin-top: 10rpx;
   width: 100%;
   max-width: 590rpx;
   display: flex;

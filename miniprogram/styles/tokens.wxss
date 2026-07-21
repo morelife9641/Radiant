@@ -1,21 +1,56 @@
-/* Radiant.AI Design Tokens */
+/* Radiant.AI design tokens: primitive -> semantic -> component. */
 page {
-  /* === Colors === */
-  --color-primary: #E63946;
-  --color-primary-deep: #B7202E;
-  --color-primary-light: #FFE3E6;
+  /* Primitive colors */
+  --ink-950: #1D1D1B;
+  --ink-800: #393936;
+  --ink-600: #62625D;
+  --ink-450: #898982;
+  --neutral-300: #CFD1CC;
+  --neutral-200: #DADCD7;
+  --neutral-100: #E9EAE5;
+  --neutral-50: #F4F4F0;
+  --warm-50: #FFFCF7;
+  --warm-100: #F7ECDE;
+  --amber-500: #C77924;
+  --amber-700: #8C4D16;
+  --coral-100: #F1DDD7;
+  --coral-500: #C46152;
+  --coral-700: #903F36;
+  --sage-100: #DDECE3;
+  --sage-700: #367455;
+  --rose-100: #F2DDD8;
+  --rose-700: #A3463D;
 
+  /* Semantic colors */
+  --color-primary: var(--coral-500);
+  --color-primary-deep: var(--coral-700);
+  --color-primary-light: var(--coral-100);
   --color-white: #FFFFFF;
-  --color-bg: #FAFAFA;
+  --color-bg: var(--neutral-50);
+  --color-ink: var(--ink-950);
+  --color-graphite: var(--ink-600);
+  --color-mist: var(--ink-450);
+  --color-hairline: var(--neutral-200);
+  --color-success: var(--sage-700);
+  --color-warning: var(--amber-500);
+  --color-error: var(--rose-700);
 
-  --color-ink: #1A1A1A;
-  --color-graphite: #4A4A4A;
-  --color-mist: #9CA3AF;
-  --color-hairline: #E5E7EB;
-
-  --color-success: #10B981;
-  --color-warning: #F59E0B;
-  --color-info: #3B82F6;
+  --surface-canvas-top: #F4E3D5;
+  --surface-canvas-mid: #F1F0EB;
+  --surface-canvas-bottom: #E7EBE9;
+  --surface-card: rgba(255, 252, 247, 0.94);
+  --surface-card-solid: #FCFAF6;
+  --surface-muted: rgba(55, 55, 51, 0.055);
+  --surface-pressed: rgba(55, 55, 51, 0.09);
+  --text-primary: var(--ink-950);
+  --text-secondary: var(--ink-600);
+  --text-tertiary: var(--ink-450);
+  --border-subtle: rgba(48, 48, 44, 0.12);
+  --border-strong: rgba(48, 48, 44, 0.22);
+  --state-success-bg: var(--sage-100);
+  --state-success-fg: var(--sage-700);
+  --state-error-bg: var(--rose-100);
+  --state-error-fg: var(--rose-700);
 
   /* === Typography === */
   --font-h1: 56rpx;
@@ -25,7 +60,7 @@ page {
   --font-caption: 24rpx;
   --font-display: 96rpx;
 
-  /* === Spacing (8 grid) === */
+  /* Spacing: 8rpx grid */
   --space-1: 8rpx;
   --space-2: 16rpx;
   --space-3: 24rpx;
@@ -35,21 +70,23 @@ page {
 
   --page-padding-x: 32rpx;
 
-  /* 自定义导航栏让位：iPhone 状态栏 ~44px + 胶囊 ~44px = 88px。
-     真实高度通过 r-navbar 内部 wx.getWindowInfo 测量。
-     这里 .page 的 padding-top 用估值，留点余量。 */
   --nav-h: 176rpx;
 
-  /* === Radius === */
-  --radius-card: 20rpx;
+  /* Shape */
+  --radius-card: 16rpx;
   --radius-btn: 16rpx;
+  --radius-control: 12rpx;
   --radius-pill: 999rpx;
 
-  /* === Shadow === */
-  --shadow-soft: 0 6rpx 16rpx rgba(26, 26, 26, 0.06);
+  /* Elevation */
+  --shadow-soft: 0 8rpx 22rpx rgba(44, 42, 38, 0.065);
+  --shadow-raised: 0 16rpx 38rpx rgba(44, 42, 38, 0.11);
+  --shadow-focus: 0 0 0 4rpx rgba(140, 77, 22, 0.1);
 
-  /* === Motion === */
+  /* Motion */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
   --dur-fast: 120ms;
   --dur-base: 220ms;
+  --dur-slow: 320ms;
 }

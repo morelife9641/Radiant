@@ -59,9 +59,19 @@ Component({
       });
     },
     'answeredState, selectedValueState, correctState, textAnswerState': function syncAnsweredState(answeredState, selectedValueState, correctState, textAnswerState) {
+      const nextSelectedValue = selectedValueState || '';
+      const nextTextAnswer = textAnswerState || this.data.textAnswer || '';
+      const nextCorrect = Boolean(correctState);
+
       if (!answeredState) {
+        if (
+          !this.data.answered
+          && this.data.selectedValue === nextSelectedValue
+          && this.data.textAnswer === (textAnswerState || '')
+        ) return;
+
         this.setData({
-          selectedValue: selectedValueState || '',
+          selectedValue: nextSelectedValue,
           revealedOptionValues: {},
           textAnswer: textAnswerState || '',
           answered: false,
@@ -69,12 +79,20 @@ Component({
         });
         return;
       }
+
+      if (
+        this.data.answered
+        && this.data.selectedValue === nextSelectedValue
+        && this.data.correct === nextCorrect
+        && this.data.textAnswer === nextTextAnswer
+      ) return;
+
       this.setData({
-        selectedValue: selectedValueState || '',
-        revealedOptionValues: buildRevealedOptionValues(this.data.question || {}, selectedValueState || ''),
-        textAnswer: textAnswerState || this.data.textAnswer,
+        selectedValue: nextSelectedValue,
+        revealedOptionValues: buildRevealedOptionValues(this.data.question || {}, nextSelectedValue),
+        textAnswer: nextTextAnswer,
         answered: true,
-        correct: Boolean(correctState)
+        correct: nextCorrect
       });
     }
   },

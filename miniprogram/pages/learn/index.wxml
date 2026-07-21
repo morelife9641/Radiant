@@ -87,10 +87,10 @@
         </scroll-view>
       </view>
       <view class="learn__empty-actions">
-        <view wx:if="{{mode === 'daily'}}" class="learn__more-button" bindtap="onLearnMore">
+        <view wx:if="{{mode === 'daily'}}" class="learn__more-button" bindtap="onLearnMore" hover-class="learn__button--press" hover-stay-time="70">
           <text>再来一组</text>
         </view>
-        <view class="learn__home-button" bindtap="onBack">
+        <view class="learn__home-button" bindtap="onBack" hover-class="learn__button--press" hover-stay-time="70">
           <text>返回首页</text>
         </view>
       </view>
@@ -116,10 +116,10 @@
         </scroll-view>
       </view>
       <view class="learn__empty-actions">
-        <view wx:if="{{mode === 'daily'}}" class="learn__more-button" bindtap="onLearnMore">
+        <view wx:if="{{mode === 'daily'}}" class="learn__more-button" bindtap="onLearnMore" hover-class="learn__button--press" hover-stay-time="70">
           <text>再来一组</text>
         </view>
-        <view class="learn__home-button" bindtap="onBack">
+        <view class="learn__home-button" bindtap="onBack" hover-class="learn__button--press" hover-stay-time="70">
           <text>返回首页</text>
         </view>
       </view>
@@ -127,10 +127,10 @@
   </view>
 
   <view wx:if="{{!isLoading && currentWord && !finished}}" class="learn__actions">
-    <view wx:if="{{!answered}}" class="learn__answer-button" bindtap="onRevealAnswer">
+    <view wx:if="{{!answered}}" class="learn__answer-button" bindtap="onRevealAnswer" hover-class="learn__button--press" hover-stay-time="70">
       <text class="learn__answer-button-text">查看答案</text>
     </view>
-    <view wx:else class="learn__view-button" bindtap="onOpenDetail">
+    <view wx:else class="learn__view-button" bindtap="onOpenDetail" hover-class="learn__button--press" hover-stay-time="70">
       <text class="learn__view-button-text">查 看</text>
     </view>
   </view>

@@ -44,6 +44,8 @@
       class="detail__tab {{activeTab === item.key ? 'detail__tab--active' : ''}}"
       data-tab="{{item.key}}"
       bindtap="onSwitchTab"
+      hover-class="detail__tab--press"
+      hover-stay-time="70"
     >
       <text class="detail__tab-label">{{item.label}}</text>
     </view>
@@ -242,6 +244,8 @@
       class="detail__sense-filter-item {{currentSenseId === senseOption.senseId ? 'is-active' : ''}}"
       data-sense="{{senseOption.senseId}}"
       bindtap="onSelectRelationSense"
+      hover-class="detail__sense-filter-item--press"
+      hover-stay-time="70"
     >
       <text class="detail__sense-filter-pos">{{senseOption.posLabel}}</text>
       <text class="detail__sense-filter-translation">{{senseOption.translation}}</text>

@@ -1,6 +1,4 @@
 <view class="history-page" style="padding-top: {{navTopPx}}px">
-  <view class="history-page__glow"></view>
-
   <view class="history-page__bar">
     <r-back-button bind:back="onBack" />
     <view class="history-page__bar-copy">
@@ -50,6 +48,8 @@
           class="history-page__range-item {{rangeDays === item.value ? 'is-active' : ''}}"
           data-days="{{item.value}}"
           bindtap="onChangeRange"
+          hover-class="history-page__range-item--press"
+          hover-stay-time="70"
         >{{item.label}}</view>
       </view>
 
