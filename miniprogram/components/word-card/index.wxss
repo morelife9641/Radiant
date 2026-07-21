@@ -218,6 +218,7 @@
 }
 
 .word-card__quiz {
+  margin-top: 40rpx;
   display: flex;
   flex-direction: column;
   gap: 20rpx;
