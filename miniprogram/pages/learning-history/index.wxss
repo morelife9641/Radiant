@@ -1,26 +1,32 @@
 .history-page {
   position: relative;
+  height: 100vh;
   min-height: 100vh;
-  padding: 0 32rpx calc(env(safe-area-inset-bottom) + 48rpx);
+  padding: 0 32rpx calc(env(safe-area-inset-bottom) + 40rpx);
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(180deg, #F3DDD3 0%, #F0EEE9 34%, #E6EAE8 100%);
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(255, 222, 207, 0.92) 0%, rgba(247, 239, 233, 0.98) 28%, rgba(238, 238, 232, 1) 62%, rgba(230, 235, 232, 1) 100%);
   color: var(--text-primary);
 }
 
 .history-page__bar {
   position: relative;
   z-index: 2;
-  min-height: 70rpx;
+  min-height: 60rpx;
   display: flex;
   align-items: center;
-}
-.history-page__bar-spacer {
-  width: 60rpx;
-  height: 60rpx;
   flex-shrink: 0;
 }
+
+.history-page__bar-spacer {
+  width: 40rpx;
+  height: 40rpx;
+  flex-shrink: 0;
+}
+
 .history-page__bar-copy {
   flex: 1;
   min-width: 0;
@@ -29,67 +35,87 @@
   align-items: center;
   gap: 2rpx;
 }
+
 .history-page__title {
-  font-size: 28rpx;
+  font-size: 27rpx;
   font-weight: 850;
-  line-height: 1.3;
-  color: rgba(33, 30, 28, 0.86);
+  line-height: 1.25;
+  color: rgba(31, 28, 26, 0.86);
 }
+
 .history-page__subtitle {
   font-size: 18rpx;
-  font-weight: 600;
+  font-weight: 620;
   line-height: 1.3;
-  color: rgba(75, 57, 50, 0.43);
+  color: rgba(83, 63, 54, 0.42);
 }
 
 .history-page__streak-summary {
   position: relative;
   z-index: 1;
-  min-height: 70rpx;
-  padding: 4rpx 8rpx 0;
+  min-height: 66rpx;
+  margin-top: 6rpx;
+  padding: 0 22rpx;
+  border-radius: 16rpx;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 8rpx;
+  gap: 14rpx;
+  background: linear-gradient(90deg, rgba(255, 248, 241, 0.66), rgba(255, 248, 241, 0.26));
+  border: 1rpx solid rgba(255, 255, 255, 0.58);
+  box-shadow: 0 10rpx 26rpx rgba(91, 66, 54, 0.06);
+  flex-shrink: 0;
 }
+
 .history-page__streak-light {
-  width: 12rpx;
-  height: 12rpx;
-  margin-right: 3rpx;
+  width: 14rpx;
+  height: 14rpx;
   border-radius: 50%;
-  background: #FF8A68;
-  box-shadow: 0 0 10rpx rgba(255, 115, 86, 0.68), 0 0 26rpx rgba(255, 157, 101, 0.42);
+  background: #FF8B68;
+  box-shadow: 0 0 10rpx rgba(255, 111, 83, 0.72), 0 0 28rpx rgba(255, 153, 94, 0.45);
+  flex-shrink: 0;
 }
+
+.history-page__streak-main {
+  min-width: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 7rpx;
+}
+
 .history-page__streak-number {
-  font-size: 34rpx;
+  font-size: 36rpx;
   font-weight: 880;
   line-height: 1;
   color: #201D1B;
 }
+
 .history-page__streak-copy {
   font-size: 22rpx;
-  font-weight: 700;
-  color: rgba(33, 30, 28, 0.68);
+  font-weight: 720;
+  color: rgba(33, 30, 28, 0.66);
 }
-.history-page__streak-divider {
-  margin: 0 3rpx;
-  color: rgba(33, 30, 28, 0.2);
-  font-size: 22rpx;
-}
-.history-page__streak-note {
-  font-size: 19rpx;
-  font-weight: 630;
-  color: rgba(33, 30, 28, 0.4);
+
+.history-page__streak-meta {
+  margin-left: auto;
+  padding: 6rpx 12rpx;
+  border-radius: 999rpx;
+  background: rgba(255, 255, 255, 0.5);
+  color: rgba(33, 30, 28, 0.42);
+  font-size: 18rpx;
+  font-weight: 650;
+  line-height: 1.2;
 }
 
 .history-page__metrics {
   position: relative;
   z-index: 1;
-  min-height: 78rpx;
-  margin: 0 0 16rpx;
+  min-height: 74rpx;
+  margin: 8rpx 0 12rpx;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  flex-shrink: 0;
 }
+
 .history-page__metric {
   position: relative;
   display: flex;
@@ -98,106 +124,152 @@
   justify-content: center;
   gap: 2rpx;
 }
+
 .history-page__metric-value {
   font-size: 31rpx;
-  font-weight: 850;
-  color: rgba(33, 30, 28, 0.88);
-  line-height: 1.2;
+  font-weight: 860;
+  line-height: 1.15;
+  color: rgba(33, 30, 28, 0.86);
 }
+
 .history-page__metric-label {
   font-size: 19rpx;
   font-weight: 650;
-  color: rgba(33, 30, 28, 0.38);
   line-height: 1.3;
+  color: rgba(33, 30, 28, 0.38);
 }
 
 .history-page__trend {
   position: relative;
   z-index: 1;
-  padding: 26rpx 24rpx 20rpx;
+  padding: 18rpx 20rpx 14rpx;
   border-radius: 16rpx;
-  background: var(--surface-card);
-  border: 1rpx solid var(--border-subtle);
-  box-shadow: var(--shadow-soft);
-}
-.history-page__range {
-  height: 48rpx;
-  padding: 4rpx;
-  border-radius: 999rpx;
-  background: var(--surface-muted);
-  display: flex;
+  background: rgba(255, 252, 247, 0.9);
+  border: 1rpx solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 16rpx 34rpx rgba(72, 55, 48, 0.08);
   flex-shrink: 0;
-  margin-left: auto;
 }
-.history-page__range-item {
-  min-width: 66rpx;
-  height: 40rpx;
-  padding: 0 10rpx;
-  border-radius: 999rpx;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(33, 30, 28, 0.42);
-  font-size: 19rpx;
-  font-weight: 720;
-  line-height: 1;
-  transition: color 160ms ease, background 160ms ease, box-shadow 160ms ease;
-}
-.history-page__range-item.is-active {
-  background: var(--surface-card-solid);
-  color: var(--coral-700);
-  box-shadow: 0 4rpx 12rpx rgba(74, 49, 42, 0.08);
-}
-.history-page__range-item--press {
-  opacity: 0.72;
-}
-.history-page__selected {
-  min-height: 88rpx;
-  margin-top: 19rpx;
-  padding: 13rpx 16rpx;
-  border-radius: 12rpx;
-  background: linear-gradient(90deg, rgba(241, 221, 215, 0.78), rgba(252, 250, 246, 0.5));
+
+.history-page__trend-head {
+  min-height: 44rpx;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 18rpx;
 }
+
+.history-page__trend-copy {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.history-page__trend-title {
+  font-size: 26rpx;
+  font-weight: 850;
+  line-height: 1.25;
+  color: rgba(33, 30, 28, 0.84);
+}
+
+.history-page__trend-subtitle {
+  margin-top: 2rpx;
+  font-size: 18rpx;
+  font-weight: 620;
+  line-height: 1.25;
+  color: rgba(33, 30, 28, 0.36);
+}
+
+.history-page__range {
+  height: 46rpx;
+  padding: 4rpx;
+  border-radius: 999rpx;
+  background: rgba(54, 44, 39, 0.055);
+  display: flex;
+  flex-shrink: 0;
+}
+
+.history-page__range-item {
+  min-width: 66rpx;
+  height: 38rpx;
+  padding: 0 10rpx;
+  border-radius: 999rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(33, 30, 28, 0.44);
+  font-size: 19rpx;
+  font-weight: 720;
+  line-height: 1;
+  transition: color 160ms ease, background 160ms ease, box-shadow 160ms ease;
+}
+
+.history-page__range-item.is-active {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(255, 242, 235, 0.92));
+  color: var(--coral-700);
+  box-shadow: 0 5rpx 14rpx rgba(88, 56, 45, 0.09);
+}
+
+.history-page__range-item--press {
+  opacity: 0.72;
+}
+
+.history-page__selected {
+  min-height: 72rpx;
+  margin-top: 12rpx;
+  padding: 10rpx 14rpx;
+  border-radius: 12rpx;
+  background: linear-gradient(90deg, rgba(255, 235, 225, 0.78), rgba(252, 250, 246, 0.56));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18rpx;
+}
+
 .history-page__selected > view {
   min-width: 0;
   display: flex;
   flex-direction: column;
 }
+
 .history-page__selected-date {
   font-size: 22rpx;
-  font-weight: 800;
+  font-weight: 820;
+  line-height: 1.35;
   color: rgba(33, 30, 28, 0.74);
 }
+
 .history-page__selected-copy {
   max-width: 470rpx;
+  margin-top: 2rpx;
   font-size: 19rpx;
   font-weight: 600;
+  line-height: 1.35;
   color: rgba(33, 30, 28, 0.4);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 .history-page__selected-value {
   flex-shrink: 0;
   font-size: 42rpx;
   font-weight: 880;
-  color: #D95047;
   line-height: 1;
+  color: #D95047;
 }
+
 .history-page__chart-wrap {
   margin-top: 8rpx;
 }
+
 .history-page__chart {
   width: 100%;
-  height: 238rpx;
+  height: 180rpx;
   display: block;
 }
+
 .history-page__chart-labels {
-  height: 30rpx;
+  height: 28rpx;
   padding: 0 18rpx;
   display: flex;
   align-items: center;
@@ -211,80 +283,171 @@
 .history-page__records {
   position: relative;
   z-index: 1;
-  margin-top: 28rpx;
+  margin-top: 20rpx;
+  min-height: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
+
+.history-page__records-head {
+  min-height: 50rpx;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16rpx;
+  flex-shrink: 0;
+}
+
+.history-page__records-head > view {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.history-page__records-title {
+  font-size: 26rpx;
+  font-weight: 850;
+  line-height: 1.25;
+  color: rgba(33, 30, 28, 0.82);
+}
+
+.history-page__records-subtitle {
+  margin-top: 2rpx;
+  font-size: 18rpx;
+  font-weight: 620;
+  line-height: 1.3;
+  color: rgba(33, 30, 28, 0.35);
+}
+
+.history-page__records-count {
+  flex-shrink: 0;
+  margin-bottom: 2rpx;
+  padding: 5rpx 12rpx;
+  border-radius: 999rpx;
+  background: rgba(255, 252, 247, 0.74);
+  color: rgba(33, 30, 28, 0.46);
+  font-size: 18rpx;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.history-page__records-scroll {
+  flex: 1;
+  min-height: 0;
+  height: 0;
+}
+
 .history-page__record-list {
-  margin-top: 16rpx;
-  border-top: 1rpx solid rgba(57, 45, 40, 0.09);
+  margin-top: 12rpx;
+  border-top: 1rpx solid rgba(57, 45, 40, 0.08);
 }
+
 .history-page__record {
-  min-height: 112rpx;
+  min-height: 110rpx;
   padding: 18rpx 2rpx;
-  border-bottom: 1rpx solid rgba(57, 45, 40, 0.09);
+  border-bottom: 1rpx solid rgba(57, 45, 40, 0.08);
   display: grid;
-  grid-template-columns: 118rpx minmax(0, 1fr) 72rpx;
+  grid-template-columns: 114rpx minmax(0, 1fr) 72rpx;
   align-items: center;
   gap: 14rpx;
 }
+
 .history-page__record-date,
 .history-page__record-main,
 .history-page__record-total {
   display: flex;
   flex-direction: column;
 }
+
 .history-page__record-day {
   font-size: 23rpx;
-  font-weight: 800;
-  color: rgba(33, 30, 28, 0.74);
+  font-weight: 810;
+  line-height: 1.3;
+  color: rgba(33, 30, 28, 0.72);
 }
+
 .history-page__record-week {
+  margin-top: 1rpx;
   font-size: 18rpx;
   font-weight: 620;
+  line-height: 1.3;
   color: rgba(33, 30, 28, 0.34);
 }
+
 .history-page__record-main {
   min-width: 0;
 }
+
 .history-page__record-title {
   font-size: 24rpx;
-  font-weight: 800;
+  font-weight: 820;
+  line-height: 1.32;
   color: rgba(33, 30, 28, 0.82);
 }
+
 .history-page__record-detail {
   max-width: 100%;
-  margin-top: 2rpx;
+  margin-top: 3rpx;
   font-size: 19rpx;
   font-weight: 600;
+  line-height: 1.35;
   color: rgba(33, 30, 28, 0.38);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 .history-page__record-total {
   align-items: flex-end;
   color: #D95A4C;
 }
+
 .history-page__record-total text:first-child {
   font-size: 29rpx;
-  font-weight: 850;
+  font-weight: 860;
   line-height: 1.1;
 }
+
 .history-page__record-total text:last-child {
   font-size: 17rpx;
   font-weight: 650;
+  line-height: 1.2;
   color: rgba(33, 30, 28, 0.32);
 }
+
+.history-page__records-footer {
+  min-height: 72rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10rpx;
+  color: rgba(33, 30, 28, 0.32);
+  font-size: 18rpx;
+  font-weight: 650;
+}
+
+.history-page__load-dot {
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 50%;
+  background: #FF8B68;
+  box-shadow: 0 0 14rpx rgba(255, 115, 86, 0.54);
+  animation: historyLoadPulse 980ms ease-in-out infinite;
+}
+
 .history-page__empty {
   min-height: 300rpx;
-  margin-top: 16rpx;
-  border-top: 1rpx solid rgba(57, 45, 40, 0.09);
-  border-bottom: 1rpx solid rgba(57, 45, 40, 0.09);
+  margin-top: 12rpx;
+  border-top: 1rpx solid rgba(57, 45, 40, 0.08);
+  border-bottom: 1rpx solid rgba(57, 45, 40, 0.08);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
 }
+
 .history-page__empty-light {
   width: 30rpx;
   height: 30rpx;
@@ -293,25 +456,43 @@
   background: #FF9B78;
   box-shadow: 0 0 0 10rpx rgba(255, 155, 120, 0.12), 0 0 34rpx rgba(255, 116, 84, 0.3);
 }
+
 .history-page__empty-title {
   font-size: 26rpx;
   font-weight: 820;
+  line-height: 1.35;
   color: rgba(33, 30, 28, 0.72);
 }
+
 .history-page__empty-copy {
   margin-top: 6rpx;
   font-size: 20rpx;
   font-weight: 600;
+  line-height: 1.4;
   color: rgba(33, 30, 28, 0.34);
 }
+
 .history-page__data-note {
   position: relative;
   z-index: 1;
   display: block;
-  margin: 28rpx 12rpx 0;
+  margin: 12rpx 12rpx 0;
   text-align: center;
   color: rgba(33, 30, 28, 0.3);
   font-size: 18rpx;
   font-weight: 600;
   line-height: 1.5;
+}
+
+@keyframes historyLoadPulse {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(0.82);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }

@@ -66,7 +66,7 @@ Page({
     bookId: '',
     isFavorite: false,
     isIgnored: false,
-    expandedCollocationIndex: -1,
+    expandedCollocationIndexes: {},
     tokenPopover: {
       visible: false,
       loading: false,
@@ -144,7 +144,7 @@ Page({
       learningContent: null,
       shortDefinitionRevealed: false,
       lexicalSuggestions: [],
-      expandedCollocationIndex: -1,
+      expandedCollocationIndexes: {},
       examplesError: '',
       fromLearn,
       orbLevel,
@@ -220,8 +220,16 @@ Page({
 
   onToggleCollocation(e) {
     const index = Number(e.currentTarget.dataset.index);
+    const expandedCollocationIndexes = { ...(this.data.expandedCollocationIndexes || {}) };
+
+    if (expandedCollocationIndexes[index]) {
+      delete expandedCollocationIndexes[index];
+    } else {
+      expandedCollocationIndexes[index] = true;
+    }
+
     this.setData({
-      expandedCollocationIndex: this.data.expandedCollocationIndex === index ? -1 : index
+      expandedCollocationIndexes
     });
   },
 

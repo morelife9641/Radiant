@@ -364,8 +364,7 @@ r-navbar {
 .home__dock-start--press {
   transform: translateX(-50%) scale(0.985);
 }
-.home__favorite-mini--press,
-.home__dock-action--press {
+.home__favorite-mini--press {
   transform: scale(0.96);
 }
 .home__start-text {

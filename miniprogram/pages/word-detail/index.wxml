@@ -89,13 +89,13 @@
           wx:key="text"
           wx:for-item="item"
           wx:for-index="collocationIdx"
-          class="detail__collocation-row {{expandedCollocationIndex == collocationIdx ? 'is-expanded' : ''}}"
+          class="detail__collocation-row {{expandedCollocationIndexes[collocationIdx] ? 'is-expanded' : ''}}"
           data-index="{{collocationIdx}}"
           catchtap="onToggleCollocation"
         >
           <view class="detail__collocation-copy">
             <text class="detail__collocation-main">{{item.text}}</text>
-            <text wx:if="{{expandedCollocationIndex == collocationIdx && item.translationZh}}" class="detail__collocation-sub">{{item.translationZh}}</text>
+            <text wx:if="{{expandedCollocationIndexes[collocationIdx] && item.translationZh}}" class="detail__collocation-sub">{{item.translationZh}}</text>
           </view>
         </view>
       </view>

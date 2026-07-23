@@ -44,30 +44,6 @@
   opacity: 1;
   box-shadow: 0 0 8rpx rgba(233, 107, 90, 0.3);
 }
-.word-card__title-row {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 8rpx;
-  min-height: 82rpx;
-}
-.word-card__word {
-  min-width: 0;
-  max-width: calc(100% - 36rpx);
-  font-size: 64rpx;
-  font-weight: 700;
-  color: var(--color-ink);
-  letter-spacing: 0;
-  line-height: 1.16;
-  padding: 0 0 6rpx;
-  margin-bottom: -6rpx;
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  flex: 0 1 auto;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
 .word-card__pron-row {
   display: flex;
   align-items: center;

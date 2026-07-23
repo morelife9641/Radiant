@@ -11,6 +11,7 @@ const RANGE_OPTIONS = [
 const DAY_MS = 24 * 60 * 60 * 1000;
 const SHANGHAI_OFFSET_MS = 8 * 60 * 60 * 1000;
 const WEEK_TEXT = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
+const RECORD_PAGE_SIZE = 14;
 
 function getNavTopPx() {
   const app = getApp();
@@ -239,6 +240,9 @@ Page({
     allDays: [],
     chartDays: [],
     historyRows: [],
+    historyTotal: 0,
+    recordsHasMore: false,
+    loadingMoreRecords: false,
     selectedIndex: 6,
     selectedDay: decorateDay(createDay(getDateKeyAsiaShanghai())),
     chartLabels: { start: '', middle: '', end: '' },
@@ -248,6 +252,8 @@ Page({
 
   _chartRect: null,
   _loadToken: 0,
+  _historyRows: [],
+  _visibleRecordCount: 0,
 
   onLoad(query = {}) {
     this.setData({
@@ -263,7 +269,7 @@ Page({
 
   async loadHistory() {
     const token = ++this._loadToken;
-    this.setData({ loading: true });
+    this.setData({ loading: true, loadingMoreRecords: false });
     const bookId = this.data.bookId || DEFAULT_WORDBOOK_ID;
     const localProgress = wx.getStorageSync(`progress.${bookId}`) || {};
     const [progressRes, historyRes, dailyGoal] = await Promise.all([
@@ -287,6 +293,9 @@ Page({
     const allDateKeys = buildDateKeys(90);
     const allDays = allDateKeys.map(dateKey => decorateDay(dayMap[dateKey] || createDay(dateKey)));
     const activeDays = allDays.filter(day => day.activityCount > 0 || day.newLearned > 0);
+    const historyRows = activeDays.slice().reverse();
+    this._historyRows = historyRows;
+    this._visibleRecordCount = Math.min(RECORD_PAGE_SIZE, historyRows.length);
     const streaks = calculateStreaks(activeDays.map(day => day.dateKey));
     const totalLearned = progressRecords.filter(item => (
       item.status === 'mastered' || normalizeCount(item.correctCount) > 0
@@ -296,7 +305,10 @@ Page({
       loading: false,
       dailyGoal: normalizeCount(dailyGoal) || 10,
       allDays,
-      historyRows: activeDays.slice().reverse().slice(0, 12),
+      historyRows: historyRows.slice(0, this._visibleRecordCount),
+      historyTotal: historyRows.length,
+      recordsHasMore: this._visibleRecordCount < historyRows.length,
+      loadingMoreRecords: false,
       summary: {
         currentStreak: streaks.current,
         longestStreak: streaks.longest,
@@ -308,6 +320,22 @@ Page({
         ? '记录已与云端同步'
         : '较早的记录可能只包含新学数据'
     }, () => this.applyRange(this.data.rangeDays));
+  },
+
+  onReachBottom() {
+    this.loadMoreHistoryRows();
+  },
+
+  loadMoreHistoryRows() {
+    const allRows = this._historyRows || [];
+    if (this.data.loading || this.data.loadingMoreRecords || !this.data.recordsHasMore) return;
+    this.setData({ loadingMoreRecords: true });
+    this._visibleRecordCount = Math.min(allRows.length, this._visibleRecordCount + RECORD_PAGE_SIZE);
+    this.setData({
+      historyRows: allRows.slice(0, this._visibleRecordCount),
+      recordsHasMore: this._visibleRecordCount < allRows.length,
+      loadingMoreRecords: false
+    });
   },
 
   applyRange(days) {

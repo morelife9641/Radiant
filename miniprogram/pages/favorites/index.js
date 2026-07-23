@@ -6,6 +6,7 @@ const DEFAULT_WORDBOOK_ID = 'ielts_content_words';
 const PROGRESS_KEY = (bookId) => `progress.${bookId}`;
 const ACTION_OPEN_PX = 86;
 const ACTION_TRIGGER_PX = 42;
+const SORT_OPTIONS = ['最近收藏', 'A-Z 正序', 'A-Z 倒序'];
 
 function getNavTopPx() {
   const app = getApp();
@@ -27,31 +28,16 @@ function formatFavoriteTime(value) {
   const time = Number(value || 0);
   if (!time) return '时间未知';
   const date = new Date(time);
+  const today = new Date();
+  const startOfToday = new Date(today.getFullYear(), today.getMonth(), today.getDate()).getTime();
+  const startOfFavoriteDay = new Date(date.getFullYear(), date.getMonth(), date.getDate()).getTime();
   const month = date.getMonth() + 1;
   const day = date.getDate();
   const hour = String(date.getHours()).padStart(2, '0');
   const minute = String(date.getMinutes()).padStart(2, '0');
+  if (startOfFavoriteDay === startOfToday) return `今天 ${hour}:${minute}`;
+  if (startOfFavoriteDay === startOfToday - 24 * 60 * 60 * 1000) return `昨天 ${hour}:${minute}`;
   return `${month}月${day}日 ${hour}:${minute}`;
-}
-
-function formatStatus(status) {
-  const map = {
-    new: '未开始',
-    learning: '学习中',
-    reviewing: '待巩固',
-    difficult: '重点复习',
-    mastered: '已掌握',
-    ignored: '已删除'
-  };
-  return map[status] || '学习中';
-}
-
-function formatProgressInfo(progress = {}) {
-  const correct = Number(progress.correctCount || 0);
-  const wrong = Number(progress.wrongCount || 0);
-  const statusText = formatStatus(progress.status || '');
-  if (!correct && !wrong) return statusText;
-  return `${statusText} · ${correct} 对 / ${wrong} 错`;
 }
 
 function firstText(values) {
@@ -86,52 +72,34 @@ function formatTranslation(item = {}) {
   ]);
 }
 
-function pickObjectText(item = {}) {
-  if (!item || typeof item !== 'object') return '';
-  const main = firstText([
-    item.text,
-    item.phrase,
-    item.collocation,
-    item.exampleEn,
-    item.example_en,
-    item.sentence,
-    item.en
-  ]);
-  const sub = firstText([
-    item.translationZh,
-    item.translation_zh,
-    item.exampleZh,
-    item.example_zh,
-    item.zh
-  ]);
-  if (main && sub) return `${main} · ${sub}`;
-  return main || sub;
+function formatPartOfSpeech(item = {}) {
+  const sense = Array.isArray(item.senses) && item.senses[0] ? item.senses[0] : {};
+  const pos = String(item.pos || sense.pos || '').trim();
+  if (!pos) return '';
+  return /[.]$/.test(pos) ? pos : `${pos}.`;
 }
 
-function findArrayText(arr = []) {
-  if (!Array.isArray(arr)) return '';
-  for (const item of arr) {
-    const text = typeof item === 'string' ? item : pickObjectText(item);
-    if (text) return text;
+function sortFavoriteItems(items = [], sortIndex = 0) {
+  const sorted = [...items];
+  if (sortIndex === 1 || sortIndex === 2) {
+    const direction = sortIndex === 1 ? 1 : -1;
+    return sorted.sort((a, b) => direction * String(a.word || '').localeCompare(String(b.word || ''), 'en', { sensitivity: 'base' }));
   }
-  return '';
+  return sorted.sort((a, b) => Number((b.progress || {}).favoritedAt || 0) - Number((a.progress || {}).favoritedAt || 0));
 }
 
-function formatExtraText(item = {}) {
+function formatDefinitionText(item = {}) {
   const sense = Array.isArray(item.senses) && item.senses[0] ? item.senses[0] : {};
   const content = item.learningContent || item.learning_content || {};
-  const synonyms = Array.isArray(sense.synonyms) ? sense.synonyms : [];
-  const extra = firstText([
-    findArrayText(content.collocations),
-    findArrayText(item.collocations),
-    findArrayText(sense.collocations),
-    findArrayText(content.examples),
-    findArrayText(item.examples),
-    findArrayText(sense.examples),
-    pickObjectText(sense.gaming_link),
-    sense.exampleEn,
-    sense.example_en,
-    synonyms[0] && (synonyms[0].exampleEn || synonyms[0].example_en),
+  const coreSense = content.coreSense && typeof content.coreSense === 'object'
+    ? content.coreSense
+    : {};
+  const definition = firstText([
+    coreSense.en,
+    content.shortDefinitionEn,
+    content.short_definition_en,
+    item.shortDefinitionEn,
+    item.short_definition_en,
     sense.definitionEn,
     sense.definition_en,
     sense.definition,
@@ -140,7 +108,12 @@ function formatExtraText(item = {}) {
     sense.collinsEn,
     sense.collins_definition && sense.collins_definition.en
   ]);
-  return trimInlineText(extra);
+  const normalized = trimInlineText(definition);
+  if (!normalized) return '';
+
+  // Keep the list concise by showing one complete core sentence, never a mixed example.
+  const sentence = normalized.match(/^(.+?[.!?])(?:\s|$)/);
+  return (sentence ? sentence[1] : normalized).trim();
 }
 
 function normalizeFavoriteItem(item = {}) {
@@ -151,10 +124,10 @@ function normalizeFavoriteItem(item = {}) {
     word: item.word || item.normalized || progress.word || progress.normalized || '',
     normalized: item.normalized || progress.normalized || item.word || '',
     phoneticText: formatPhonetic(item.phonetic),
+    posText: formatPartOfSpeech(item),
     translationText: formatTranslation(item),
-    extraText: formatExtraText(item),
+    definitionText: formatDefinitionText(item),
     favoriteTimeText: formatFavoriteTime(progress.favoritedAt || item.favoritedAt),
-    infoText: formatProgressInfo(progress),
     actionWidth: 0,
     progress
   };
@@ -231,10 +204,14 @@ Page({
     bookId: DEFAULT_WORDBOOK_ID,
     items: [],
     loading: true,
-    navTopPx: 96
+    navTopPx: 96,
+    sortOptions: SORT_OPTIONS,
+    sortIndex: 0,
+    sortLabel: SORT_OPTIONS[0]
   },
 
   _hasLoaded: false,
+  _favoriteItems: [],
 
   onLoad(query) {
     const bookId = query.bookId || DEFAULT_WORDBOOK_ID;
@@ -251,10 +228,7 @@ Page({
     this.setData({ loading: true });
     const cloudRes = await learnService.listFavorites(this.data.bookId, { limit: 100 }).catch(() => null);
     if (cloudRes && cloudRes.ok && Array.isArray(cloudRes.items) && cloudRes.items.length) {
-      this.setData({
-        items: cloudRes.items.map(normalizeFavoriteItem),
-        loading: false
-      });
+      this.setFavoriteItems(cloudRes.items.map(normalizeFavoriteItem), false);
       this._hasLoaded = true;
       return;
     }
@@ -270,8 +244,26 @@ Page({
       ...item
     }));
 
-    this.setData({ items, loading: false });
+    this.setFavoriteItems(items, false);
     this._hasLoaded = true;
+  },
+
+  setFavoriteItems(items = [], loading = false) {
+    this._favoriteItems = items;
+    this.setData({
+      items: sortFavoriteItems(items, this.data.sortIndex),
+      loading
+    });
+  },
+
+  onSortChange(e) {
+    const sortIndex = Number(e.detail && e.detail.value);
+    const nextIndex = Number.isInteger(sortIndex) && SORT_OPTIONS[sortIndex] ? sortIndex : 0;
+    this.setData({
+      sortIndex: nextIndex,
+      sortLabel: SORT_OPTIONS[nextIndex],
+      items: sortFavoriteItems(this._favoriteItems, nextIndex)
+    });
   },
 
   onBack() {
@@ -286,6 +278,10 @@ Page({
     wx.navigateTo({
       url: `/pages/word-detail/index?bookId=${this.data.bookId}&word=${encodeURIComponent(word)}`
     });
+  },
+
+  onGoLearn() {
+    wx.navigateTo({ url: '/pages/learn/index' });
   },
 
   onPlayWord(e) {

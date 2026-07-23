@@ -13,7 +13,7 @@
       <view class="word-card__prompt-line">
         <text wx:if="{{question.prompt.posLabel}}" class="word-card__prompt-pos">{{question.prompt.posLabel}}</text>
         <view
-          class="word-card__prompt-main {{promptChineseText ? 'is-translatable' : ''}} {{promptChineseVisible ? 'is-translation-visible' : ''}}"
+          class="word-card__prompt-main {{promptChineseText ? 'is-translatable' : ''}} {{promptChineseVisible || (answered && question.prompt.lang === 'en') ? 'is-translation-visible' : ''}}"
           bindtap="onTogglePromptTranslation"
         >
           <text

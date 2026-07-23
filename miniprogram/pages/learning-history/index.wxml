@@ -18,11 +18,14 @@
   <block wx:else>
     <view class="history-page__streak-summary">
       <view class="history-page__streak-light" aria-hidden="true"></view>
-      <text class="history-page__streak-copy">已连续学习</text>
-      <text class="history-page__streak-number">{{summary.currentStreak}}</text>
-      <text class="history-page__streak-copy">天</text>
-      <text class="history-page__streak-divider">·</text>
-      <text class="history-page__streak-note">最长 {{summary.longestStreak}} 天</text>
+      <view class="history-page__streak-main">
+        <text class="history-page__streak-copy">已连续学习</text>
+        <text class="history-page__streak-number">{{summary.currentStreak}}</text>
+        <text class="history-page__streak-copy">天</text>
+      </view>
+      <view class="history-page__streak-meta">
+        <text>最长 {{summary.longestStreak}} 天</text>
+      </view>
     </view>
 
     <view class="history-page__metrics">
@@ -41,16 +44,22 @@
     </view>
 
     <view class="history-page__trend">
-      <view class="history-page__range" aria-label="趋势范围">
-        <view
-          wx:for="{{rangeOptions}}"
-          wx:key="value"
-          class="history-page__range-item {{rangeDays === item.value ? 'is-active' : ''}}"
-          data-days="{{item.value}}"
-          bindtap="onChangeRange"
-          hover-class="history-page__range-item--press"
-          hover-stay-time="70"
-        >{{item.label}}</view>
+      <view class="history-page__trend-head">
+        <view class="history-page__trend-copy">
+          <text class="history-page__trend-title">新学趋势</text>
+          <text class="history-page__trend-subtitle">最近 {{rangeDays}} 天每日新学</text>
+        </view>
+        <view class="history-page__range" aria-label="趋势范围">
+          <view
+            wx:for="{{rangeOptions}}"
+            wx:key="value"
+            class="history-page__range-item {{rangeDays === item.value ? 'is-active' : ''}}"
+            data-days="{{item.value}}"
+            bindtap="onChangeRange"
+            hover-class="history-page__range-item--press"
+            hover-stay-time="70"
+          >{{item.label}}</view>
+        </view>
       </view>
 
       <view class="history-page__selected">
@@ -78,28 +87,52 @@
     </view>
 
     <view class="history-page__records">
-      <view wx:if="{{!historyRows.length}}" class="history-page__empty">
-        <view class="history-page__empty-light"></view>
-        <text class="history-page__empty-title">第一束光还在路上</text>
-        <text class="history-page__empty-copy">完成今天的学习后，记录会出现在这里</text>
+      <view class="history-page__records-head">
+        <view>
+          <text class="history-page__records-title">学习记录</text>
+          <text class="history-page__records-subtitle">按最近学习日期排列</text>
+        </view>
+        <text class="history-page__records-count">{{historyTotal}} 条</text>
       </view>
 
-      <view wx:else class="history-page__record-list">
-        <view wx:for="{{historyRows}}" wx:key="dateKey" class="history-page__record">
-          <view class="history-page__record-date">
-            <text class="history-page__record-day">{{item.dayText}}</text>
-            <text class="history-page__record-week">{{item.weekText}}</text>
-          </view>
-          <view class="history-page__record-main">
-            <text class="history-page__record-title">{{item.recordTitle}}</text>
-            <text class="history-page__record-detail">{{item.recordDetail}}</text>
-          </view>
-          <view class="history-page__record-total">
-            <text>{{item.activityCount}}</text>
-            <text>次</text>
+      <scroll-view
+        class="history-page__records-scroll"
+        scroll-y
+        enhanced
+        show-scrollbar="{{false}}"
+        lower-threshold="80"
+        bindscrolltolower="loadMoreHistoryRows"
+      >
+        <view wx:if="{{!historyRows.length}}" class="history-page__empty">
+          <view class="history-page__empty-light"></view>
+          <text class="history-page__empty-title">第一束光还在路上</text>
+          <text class="history-page__empty-copy">完成今天的学习后，记录会出现在这里</text>
+        </view>
+
+        <view wx:else class="history-page__record-list">
+          <view wx:for="{{historyRows}}" wx:key="dateKey" class="history-page__record">
+            <view class="history-page__record-date">
+              <text class="history-page__record-day">{{item.dayText}}</text>
+              <text class="history-page__record-week">{{item.weekText}}</text>
+            </view>
+            <view class="history-page__record-main">
+              <text class="history-page__record-title">{{item.recordTitle}}</text>
+              <text class="history-page__record-detail">{{item.recordDetail}}</text>
+            </view>
+            <view class="history-page__record-total">
+              <text>{{item.activityCount}}</text>
+              <text>次</text>
+            </view>
           </view>
         </view>
-      </view>
+
+        <view wx:if="{{historyRows.length}}" class="history-page__records-footer">
+          <view wx:if="{{loadingMoreRecords}}" class="history-page__load-dot"></view>
+          <text wx:if="{{loadingMoreRecords}}">正在加载更多记录</text>
+          <text wx:elif="{{recordsHasMore}}">继续下滑加载更多</text>
+          <text wx:else>{{historyTotal > 14 ? '已展示全部学习记录' : '已完整展示学习记录'}}</text>
+        </view>
+      </scroll-view>
     </view>
 
     <text wx:if="{{dataNote}}" class="history-page__data-note">{{dataNote}}</text>
