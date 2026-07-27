@@ -202,33 +202,6 @@ function decorateDay(day) {
   };
 }
 
-function calculateStreaks(activeDateKeys) {
-  const sorted = Array.from(new Set(activeDateKeys)).sort();
-  if (!sorted.length) return { current: 0, longest: 0 };
-  let longest = 1;
-  let running = 1;
-  for (let index = 1; index < sorted.length; index += 1) {
-    if (dateKeyToTime(sorted[index]) - dateKeyToTime(sorted[index - 1]) === DAY_MS) {
-      running += 1;
-      longest = Math.max(longest, running);
-    } else {
-      running = 1;
-    }
-  }
-
-  const today = getDateKeyAsiaShanghai();
-  const anchor = sorted.includes(today) ? today : shiftDateKey(today, -1);
-  if (!sorted.includes(anchor)) return { current: 0, longest };
-  const activeSet = new Set(sorted);
-  let current = 0;
-  let cursor = anchor;
-  while (activeSet.has(cursor)) {
-    current += 1;
-    cursor = shiftDateKey(cursor, -1);
-  }
-  return { current, longest };
-}
-
 Page({
   data: {
     navTopPx: 96,
@@ -245,9 +218,7 @@ Page({
     loadingMoreRecords: false,
     selectedIndex: 6,
     selectedDay: decorateDay(createDay(getDateKeyAsiaShanghai())),
-    chartLabels: { start: '', middle: '', end: '' },
-    summary: { currentStreak: 0, longestStreak: 0, activeDays: 0, periodLearned: 0, totalLearned: 0 },
-    dataNote: ''
+    chartLabels: { start: '', middle: '', end: '' }
   },
 
   _chartRect: null,
@@ -296,11 +267,6 @@ Page({
     const historyRows = activeDays.slice().reverse();
     this._historyRows = historyRows;
     this._visibleRecordCount = Math.min(RECORD_PAGE_SIZE, historyRows.length);
-    const streaks = calculateStreaks(activeDays.map(day => day.dateKey));
-    const totalLearned = progressRecords.filter(item => (
-      item.status === 'mastered' || normalizeCount(item.correctCount) > 0
-    )).length;
-
     this.setData({
       loading: false,
       dailyGoal: normalizeCount(dailyGoal) || 10,
@@ -308,17 +274,7 @@ Page({
       historyRows: historyRows.slice(0, this._visibleRecordCount),
       historyTotal: historyRows.length,
       recordsHasMore: this._visibleRecordCount < historyRows.length,
-      loadingMoreRecords: false,
-      summary: {
-        currentStreak: streaks.current,
-        longestStreak: streaks.longest,
-        activeDays: activeDays.length,
-        periodLearned: 0,
-        totalLearned
-      },
-      dataNote: historyRes && historyRes.ok
-        ? '记录已与云端同步'
-        : '较早的记录可能只包含新学数据'
+      loadingMoreRecords: false
     }, () => this.applyRange(this.data.rangeDays));
   },
 
@@ -349,8 +305,6 @@ Page({
       }
     }
     const middleIndex = Math.floor((chartDays.length - 1) / 2);
-    const periodLearned = chartDays.reduce((sum, day) => sum + day.newLearned, 0);
-    const activeDays = chartDays.filter(day => day.activityCount || day.newLearned).length;
     this.setData({
       rangeDays: days,
       chartDays,
@@ -360,11 +314,6 @@ Page({
         start: formatShortDate(chartDays[0].dateKey),
         middle: formatShortDate(chartDays[middleIndex].dateKey),
         end: formatShortDate(chartDays[chartDays.length - 1].dateKey)
-      },
-      summary: {
-        ...this.data.summary,
-        activeDays,
-        periodLearned
       }
     }, () => this.drawChart());
   },

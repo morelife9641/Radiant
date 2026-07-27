@@ -128,7 +128,7 @@
   min-width: 0;
   font-size: 36rpx;
   font-weight: 700;
-  margin-top: 20rpx;
+  margin-top: 0;
   color: var(--color-ink);
   line-height: 1.34;
   white-space: normal;
@@ -285,7 +285,7 @@
   display: none;
   flex-direction: column;
   justify-content: center;
-  gap: 4rpx;
+  gap: 7rpx;
   pointer-events: none;
 }
 .word-card__option.is-detail .word-card__option-face--front {
@@ -324,14 +324,24 @@
   white-space: nowrap;
   -webkit-font-smoothing: antialiased;
 }
+.word-card__option-translations {
+  display: flex;
+  flex-direction: column;
+  gap: 7rpx;
+  width: 100%;
+  min-width: 0;
+  padding: 4rpx 0 2rpx;
+  box-sizing: border-box;
+}
 .word-card__option-translation {
   display: -webkit-box;
   width: 100%;
   max-width: 100%;
-  color: var(--text-secondary, rgba(26, 26, 26, 0.56));
-  font-size: 21rpx;
-  font-weight: 500;
-  line-height: 1.27;
+  min-width: 0;
+  color: rgba(26, 26, 26, 0.86);
+  font-size: 24rpx;
+  font-weight: 580;
+  line-height: 1.42;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;

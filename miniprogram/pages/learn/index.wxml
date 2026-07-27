@@ -13,6 +13,7 @@
   >
       <view slot="center" class="learn__meta">
         <text class="learn__mode-label">{{mode === 'review' ? '复习队列' : '今日新学'}}</text>
+        <view class="learn__meta-divider"></view>
         <text class="learn__progress-text">{{barProgressText}}</text>
       </view>
       <view slot="actions" class="learn__state-actions">

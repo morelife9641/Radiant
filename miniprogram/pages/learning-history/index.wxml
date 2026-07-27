@@ -1,11 +1,6 @@
 <view class="history-page" style="padding-top: {{navTopPx}}px">
   <view class="history-page__bar">
     <r-back-button bind:back="onBack" />
-    <view class="history-page__bar-copy">
-      <text class="history-page__title">学习轨迹</text>
-      <text class="history-page__subtitle">每一次积累，都让光更亮一点</text>
-    </view>
-    <view class="history-page__bar-spacer"></view>
   </view>
 
   <r-loading
@@ -16,33 +11,6 @@
   />
 
   <block wx:else>
-    <view class="history-page__streak-summary">
-      <view class="history-page__streak-light" aria-hidden="true"></view>
-      <view class="history-page__streak-main">
-        <text class="history-page__streak-copy">已连续学习</text>
-        <text class="history-page__streak-number">{{summary.currentStreak}}</text>
-        <text class="history-page__streak-copy">天</text>
-      </view>
-      <view class="history-page__streak-meta">
-        <text>最长 {{summary.longestStreak}} 天</text>
-      </view>
-    </view>
-
-    <view class="history-page__metrics">
-      <view class="history-page__metric">
-        <text class="history-page__metric-value">{{summary.activeDays}}</text>
-        <text class="history-page__metric-label">活跃天数</text>
-      </view>
-      <view class="history-page__metric">
-        <text class="history-page__metric-value">{{summary.periodLearned}}</text>
-        <text class="history-page__metric-label">区间新学</text>
-      </view>
-      <view class="history-page__metric">
-        <text class="history-page__metric-value">{{summary.totalLearned}}</text>
-        <text class="history-page__metric-label">累计词汇</text>
-      </view>
-    </view>
-
     <view class="history-page__trend">
       <view class="history-page__trend-head">
         <view class="history-page__trend-copy">
@@ -135,6 +103,5 @@
       </scroll-view>
     </view>
 
-    <text wx:if="{{dataNote}}" class="history-page__data-note">{{dataNote}}</text>
   </block>
 </view>

@@ -73,7 +73,9 @@
         </view>
         <view class="word-card__option-face word-card__option-face--detail">
           <text class="word-card__option-word">{{choice.wordText || choice.text}}</text>
-          <text wx:if="{{choice.translationText}}" class="word-card__option-translation">{{choice.translationText}}</text>
+          <view wx:if="{{choice.translationText}}" class="word-card__option-translations">
+            <text class="word-card__option-translation">{{choice.translationText}}</text>
+          </view>
         </view>
       </view>
     </view>

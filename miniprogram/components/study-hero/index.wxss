@@ -1,4 +1,11 @@
 .study-hero {
+  --study-hero-bar-height: 72rpx;
+  --study-hero-progress-top: 64rpx;
+  --study-hero-progress-width: 180rpx;
+  --study-hero-heading-margin-top: 10rpx;
+  --study-hero-heading-padding-x: 0;
+  --study-hero-heading-padding-bottom: 0;
+  --study-hero-heading-justify: flex-start;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -11,11 +18,11 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: 72rpx;
-  min-height: 72rpx;
+  height: var(--study-hero-bar-height);
+  min-height: var(--study-hero-bar-height);
   padding: 0;
   box-sizing: border-box;
-  flex: 0 0 72rpx;
+  flex: 0 0 var(--study-hero-bar-height);
 }
 
 .study-hero__back,
@@ -23,7 +30,7 @@
   display: flex;
   align-items: center;
   width: 90rpx;
-  height: 72rpx;
+  height: var(--study-hero-bar-height);
   flex: 0 0 90rpx;
 }
 
@@ -40,15 +47,15 @@
   align-items: center;
   justify-content: center;
   min-width: 0;
-  height: 72rpx;
+  height: var(--study-hero-bar-height);
   flex: 1;
 }
 
 .study-hero__progress {
   position: absolute;
   left: 50%;
-  top: 64rpx;
-  width: 180rpx;
+  top: var(--study-hero-progress-top);
+  width: var(--study-hero-progress-width);
   height: 4rpx;
   transform: translateX(-50%);
   border-radius: var(--radius-pill);
@@ -65,7 +72,10 @@
 }
 
 .study-hero__heading {
+  display: flex;
+  justify-content: var(--study-hero-heading-justify);
   width: 100%;
   min-width: 0;
-  margin-top: 10rpx;
+  margin-top: var(--study-hero-heading-margin-top);
+  padding: 0 var(--study-hero-heading-padding-x) var(--study-hero-heading-padding-bottom);
 }

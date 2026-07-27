@@ -21,124 +21,6 @@
   flex-shrink: 0;
 }
 
-.history-page__bar-spacer {
-  width: 40rpx;
-  height: 40rpx;
-  flex-shrink: 0;
-}
-
-.history-page__bar-copy {
-  flex: 1;
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rpx;
-}
-
-.history-page__title {
-  font-size: 27rpx;
-  font-weight: 850;
-  line-height: 1.25;
-  color: rgba(31, 28, 26, 0.86);
-}
-
-.history-page__subtitle {
-  font-size: 18rpx;
-  font-weight: 620;
-  line-height: 1.3;
-  color: rgba(83, 63, 54, 0.42);
-}
-
-.history-page__streak-summary {
-  position: relative;
-  z-index: 1;
-  min-height: 66rpx;
-  margin-top: 6rpx;
-  padding: 0 22rpx;
-  border-radius: 16rpx;
-  display: flex;
-  align-items: center;
-  gap: 14rpx;
-  background: linear-gradient(90deg, rgba(255, 248, 241, 0.66), rgba(255, 248, 241, 0.26));
-  border: 1rpx solid rgba(255, 255, 255, 0.58);
-  box-shadow: 0 10rpx 26rpx rgba(91, 66, 54, 0.06);
-  flex-shrink: 0;
-}
-
-.history-page__streak-light {
-  width: 14rpx;
-  height: 14rpx;
-  border-radius: 50%;
-  background: #FF8B68;
-  box-shadow: 0 0 10rpx rgba(255, 111, 83, 0.72), 0 0 28rpx rgba(255, 153, 94, 0.45);
-  flex-shrink: 0;
-}
-
-.history-page__streak-main {
-  min-width: 0;
-  display: flex;
-  align-items: baseline;
-  gap: 7rpx;
-}
-
-.history-page__streak-number {
-  font-size: 36rpx;
-  font-weight: 880;
-  line-height: 1;
-  color: #201D1B;
-}
-
-.history-page__streak-copy {
-  font-size: 22rpx;
-  font-weight: 720;
-  color: rgba(33, 30, 28, 0.66);
-}
-
-.history-page__streak-meta {
-  margin-left: auto;
-  padding: 6rpx 12rpx;
-  border-radius: 999rpx;
-  background: rgba(255, 255, 255, 0.5);
-  color: rgba(33, 30, 28, 0.42);
-  font-size: 18rpx;
-  font-weight: 650;
-  line-height: 1.2;
-}
-
-.history-page__metrics {
-  position: relative;
-  z-index: 1;
-  min-height: 74rpx;
-  margin: 8rpx 0 12rpx;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  flex-shrink: 0;
-}
-
-.history-page__metric {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 2rpx;
-}
-
-.history-page__metric-value {
-  font-size: 31rpx;
-  font-weight: 860;
-  line-height: 1.15;
-  color: rgba(33, 30, 28, 0.86);
-}
-
-.history-page__metric-label {
-  font-size: 19rpx;
-  font-weight: 650;
-  line-height: 1.3;
-  color: rgba(33, 30, 28, 0.38);
-}
-
 .history-page__trend {
   position: relative;
   z-index: 1;
@@ -472,18 +354,6 @@
   color: rgba(33, 30, 28, 0.34);
 }
 
-.history-page__data-note {
-  position: relative;
-  z-index: 1;
-  display: block;
-  margin: 12rpx 12rpx 0;
-  text-align: center;
-  color: rgba(33, 30, 28, 0.3);
-  font-size: 18rpx;
-  font-weight: 600;
-  line-height: 1.5;
-}
-
 @keyframes historyLoadPulse {
   0%,
   100% {
@@ -495,4 +365,68 @@
     opacity: 1;
     transform: scale(1);
   }
+}
+
+/* Radiant v2: light-trail history */
+.history-page {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(241, 181, 143, 0.20), transparent 34%),
+    var(--surface-canvas);
+}
+
+.history-page__bar {
+  min-height: 64rpx;
+}
+
+.history-page__empty-light,
+.history-page__load-dot {
+  background: var(--amber-500);
+  box-shadow: 0 0 16rpx rgba(199, 121, 36, 0.34);
+}
+
+.history-page__trend {
+  margin-top: 8rpx;
+  padding: 22rpx 22rpx 18rpx;
+  border-radius: var(--radius-card);
+  background: rgba(255, 252, 247, 0.92);
+  border-color: var(--color-border);
+  box-shadow: var(--shadow-soft);
+  flex: 0 0 auto;
+}
+
+.history-page__trend-title,
+.history-page__records-title {
+  color: var(--text-primary);
+}
+
+.history-page__selected {
+  background: rgba(241, 221, 215, 0.55);
+  border: 1rpx solid rgba(196, 97, 82, 0.10);
+}
+
+.history-page__selected-value,
+.history-page__record-total {
+  color: var(--coral-500);
+}
+
+.history-page__records {
+  margin-top: 32rpx;
+  flex: 1;
+}
+
+.history-page__chart-wrap {
+  margin-top: 12rpx;
+}
+
+.history-page__chart {
+  height: 210rpx;
+}
+
+.history-page__record-list {
+  border-top-color: var(--color-border);
+}
+
+.history-page__record {
+  min-height: 104rpx;
+  border-bottom-color: var(--color-border);
 }

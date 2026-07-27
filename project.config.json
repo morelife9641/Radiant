@@ -74,6 +74,10 @@
         "type": "folder"
       },
       {
+        "value": "assets/mascot",
+        "type": "folder"
+      },
+      {
         "value": "assets/大学英语四级词汇带音标-乱序版.pdf",
         "type": "file"
       },
@@ -100,10 +104,6 @@
       {
         "value": "components/chat-bubble",
         "type": "folder"
-      },
-      {
-        "value": "services/ai.js",
-        "type": "file"
       }
     ],
     "include": []

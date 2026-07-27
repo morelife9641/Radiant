@@ -114,9 +114,10 @@ async function removeUserRows(collectionName, openid) {
 
 async function deleteAccountData(openid) {
   await removeUserRows('user_word_progress', openid);
-  await removeUserRows('user_book_progress', openid).catch(() => null);
-  await removeUserRows('user_learn_sessions', openid).catch(() => null);
-  await db.collection('users').doc(openid).remove().catch(() => null);
+  await removeUserRows('user_book_progress', openid);
+  await removeUserRows('user_learn_sessions', openid);
+  await removeUserRows('user_learning_activity', openid);
+  await db.collection('users').doc(openid).remove();
 }
 
 exports.main = async (event, context) => {

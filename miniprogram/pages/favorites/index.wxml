@@ -1,13 +1,26 @@
 <view class="page favorites" style="padding-top: {{navTopPx}}px">
-  <view class="favorites__bar">
+  <view wx:if="{{sortMenuVisible}}" class="favorites__sort-scrim {{sortMenuOpen ? 'is-open' : ''}}" catchtap="onCloseSortMenu"></view>
+  <view class="favorites__bar" bindtap="onCloseSortMenu">
     <r-back-button bind:back="onBack" />
     <text class="favorites__title">收藏</text>
-    <picker class="favorites__sort-picker" mode="selector" range="{{sortOptions}}" value="{{sortIndex}}" bindchange="onSortChange">
-      <view class="favorites__sort-control">
-        <text class="favorites__sort-label">{{sortLabel}}</text>
+    <view class="favorites__sort-picker">
+      <view class="favorites__sort-control {{sortMenuVisible ? 'is-open' : ''}}" catchtap="onToggleSortMenu" aria-label="选择收藏排序" aria-expanded="{{sortMenuOpen}}">
+        <text wx:if="{{!sortMenuVisible}}" class="favorites__sort-label">{{sortLabel}}</text>
         <view class="favorites__sort-chevron"></view>
       </view>
-    </picker>
+      <view wx:if="{{sortMenuVisible}}" class="favorites__sort-menu {{sortMenuOpen ? 'is-open' : ''}}">
+        <view
+          wx:for="{{sortOptions}}"
+          wx:key="*this"
+          class="favorites__sort-menu-item {{index === sortIndex ? 'is-selected' : ''}}"
+          data-sort-index="{{index}}"
+          catchtap="onSelectSort"
+        >
+          <text>{{item}}</text>
+          <view wx:if="{{index === sortIndex}}" class="favorites__sort-menu-mark"></view>
+        </view>
+      </view>
+    </view>
   </view>
 
   <r-loading wx:if="{{loading}}" fill title="正在整理收藏" />
@@ -37,7 +50,7 @@
           class="favorites__delete"
           style="width: {{item.actionWidth}}px; opacity: {{item.actionWidth ? 1 : 0}};"
           data-index="{{index}}"
-          catchtap="onCancelFavorite"
+          catchtap="onRequestCancelFavorite"
         >取消收藏</view>
         <view
           class="favorites__item"
@@ -49,22 +62,22 @@
           <view class="favorites__head">
             <view class="favorites__title-row">
               <text class="favorites__word">{{item.word}}</text>
+              <view class="favorites__favorite-control" data-index="{{index}}" catchtap="onRequestCancelFavorite" aria-label="取消收藏">
+                <image class="favorites__favorite-icon" src="/assets/icons/star-favorite-filled.svg" mode="aspectFit" />
+              </view>
             </view>
             <view class="favorites__pron-row">
               <text wx:if="{{item.phoneticText}}" class="favorites__phonetic">{{item.phoneticText}}</text>
               <view class="favorites__play" data-word="{{item.word}}" catchtap="onPlayWord" aria-label="播放发音">
-                <image class="favorites__play-icon" src="/assets/icons/ear-neutral.svg" mode="aspectFit" />
+                <image class="favorites__play-icon" src="/assets/icons/ear.svg" mode="aspectFit" />
               </view>
             </view>
           </view>
           <view class="favorites__translation-line">
-            <text wx:if="{{item.posText}}" class="favorites__translation-pos">{{item.posText}}</text>
-            <text class="favorites__translation">{{item.translationText}}</text>
-          </view>
-          <view class="favorites__definition-row">
-            <text class="favorites__definition">{{item.definitionText}}</text>
-          </view>
-          <view class="favorites__meta-row">
+            <view class="favorites__translation-copy">
+              <text wx:if="{{item.posText}}" class="favorites__translation-pos">{{item.posText}}</text>
+              <text class="favorites__translation">{{item.translationText}}</text>
+            </view>
             <text class="favorites__time">{{item.favoriteTimeText}}</text>
           </view>
         </view>

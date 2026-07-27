@@ -27,8 +27,27 @@ export const learnService = {
   review({ limit = 50 } = {}) {
     return callFn('learn-submit', { action: 'review', limit });
   },
-  listFavorites(wordbookId, { limit = 100 } = {}) {
-    return callFn('learn-submit', { action: 'listFavorites', wordbookId, limit });
+  listFavorites(wordbookId, { cursor = '', limit = 100 } = {}) {
+    return callFn('learn-submit', { action: 'listFavorites', wordbookId, cursor, limit });
+  },
+  async listAllFavorites(wordbookId, { pageSize = 100, maxPages = 50 } = {}) {
+    const items = [];
+    let cursor = '';
+
+    for (let page = 0; page < maxPages; page += 1) {
+      const res = await this.listFavorites(wordbookId, { cursor, limit: pageSize });
+      if (!res || !res.ok) return res;
+      items.push(...(res.items || []));
+      cursor = String(res.cursor || '');
+      if (!cursor) return { ok: true, items };
+    }
+
+    return {
+      ok: false,
+      code: 'FAVORITES_PAGE_LIMIT',
+      message: '收藏数量超过安全加载上限。',
+      items
+    };
   },
   submit(records) {
     return callFn('learn-submit', { action: 'submit', records });

@@ -3,6 +3,7 @@ import { topicService } from '../../services/topic';
 import { wordbookService } from '../../services/wordbook';
 import { playUrl, playWord, stopAudio } from '../../utils/audio';
 import { learnService } from '../../services/learn';
+import { aiService } from '../../services/ai';
 import { formatPos } from '../../utils/pos';
 
 const DEFAULT_TOPIC_IDS = ['tbbt', 'ted_bv1m5lz6ceyq'];
@@ -19,7 +20,7 @@ const CONTENT_WORD_TABS = [
   { key: 'corpus', label: '原文' },
   { key: 'learning', label: '学习' },
   { key: 'confusing', label: '辨析' },
-  { key: 'suggestions', label: '候选' }
+  { key: 'suggestions', label: '拓展' }
 ];
 const DEFAULT_WORDBOOK_ID = 'ielts_content_words';
 
@@ -44,10 +45,6 @@ Page({
     relationSynonyms: [],
     relationAntonyms: [],
     relationConfusing: [],
-    relationRecords: [],
-    relationSenseOptions: [],
-    currentSenseId: '',
-    relationGroups: [],
     relationsError: '',
     learningRequested: false,
     learningLoading: false,
@@ -55,6 +52,10 @@ Page({
     learningContent: null,
     shortDefinitionRevealed: false,
     lexicalSuggestions: [],
+    aiExpansionRequested: false,
+    aiExpansionLoading: false,
+    aiExpansionError: '',
+    aiExpansion: null,
     examplesRequested: false,
     examplesAvailable: true,
     examplesError: '',
@@ -112,7 +113,6 @@ Page({
       return;
     }
     const displayWord = decorateWordExamples(w);
-    const relationSenseOptions = buildRelationSenseOptions(displayWord);
     const progress = loadProgress(bookId);
     const currentProgress = getWordProgress(progress, displayWord);
     wx.setNavigationBarTitle({ title: w.word });
@@ -133,10 +133,6 @@ Page({
       relationSynonyms: [],
       relationAntonyms: [],
       relationConfusing: [],
-      relationRecords: [],
-      relationSenseOptions,
-      currentSenseId: relationSenseOptions.length ? relationSenseOptions[0].senseId : '',
-      relationGroups: [],
       relationsError: '',
       learningRequested: false,
       learningLoading: false,
@@ -144,6 +140,10 @@ Page({
       learningContent: null,
       shortDefinitionRevealed: false,
       lexicalSuggestions: [],
+      aiExpansionRequested: false,
+      aiExpansionLoading: false,
+      aiExpansionError: '',
+      aiExpansion: null,
       expandedCollocationIndexes: {},
       examplesError: '',
       fromLearn,
@@ -206,8 +206,12 @@ Page({
       this.loadRelations(this.data.word.wordId || this.data.word._id);
     }
 
-    if ((tab === 'learning' || tab === 'suggestions') && !this.data.learningRequested && this.data.word) {
+    if (tab === 'learning' && !this.data.learningRequested && this.data.word) {
       this.loadLearningContent(this.data.word.wordId || this.data.word._id);
+    }
+
+    if (tab === 'suggestions' && (!this.data.aiExpansionRequested || this.data.aiExpansionError) && this.data.word) {
+      this.loadAiExpansion();
     }
   },
 
@@ -249,9 +253,7 @@ Page({
 
     const relationMeta = buildRelationMeta(
       res.relations || [],
-      res.groups || [],
-      this.data.bookId,
-      this.data.currentSenseId
+      this.data.bookId
     );
     this.setData({
       ...relationMeta,
@@ -283,21 +285,37 @@ Page({
     });
   },
 
+  async loadAiExpansion() {
+    const word = this.data.word;
+    if (!word) return;
+
+    this.setData({
+      aiExpansionLoading: true,
+      aiExpansionRequested: true,
+      aiExpansionError: ''
+    });
+
+    const res = await withTimeout(aiService.wordMemoryGuide(buildAiCandidateWordPayload(word)), 28000).catch(() => null);
+    if (!res || !res.ok) {
+      this.setData({
+        aiExpansionLoading: false,
+        aiExpansionError: (res && res.message) || 'AI 拓展暂时生成失败'
+      });
+      return;
+    }
+
+    this.setData({
+      aiExpansion: normalizeAiExpansion(res.guide),
+      aiExpansionLoading: false,
+      aiExpansionError: ''
+    });
+  },
+
   onToggleShortDefinition() {
     const content = this.data.learningContent || {};
     if (!content.shortDefinitionZh) return;
     this.setData({
       shortDefinitionRevealed: !this.data.shortDefinitionRevealed
-    });
-  },
-
-  onSelectRelationSense(e) {
-    const senseId = String(e.currentTarget.dataset.sense || '').trim();
-    if (!senseId || senseId === this.data.currentSenseId) return;
-
-    this.setData({
-      currentSenseId: senseId,
-      ...buildRelationLists(this.data.relationRecords || [], this.data.bookId, senseId)
     });
   },
 
@@ -605,35 +623,19 @@ function buildTabMeta(word = {}) {
   };
 }
 
-function buildRelationSenseOptions(word = {}) {
-  const senses = Array.isArray(word.senses) ? word.senses : [];
-  return senses
-    .filter(sense => sense && sense.senseId)
-    .map(sense => ({
-      senseId: sense.senseId,
-      posLabel: sense.posLabel || formatPos(sense.pos) || '词义',
-      translation: String(sense.translation || '').trim()
-    }));
-}
-
-function buildRelationMeta(relations = [], groups = [], bookId = '', currentSenseId = '') {
+function buildRelationMeta(relations = [], bookId = '') {
   const normalizedRelations = relations.map(normalizeRelation).filter(item => item.word);
   return {
-    relationRecords: normalizedRelations,
-    ...buildRelationLists(normalizedRelations, bookId, currentSenseId),
-    relationGroups: groups.map(normalizeRelationGroup)
+    ...buildRelationLists(normalizedRelations, bookId)
   };
 }
 
-function buildRelationLists(relations = [], bookId = '', currentSenseId = '') {
-  const scopedRelations = currentSenseId
-    ? relations.filter(item => !item.fromSenseId || item.fromSenseId === currentSenseId)
-    : relations;
-  const relationSynonyms = scopedRelations.filter(item => item.kind === 'synonyms');
-  const relationAntonyms = scopedRelations.filter(item => item.kind === 'antonyms');
+function buildRelationLists(relations = [], bookId = '') {
+  const relationSynonyms = relations.filter(item => item.kind === 'synonyms');
+  const relationAntonyms = relations.filter(item => item.kind === 'antonyms');
   const relationConfusing = isContentWordbook(bookId)
-    ? scopedRelations.filter(item => item.kind !== 'antonyms')
-    : scopedRelations.filter(item => item.kind === 'confusing');
+    ? relations.filter(item => item.kind !== 'antonyms')
+    : relations.filter(item => item.kind === 'confusing');
 
   return {
     relationSynonyms,
@@ -663,13 +665,20 @@ function normalizeRelation(relation = {}) {
   };
 }
 
-function normalizeRelationGroup(group = {}) {
-  return {
-    ...group,
-    memberLabel: Array.isArray(group.members)
-      ? group.members.map(item => item.word).filter(Boolean).join(' / ')
-      : ''
-  };
+function getReadingProfileTag(score) {
+  const value = Number(score || 0);
+  if (!value) return '';
+  if (value >= 4) return '阅读高频';
+  if (value >= 3) return '阅读常见';
+  return '阅读拓展';
+}
+
+function getWritingProfileTag(score) {
+  const value = Number(score || 0);
+  if (!value) return '';
+  if (value >= 4) return '写作万金油';
+  if (value >= 3) return '写作加分';
+  return '写作进阶';
 }
 
 function normalizeLearningContent(content) {
@@ -723,11 +732,9 @@ function normalizeLearningContent(content) {
       : [],
     examProfile,
     sourceStats,
-    occurrenceText: sourceStats.occurrenceCount || sourceStats.articleCount
-      ? `${Number(sourceStats.occurrenceCount || 0)} 次 / ${Number(sourceStats.articleCount || 0)} 篇`
-      : '',
-    priorityText: examProfile.priority ? `阅读优先级 ${examProfile.priority}/5` : '',
-    writingText: examProfile.writingValue ? `写作价值 ${examProfile.writingValue}/5` : '',
+    occurrenceText: sourceStats.occurrenceCount || sourceStats.articleCount ? '阅读常见' : '',
+    priorityText: getReadingProfileTag(examProfile.priority),
+    writingText: getWritingProfileTag(examProfile.writingValue),
     hasShortDefinition: Boolean(shortDefinitionEn),
     hasProfile: Boolean(sourceStats.occurrenceCount || sourceStats.articleCount || examProfile.priority || examProfile.writingValue),
     hasMorphology: Boolean(
@@ -751,6 +758,46 @@ function normalizeSuggestion(item = {}) {
     targetHint: item.targetInWordbook ? '本书收录' : (item.targetInGlobalWords ? '词库收录' : '文本候选'),
     canOpen: Boolean(item.targetInWordbook)
   };
+}
+
+function buildAiCandidateWordPayload(word = {}) {
+  return {
+    word: String(word.word || '').trim(),
+    senses: (Array.isArray(word.senses) ? word.senses : [])
+      .slice(0, 5)
+      .map(sense => ({
+        pos: String(sense.pos || '').trim(),
+        translation: String(sense.translation || '').trim(),
+        definitionEn: String(sense.definitionEn || '').trim(),
+        definitionZh: String(sense.definitionZh || '').trim()
+      }))
+      .filter(sense => sense.translation || sense.definitionEn || sense.definitionZh)
+  };
+}
+
+function normalizeAiExpansion(guide = {}) {
+  const input = Array.isArray(guide.input)
+    ? guide.input
+      .map(item => ({
+        titleZh: String(item && item.titleZh || '').trim(),
+        contentZh: String(item && item.contentZh || '').trim()
+      }))
+      .filter(item => item.titleZh && item.contentZh)
+    : [];
+  const output = Array.isArray(guide.output)
+    ? guide.output
+      .map(item => ({
+        titleZh: String(item && item.titleZh || '').trim(),
+        contentZh: String(item && item.contentZh || '').trim(),
+        exampleEn: String(item && item.exampleEn || '').trim(),
+        exampleZh: String(item && item.exampleZh || '').trim()
+      }))
+      .filter(item => item.titleZh && item.contentZh)
+    : [];
+
+  if (!input.length && !output.length) return null;
+
+  return { input, output };
 }
 
 function relationKind(type) {

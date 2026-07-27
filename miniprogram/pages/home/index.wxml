@@ -49,15 +49,17 @@
     <view class="home__center">
       <view class="home__visual">
         <text class="home__visual-word">{{dailyVisual ? dailyVisual.word : activeBook.name}}</text>
-        <view
-          wx:if="{{homeExample && homeExample.text}}"
-          class="home__example {{homeShortDefinitionRevealed ? 'is-revealed' : ''}}"
-          bindtap="onToggleHomeShortDefinition"
-          hover-class="home__example--press"
-          hover-stay-time="80"
-        >
-          <text class="home__example-text">{{homeExample.text}}</text>
-          <text wx:if="{{homeExample.translationZh && homeShortDefinitionRevealed}}" class="home__example-zh">{{homeExample.translationZh}}</text>
+        <view class="home__example-slot">
+          <view
+            wx:if="{{homeExample && homeExample.text}}"
+            class="home__example {{homeShortDefinitionRevealed ? 'is-revealed' : ''}}"
+            bindtap="onToggleHomeShortDefinition"
+            hover-class="home__example--press"
+            hover-stay-time="80"
+          >
+            <text class="home__example-text">{{homeExample.text}}</text>
+            <text wx:if="{{homeExample.translationZh && homeShortDefinitionRevealed}}" class="home__example-zh">{{homeExample.translationZh}}</text>
+          </view>
         </view>
       </view>
     </view>
@@ -65,9 +67,12 @@
     <view class="home__bottom">
       <view class="home__start-group">
         <view class="home__study-status">
-          <text>新学 {{studyQueueCount}}</text>
-          <text class="home__study-status-dot">·</text>
-          <text bindtap="onStartReview">待复习 {{reviewCount}}</text>
+          <text wx:if="{{taskCompleted && reviewCount <= 0}}">已完成</text>
+          <block wx:else>
+            <text>新学 {{studyQueueCount}}</text>
+            <text class="home__study-status-dot">·</text>
+            <text bindtap="onStartReview">待复习 {{reviewCount}}</text>
+          </block>
         </view>
         <view class="home__dock-action" bindtap="onOpenSettings" hover-class="home__dock-action--press" hover-stay-time="80" aria-label="设置">
           <image class="home__dock-icon" src="/assets/icons/layout-dashboard-home.svg" mode="aspectFit" />

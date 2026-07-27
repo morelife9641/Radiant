@@ -35,9 +35,9 @@ page {
   --color-warning: var(--amber-500);
   --color-error: var(--rose-700);
 
-  --surface-canvas-top: #F4E3D5;
-  --surface-canvas-mid: #F1F0EB;
-  --surface-canvas-bottom: #E7EBE9;
+  --surface-canvas-top: #F5F1EB;
+  --surface-canvas-mid: #F5F1EB;
+  --surface-canvas-bottom: #F1EEE8;
   --surface-card: rgba(255, 252, 247, 0.94);
   --surface-card-solid: #FCFAF6;
   --surface-muted: rgba(55, 55, 51, 0.055);
@@ -51,6 +51,23 @@ page {
   --state-success-fg: var(--sage-700);
   --state-error-bg: var(--rose-100);
   --state-error-fg: var(--rose-700);
+
+  /* Radiant v2 semantic aliases */
+  --color-background: #F5F1EB;
+  --color-foreground: var(--ink-950);
+  --color-card: var(--warm-50);
+  --color-card-foreground: var(--ink-950);
+  --color-secondary: rgba(55, 55, 51, 0.055);
+  --color-secondary-foreground: var(--ink-800);
+  --color-muted-foreground: var(--ink-450);
+  --color-border: rgba(48, 48, 44, 0.10);
+  --color-border-strong: rgba(48, 48, 44, 0.20);
+  --color-success-bg: var(--sage-100);
+  --color-error-bg: var(--rose-100);
+  --surface-paper: #FFFCF7;
+  --surface-canvas: #F5F1EB;
+  --surface-glow-warm: rgba(241, 181, 143, 0.18);
+  --surface-glow-coral: rgba(196, 97, 82, 0.14);
 
   /* === Typography === */
   --font-h1: 56rpx;
@@ -73,7 +90,7 @@ page {
   --nav-h: 176rpx;
 
   /* Shape */
-  --radius-card: 16rpx;
+  --radius-card: 20rpx;
   --radius-btn: 16rpx;
   --radius-control: 12rpx;
   --radius-pill: 999rpx;
@@ -82,6 +99,22 @@ page {
   --shadow-soft: 0 8rpx 22rpx rgba(44, 42, 38, 0.065);
   --shadow-raised: 0 16rpx 38rpx rgba(44, 42, 38, 0.11);
   --shadow-focus: 0 0 0 4rpx rgba(140, 77, 22, 0.1);
+
+  /* Component tokens */
+  --card-bg: var(--surface-paper);
+  --card-border: var(--color-border);
+  --card-radius: var(--radius-card);
+  --card-padding: 24rpx;
+  --card-shadow: var(--shadow-soft);
+  --button-height: 84rpx;
+  --button-radius: var(--radius-pill);
+  --button-primary-bg: var(--ink-950);
+  --button-primary-fg: var(--color-white);
+  --pill-height: 52rpx;
+  --page-nav-height: 88rpx;
+  --page-accent: var(--coral-500);
+  --page-accent-deep: var(--coral-700);
+  --page-accent-wash: rgba(196, 97, 82, 0.12);
 
   /* Motion */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);

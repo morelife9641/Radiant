@@ -342,6 +342,36 @@ function buildSpellingQuestion(word) {
   return q;
 }
 
+function getStableQuestionSeed(word, questionIndex, progress = {}) {
+  const source = [
+    getWordId(word) || getNormalized(word),
+    Math.max(0, Number(questionIndex || 0)),
+    Math.max(0, Number(progress.correctCount || 0)),
+    Math.max(0, Number(progress.wrongCount || 0))
+  ].join(':');
+  let hash = 2166136261;
+
+  for (let index = 0; index < source.length; index += 1) {
+    hash ^= source.charCodeAt(index);
+    hash = Math.imul(hash, 16777619);
+  }
+
+  return hash >>> 0;
+}
+
+function pickReviewQuestionType(word, options = {}) {
+  const progress = options.progress || {};
+  const types = [QUESTION_TYPES.WORD_TO_ZH, QUESTION_TYPES.ZH_TO_WORD];
+
+  if (getChineseDefinition(word)) types.push(QUESTION_TYPES.SENSE_TO_WORD);
+  if (getEnglishDefinition(word)) types.push(QUESTION_TYPES.DEFINITION_TO_WORD);
+  if (options.enableSpellingQuestions === true && Number(progress.correctCount || 0) >= 3) {
+    types.push(QUESTION_TYPES.SPELLING);
+  }
+
+  return types[getStableQuestionSeed(word, options.questionIndex, progress) % types.length];
+}
+
 function pickQuestionType(word, options = {}) {
   const progress = options.progress || {};
   const mode = options.mode || 'daily';
@@ -354,18 +384,12 @@ function pickQuestionType(word, options = {}) {
   if (!word || !getTranslation(word)) return QUESTION_TYPES.WORD_TO_ZH;
   if (status === 'difficult' || wrongCount > correctCount) return QUESTION_TYPES.WORD_TO_ZH;
   if (mode === 'review') {
-    if (correctCount >= 3 && enableSpellingQuestions) return QUESTION_TYPES.SPELLING;
-    if (correctCount >= 2 && getEnglishDefinition(word)) return QUESTION_TYPES.DEFINITION_TO_WORD;
     if (correctCount <= 0) return QUESTION_TYPES.WORD_TO_ZH;
-    if (getEnglishDefinition(word) && questionIndex % 3 === 2) {
-      return QUESTION_TYPES.DEFINITION_TO_WORD;
-    }
-    if (getChineseDefinition(word)) {
-      return questionIndex % 3 === 1
-        ? QUESTION_TYPES.SENSE_TO_WORD
-        : QUESTION_TYPES.WORD_TO_ZH;
-    }
-    return QUESTION_TYPES.WORD_TO_ZH;
+    return pickReviewQuestionType(word, {
+      progress,
+      questionIndex,
+      enableSpellingQuestions
+    });
   }
   if (correctCount <= 0) return QUESTION_TYPES.WORD_TO_ZH;
   if (correctCount === 1) {

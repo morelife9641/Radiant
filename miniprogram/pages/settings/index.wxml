@@ -10,7 +10,7 @@
     <r-back-button bind:back="onBack" />
     <view class="settings__heading">
       <text class="settings__title">设置</text>
-      <text class="settings__subtitle">学习节奏与账号偏好</text>
+      <!-- <text class="settings__subtitle">学习节奏与账号偏好</text> -->
     </view>
   </view>
 

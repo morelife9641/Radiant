@@ -28,16 +28,10 @@ function formatFavoriteTime(value) {
   const time = Number(value || 0);
   if (!time) return '时间未知';
   const date = new Date(time);
-  const today = new Date();
-  const startOfToday = new Date(today.getFullYear(), today.getMonth(), today.getDate()).getTime();
-  const startOfFavoriteDay = new Date(date.getFullYear(), date.getMonth(), date.getDate()).getTime();
+  const year = date.getFullYear();
   const month = date.getMonth() + 1;
   const day = date.getDate();
-  const hour = String(date.getHours()).padStart(2, '0');
-  const minute = String(date.getMinutes()).padStart(2, '0');
-  if (startOfFavoriteDay === startOfToday) return `今天 ${hour}:${minute}`;
-  if (startOfFavoriteDay === startOfToday - 24 * 60 * 60 * 1000) return `昨天 ${hour}:${minute}`;
-  return `${month}月${day}日 ${hour}:${minute}`;
+  return `${year}.${month}.${day}`;
 }
 
 function firstText(values) {
@@ -45,19 +39,6 @@ function firstText(values) {
     if (typeof value === 'string' && value.trim()) return value.trim();
   }
   return '';
-}
-
-function trimInlineText(value) {
-  return String(value || '')
-    .replace(/\\n/g, '\n')
-    .split(/\n+/)
-    .map(line => line
-      .replace(/^\s*(?:n|v|vi|vt|adj|adv|a|ad|prep|conj|pron|num|int|interj|phr|abbr|aux|modal|det|art|pl|sing|u|c|un|cn|ｎ|ｖ|ａｄｊ|ａｄｖ)\.?\s+/i, '')
-      .trim())
-    .filter(Boolean)
-    .join(' · ')
-    .replace(/\s+/g, ' ')
-    .trim();
 }
 
 function formatTranslation(item = {}) {
@@ -88,34 +69,6 @@ function sortFavoriteItems(items = [], sortIndex = 0) {
   return sorted.sort((a, b) => Number((b.progress || {}).favoritedAt || 0) - Number((a.progress || {}).favoritedAt || 0));
 }
 
-function formatDefinitionText(item = {}) {
-  const sense = Array.isArray(item.senses) && item.senses[0] ? item.senses[0] : {};
-  const content = item.learningContent || item.learning_content || {};
-  const coreSense = content.coreSense && typeof content.coreSense === 'object'
-    ? content.coreSense
-    : {};
-  const definition = firstText([
-    coreSense.en,
-    content.shortDefinitionEn,
-    content.short_definition_en,
-    item.shortDefinitionEn,
-    item.short_definition_en,
-    sense.definitionEn,
-    sense.definition_en,
-    sense.definition,
-    sense.meaningEn,
-    sense.meaning_en,
-    sense.collinsEn,
-    sense.collins_definition && sense.collins_definition.en
-  ]);
-  const normalized = trimInlineText(definition);
-  if (!normalized) return '';
-
-  // Keep the list concise by showing one complete core sentence, never a mixed example.
-  const sentence = normalized.match(/^(.+?[.!?])(?:\s|$)/);
-  return (sentence ? sentence[1] : normalized).trim();
-}
-
 function normalizeFavoriteItem(item = {}) {
   const progress = item.progress || {};
   return {
@@ -126,7 +79,6 @@ function normalizeFavoriteItem(item = {}) {
     phoneticText: formatPhonetic(item.phonetic),
     posText: formatPartOfSpeech(item),
     translationText: formatTranslation(item),
-    definitionText: formatDefinitionText(item),
     favoriteTimeText: formatFavoriteTime(progress.favoritedAt || item.favoritedAt),
     actionWidth: 0,
     progress
@@ -207,11 +159,14 @@ Page({
     navTopPx: 96,
     sortOptions: SORT_OPTIONS,
     sortIndex: 0,
-    sortLabel: SORT_OPTIONS[0]
+    sortLabel: SORT_OPTIONS[0],
+    sortMenuVisible: false,
+    sortMenuOpen: false
   },
 
   _hasLoaded: false,
   _favoriteItems: [],
+  _sortMenuTimer: null,
 
   onLoad(query) {
     const bookId = query.bookId || DEFAULT_WORDBOOK_ID;
@@ -226,7 +181,7 @@ Page({
 
   async loadFavorites() {
     this.setData({ loading: true });
-    const cloudRes = await learnService.listFavorites(this.data.bookId, { limit: 100 }).catch(() => null);
+    const cloudRes = await learnService.listAllFavorites(this.data.bookId).catch(() => null);
     if (cloudRes && cloudRes.ok && Array.isArray(cloudRes.items) && cloudRes.items.length) {
       this.setFavoriteItems(cloudRes.items.map(normalizeFavoriteItem), false);
       this._hasLoaded = true;
@@ -256,20 +211,48 @@ Page({
     });
   },
 
-  onSortChange(e) {
-    const sortIndex = Number(e.detail && e.detail.value);
+  onToggleSortMenu() {
+    if (this.data.sortMenuVisible) {
+      this.onCloseSortMenu();
+      return;
+    }
+    if (this._sortMenuTimer) clearTimeout(this._sortMenuTimer);
+    this.setData({ sortMenuVisible: true, sortMenuOpen: false });
+    this._sortMenuTimer = setTimeout(() => {
+      this.setData({ sortMenuOpen: true });
+      this._sortMenuTimer = null;
+    }, 16);
+  },
+
+  onCloseSortMenu() {
+    if (!this.data.sortMenuVisible) return;
+    if (this._sortMenuTimer) clearTimeout(this._sortMenuTimer);
+    this.setData({ sortMenuOpen: false });
+    this._sortMenuTimer = setTimeout(() => {
+      this.setData({ sortMenuVisible: false });
+      this._sortMenuTimer = null;
+    }, 180);
+  },
+
+  onSelectSort(e) {
+    const sortIndex = Number(e.currentTarget.dataset.sortIndex);
     const nextIndex = Number.isInteger(sortIndex) && SORT_OPTIONS[sortIndex] ? sortIndex : 0;
     this.setData({
       sortIndex: nextIndex,
       sortLabel: SORT_OPTIONS[nextIndex],
       items: sortFavoriteItems(this._favoriteItems, nextIndex)
     });
+    this.onCloseSortMenu();
   },
 
   onBack() {
     wx.navigateBack({
       fail: () => wx.reLaunch({ url: '/pages/home/index' })
     });
+  },
+
+  onUnload() {
+    if (this._sortMenuTimer) clearTimeout(this._sortMenuTimer);
   },
 
   onOpenWord(e) {
@@ -334,8 +317,23 @@ Page({
     if (Object.keys(updates).length) this.setData(updates);
   },
 
-  async onCancelFavorite(e) {
+  onRequestCancelFavorite(e) {
     const { index } = e.currentTarget.dataset;
+    const item = this.data.items[index];
+    if (!item) return;
+
+    wx.showModal({
+      title: '取消收藏？',
+      content: `“${item.word}”将从收藏中移除`,
+      confirmText: '取消收藏',
+      confirmColor: '#C46152',
+      success: (result) => {
+        if (result.confirm) this.onCancelFavorite(Number(index));
+      }
+    });
+  },
+
+  async onCancelFavorite(index) {
     const item = this.data.items[index];
     if (!item) return;
 
@@ -352,6 +350,6 @@ Page({
     }).catch((err) => {
       console.warn('[favorites] cancel favorite sync failed', err);
     });
-    this.loadFavorites();
+    await this.loadFavorites();
   }
 });

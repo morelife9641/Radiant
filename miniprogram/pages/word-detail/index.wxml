@@ -38,16 +38,18 @@
   </study-hero>
 
   <view class="detail__tabs">
-    <view
-      wx:for="{{tabs}}"
-      wx:key="key"
-      class="detail__tab {{activeTab === item.key ? 'detail__tab--active' : ''}}"
-      data-tab="{{item.key}}"
-      bindtap="onSwitchTab"
-      hover-class="detail__tab--press"
-      hover-stay-time="70"
-    >
-      <text class="detail__tab-label">{{item.label}}</text>
+    <view class="detail__tabs-track">
+      <view
+        wx:for="{{tabs}}"
+        wx:key="key"
+        class="detail__tab {{activeTab === item.key ? 'detail__tab--active' : ''}}"
+        data-tab="{{item.key}}"
+        bindtap="onSwitchTab"
+        hover-class="detail__tab--press"
+        hover-stay-time="70"
+      >
+        <text class="detail__tab-label">{{item.label}}</text>
+      </view>
     </view>
   </view>
 
@@ -101,7 +103,7 @@
       </view>
     </view>
 
-    <view wx:if="{{examplesLoading || featuredExample}}" class="detail__source-card card" bindtap="onOpenCorpus">
+    <view wx:if="{{featuredExample}}" class="detail__source-card card" bindtap="onOpenCorpus">
       <view class="detail__source-head">
         <text class="detail__section-title">阅读出处</text>
       </view>
@@ -120,12 +122,12 @@
         <text wx:if="{{featuredExample.sourceLabel}}" class="detail__example-source muted">{{featuredExample.sourceLabel}}</text>
       </view>
       <view class="detail__source-footer">
-        <text class="detail__source-action">{{examplesLoading ? '正在查找原文' : '查看全部出处'}}</text>
+        <text class="detail__source-action">查看</text>
       </view>
     </view>
 
     <view wx:if="{{(learningLoading && !learningContent) || (examplesLoading && !featuredExample)}}" class="detail__basic-loading">
-      <r-loading compact title="{{learningLoading ? '正在补充搭配和学习内容' : '正在查找阅读出处'}}" />
+      <r-loading raised title="{{learningLoading ? '正在补充搭配和学习内容' : '正在查找阅读出处'}}" />
     </view>
   </view>
 
@@ -133,41 +135,44 @@
     <view class="detail__examples card">
       <view class="row-between">
         <text class="detail__section-title">{{examplesTitle}}</text>
-        <text wx:if="{{examplesLoading}}" class="caption muted">加载中…</text>
       </view>
 
-      <view wx:if="{{!examplesLoading && !examples.length}}" class="detail__empty">
+      <r-loading wx:if="{{examplesLoading}}" raised title="正在查找原文例句" />
+
+      <view wx:elif="{{!examples.length}}" class="detail__empty">
         <text class="detail__empty-copy">{{examplesError ? '请确认云函数已上传，或稍后再试' : '这个词目前没有匹配到可展示的原文例句'}}</text>
       </view>
 
-      <view wx:for="{{examples}}" wx:key="id" wx:for-item="example" class="detail__example-card">
-        <view class="detail__example-main">
-          <image wx:if="{{example.topicCover.image}}" class="detail__example-cover" src="{{example.topicCover.image}}" mode="aspectFill" />
-          <view class="detail__example-copy">
-            <view class="detail__token-line">
-              <view
-                wx:for="{{example.tokens}}"
-                wx:key="index"
-                wx:for-item="token"
-                class="detail__token {{token.searchable ? 'detail__token--word' : ''}} {{token.current ? 'detail__token--current' : ''}}"
-                data-word="{{token.value}}"
-                catchtap="onSearchToken"
-              >{{token.text}}</view>
+      <block wx:else>
+        <view wx:for="{{examples}}" wx:key="id" wx:for-item="example" class="detail__example-card">
+          <view class="detail__example-main">
+            <image wx:if="{{example.topicCover.image}}" class="detail__example-cover" src="{{example.topicCover.image}}" mode="aspectFill" />
+            <view class="detail__example-copy">
+              <view class="detail__token-line">
+                <view
+                  wx:for="{{example.tokens}}"
+                  wx:key="index"
+                  wx:for-item="token"
+                  class="detail__token {{token.searchable ? 'detail__token--word' : ''}} {{token.current ? 'detail__token--current' : ''}}"
+                  data-word="{{token.value}}"
+                  catchtap="onSearchToken"
+                >{{token.text}}</view>
+              </view>
+              <text wx:if="{{example.translationZh}}" class="detail__example-zh">{{example.translationZh}}</text>
+              <text class="detail__example-source muted">{{example.sourceLabel}}</text>
             </view>
-            <text wx:if="{{example.translationZh}}" class="detail__example-zh">{{example.translationZh}}</text>
-            <text class="detail__example-source muted">{{example.sourceLabel}}</text>
+          </view>
+          <view wx:if="{{example.audioUrl}}" class="detail__example-play" data-url="{{example.audioUrl}}" bindtap="onPlayExample" aria-label="播放例句">
+            <view class="detail__example-play-icon"></view>
           </view>
         </view>
-        <view wx:if="{{example.audioUrl}}" class="detail__example-play" data-url="{{example.audioUrl}}" bindtap="onPlayExample" aria-label="播放例句">
-          <view class="detail__example-play-icon"></view>
-        </view>
-      </view>
+      </block>
     </view>
   </view>
 
   <view wx:if="{{activeTab === 'learning'}}" class="detail__panel">
     <view wx:if="{{learningLoading}}" class="detail__empty card">
-      <r-loading compact title="正在读取构词、搭配和语法模式" />
+      <r-loading raised title="正在读取构词、搭配和语法模式" />
     </view>
     <view wx:if="{{!learningLoading && learningError}}" class="detail__empty card">
       <text class="detail__empty-copy">请确认 wordbook-fetch 云函数已重新上传，或稍后再试</text>
@@ -180,9 +185,9 @@
       <view class="detail__learn-head">
         <text class="detail__section-title">考试画像</text>
         <view class="detail__learn-badges">
-          <text wx:if="{{learningContent.occurrenceText}}" class="detail__learn-badge">{{learningContent.occurrenceText}}</text>
-          <text wx:if="{{learningContent.priorityText}}" class="detail__learn-badge">{{learningContent.priorityText}}</text>
-          <text wx:if="{{learningContent.writingText}}" class="detail__learn-badge">{{learningContent.writingText}}</text>
+          <text wx:if="{{learningContent.occurrenceText}}" class="detail__learn-badge detail__learn-badge--source">{{learningContent.occurrenceText}}</text>
+          <text wx:if="{{learningContent.priorityText}}" class="detail__learn-badge detail__learn-badge--priority">{{learningContent.priorityText}}</text>
+          <text wx:if="{{learningContent.writingText}}" class="detail__learn-badge detail__learn-badge--writing">{{learningContent.writingText}}</text>
         </view>
       </view>
     </view>
@@ -192,8 +197,10 @@
       <text wx:if="{{learningContent.morphology.explanationZh}}" class="detail__learn-text">{{learningContent.morphology.explanationZh}}</text>
       <view wx:if="{{learningContent.morphology.segments.length}}" class="detail__segment-list">
         <view wx:for="{{learningContent.morphology.segments}}" wx:key="form" wx:for-item="seg" class="detail__segment">
-          <text class="detail__segment-form">{{seg.form}}</text>
-          <text class="detail__segment-type">{{seg.type}}</text>
+          <view class="detail__segment-heading">
+            <text class="detail__segment-form">{{seg.form}}</text>
+            <text class="detail__segment-type">{{seg.type}}</text>
+          </view>
           <text class="detail__segment-meaning">{{seg.meaningText}}</text>
         </view>
       </view>
@@ -233,28 +240,9 @@
     </view>
   </view>
 
-  <view
-    wx:if="{{(activeTab === 'synonyms' || activeTab === 'antonyms' || activeTab === 'confusing') && relationSenseOptions.length > 1}}"
-    class="detail__sense-filter"
-  >
-    <view
-      wx:for="{{relationSenseOptions}}"
-      wx:key="senseId"
-      wx:for-item="senseOption"
-      class="detail__sense-filter-item {{currentSenseId === senseOption.senseId ? 'is-active' : ''}}"
-      data-sense="{{senseOption.senseId}}"
-      bindtap="onSelectRelationSense"
-      hover-class="detail__sense-filter-item--press"
-      hover-stay-time="70"
-    >
-      <text class="detail__sense-filter-pos">{{senseOption.posLabel}}</text>
-      <text class="detail__sense-filter-translation">{{senseOption.translation}}</text>
-    </view>
-  </view>
-
   <view wx:if="{{activeTab === 'synonyms'}}" class="detail__panel">
     <view wx:if="{{relationsLoading}}" class="detail__empty card">
-      <r-loading compact title="正在读取近义词和辨析内容" />
+      <r-loading raised title="正在读取近义词和辨析内容" />
     </view>
     <view wx:if="{{!relationsLoading && relationsError}}" class="detail__empty card">
       <text class="detail__empty-copy">请确认 wordbook-fetch 云函数已重新上传，或稍后再试</text>
@@ -334,7 +322,7 @@
 
   <view wx:if="{{activeTab === 'antonyms'}}" class="detail__panel">
     <view wx:if="{{relationsLoading}}" class="detail__empty card">
-      <r-loading compact title="正在检查这个词是否有反义词" />
+      <r-loading raised title="正在检查这个词是否有反义词" />
     </view>
     <view wx:if="{{!relationsLoading && relationsError}}" class="detail__empty card">
       <text class="detail__empty-copy">请确认 wordbook-fetch 云函数已重新上传，或稍后再试</text>
@@ -366,7 +354,7 @@
 
   <view wx:if="{{activeTab === 'confusing'}}" class="detail__panel">
     <view wx:if="{{relationsLoading}}" class="detail__empty card">
-      <r-loading compact title="正在读取相近词和易混词" />
+      <r-loading raised title="正在读取相近词和易混词" />
     </view>
     <view wx:if="{{!relationsLoading && relationsError}}" class="detail__empty card">
       <text class="detail__empty-copy">请确认 wordbook-fetch 云函数已重新上传，或稍后再试</text>
@@ -400,7 +388,7 @@
     </view>
 
     <view wx:if="{{!relationsLoading && !relationsError && !relationConfusing.length && learningLoading}}" class="detail__empty card">
-      <r-loading compact title="正在检查候选关系" />
+      <r-loading raised title="正在检查候选关系" />
     </view>
 
     <view wx:if="{{!relationsLoading && !relationsError && !relationConfusing.length && !learningLoading && lexicalSuggestions.length}}" class="detail__relation-list">
@@ -469,42 +457,27 @@
   </view>
 
   <view wx:if="{{activeTab === 'suggestions'}}" class="detail__panel">
-    <view wx:if="{{learningLoading}}" class="detail__empty card">
-      <r-loading compact title="正在读取候选内容" description="候选内容不会自动当作正式辨析" />
+    <view wx:if="{{aiExpansionLoading}}" class="detail__empty card">
+      <r-loading raised title="正在生成考试建议" />
     </view>
-    <view wx:if="{{!learningLoading && learningError}}" class="detail__empty card">
-      <text class="detail__empty-copy">请确认 wordbook-fetch 云函数已重新上传，或稍后再试</text>
+    <view wx:if="{{!aiExpansionLoading && aiExpansionError}}" class="detail__empty card">
+      <text class="detail__empty-copy">{{aiExpansionError}}</text>
     </view>
-    <view wx:if="{{!learningLoading && !learningError && !lexicalSuggestions.length}}" class="detail__empty card">
-      <text class="detail__empty-copy">这个词暂时没有 AI 候选近义/同类关系</text>
+    <view wx:if="{{!aiExpansionLoading && !aiExpansionError && !aiExpansion}}" class="detail__empty card">
+      <text class="detail__empty-copy">这个词暂时没有可展示的考试建议</text>
     </view>
-    <view wx:if="{{!learningLoading && !learningError && lexicalSuggestions.length}}" class="detail__relation-list">
-      <view wx:for="{{lexicalSuggestions}}" wx:key="_id" wx:for-item="rel" class="detail__relation-card is-suggestion">
-        <view class="detail__relation-top">
-          <view class="detail__relation-pair {{rel.canOpen ? '' : 'is-disabled'}}" data-word="{{rel.word}}" data-open="{{rel.canOpen ? 1 : 0}}" bindtap="onOpenRelationWord">
-            <text class="detail__relation-current">{{word.word}}</text>
-            <image class="detail__relation-arrow" src="/assets/icons/arrow-left-right.svg" mode="aspectFit" />
-            <text class="detail__relation-target">{{rel.word}}</text>
-          </view>
-          <view class="detail__suggestion-tags">
-            <text class="detail__relation-type">{{rel.typeLabel}}</text>
-            <text class="detail__suggestion-tag">{{rel.targetHint}}</text>
-          </view>
-        </view>
-        <text wx:if="{{rel.groupTitle}}" class="detail__suggestion-group">{{rel.groupTitle}}</text>
-        <text wx:if="{{rel.explanation}}" class="detail__relation-text">{{rel.explanation}}</text>
-        <view wx:if="{{rel.exampleEn}}" class="detail__relation-example">
-          <view class="detail__token-line">
-            <view
-              wx:for="{{rel.exampleEnTokens}}"
-              wx:key="index"
-              wx:for-item="token"
-              class="detail__token {{token.searchable ? 'detail__token--word' : ''}} {{token.current ? 'detail__token--current' : ''}}"
-              data-word="{{token.value}}"
-              catchtap="onSearchToken"
-            >{{token.text}}</view>
-          </view>
-          <text wx:if="{{rel.exampleZh}}" class="detail__example-zh muted">{{rel.exampleZh}}</text>
+    <view wx:if="{{!aiExpansionLoading && !aiExpansionError && aiExpansion}}" class="detail__ai-expansion">
+      <view wx:for="{{aiExpansion.input}}" wx:key="index" wx:for-item="item" class="detail__ai-list-item">
+        <text class="detail__ai-list-title">{{item.titleZh}}</text>
+        <text class="detail__ai-expansion-copy">{{item.contentZh}}</text>
+      </view>
+      <view class="detail__ai-list-break"></view>
+      <view wx:for="{{aiExpansion.output}}" wx:key="index" wx:for-item="item" class="detail__ai-list-item is-output">
+        <text class="detail__ai-list-title">{{item.titleZh}}</text>
+        <text class="detail__ai-expansion-copy">{{item.contentZh}}</text>
+        <view wx:if="{{item.exampleEn}}" class="detail__ai-example">
+          <text class="detail__ai-example-en">{{item.exampleEn}}</text>
+          <text wx:if="{{item.exampleZh}}" class="detail__ai-example-zh">{{item.exampleZh}}</text>
         </view>
       </view>
     </view>
@@ -531,10 +504,11 @@
   </view>
 
   <view wx:if="{{fromLearn}}" class="detail__learn-next">
-    <view class="detail__learn-next-button" bindtap="onLearnNext">
+    <view class="detail__learn-next-button" bindtap="onLearnNext" hover-class="detail__learn-next--press" hover-stay-time="70">
       <text class="detail__learn-next-text">继 续</text>
     </view>
   </view>
+
 </view>
 
 <r-loading

@@ -10,6 +10,7 @@ const DEFAULT_REVIEW_LIMIT = 50;
 const MAX_REVIEW_LIMIT = 100;
 const MAX_SUBMIT_RECORDS = 20;
 const MAX_REVIEW_SCAN_ROWS = 5000;
+const MAX_FAVORITES_SCAN_ROWS = 5000;
 const RESET_BATCH_SIZE = 100;
 const RESET_PROGRESS_COLLECTIONS = ['user_word_progress', 'user_book_progress', 'user_learn_sessions', 'user_learning_activity'];
 const STATUS_VALUES = ['new', 'learning', 'reviewing', 'difficult', 'mastered', 'ignored'];
@@ -805,18 +806,28 @@ async function learningHistory(openid, event) {
   const startDateKey = getDateKeyAsiaShanghai(Date.now() - (days - 1) * DAY_MS);
   await ensureLearningActivityCollection();
 
-  const result = await db.collection('user_learning_activity')
-    .where({ userId: openid })
-    .limit(100)
-    .get()
-    .catch(() => ({ data: [] }));
+  const activityWhere = {
+    userId: openid,
+    dateKey: _.gte(startDateKey).and(_.lte(endDateKey))
+  };
+  if (wordbookId) activityWhere.wordbookId = wordbookId;
+
+  const activityRows = [];
+  for (let offset = 0; offset < MAX_REVIEW_SCAN_ROWS; offset += PAGE_SIZE) {
+    const result = await db.collection('user_learning_activity')
+      .where(activityWhere)
+      .orderBy('dateKey', 'desc')
+      .skip(offset)
+      .limit(PAGE_SIZE)
+      .get()
+      .catch(() => ({ data: [] }));
+    const rows = result.data || [];
+    activityRows.push(...rows);
+    if (rows.length < PAGE_SIZE) break;
+  }
+
   const dayMap = {};
-  (result.data || [])
-    .filter(row => (
-      (!wordbookId || row.wordbookId === wordbookId)
-      && row.dateKey >= startDateKey
-      && row.dateKey <= endDateKey
-    ))
+  activityRows
     .forEach((row) => {
       dayMap[row.dateKey] = {
         dateKey: row.dateKey,
@@ -1062,12 +1073,21 @@ async function review(openid, event) {
 async function listFavorites(openid, event) {
   const limit = normalizeLimit(event.limit, PAGE_SIZE, MAX_PROGRESS_PAGE_SIZE);
   const wordbookId = String(event.wordbookId || event.bookId || '').trim().slice(0, 80);
+  const offset = Math.min(
+    Math.max(0, Math.floor(numberOrDefault(event.cursor, 0))),
+    MAX_FAVORITES_SCAN_ROWS
+  );
+  const where = { userId: openid, favorite: true };
+  if (wordbookId) where.bookIds = _.all([wordbookId]);
+
   const result = await db.collection('user_word_progress')
-    .where({ userId: openid, favorite: true })
+    .where(where)
+    .orderBy('favoritedAt', 'desc')
+    .orderBy('wordId', 'asc')
+    .skip(offset)
     .limit(limit)
     .get();
-  const rows = (await filterProgressByWordbook(result.data || [], wordbookId))
-    .sort((a, b) => numberOrDefault(b.favoritedAt, 0) - numberOrDefault(a.favoritedAt, 0));
+  const rows = result.data || [];
   const wordIds = rows.map(item => item.wordId).filter(Boolean);
   const [words, learningContents] = await Promise.all([
     fetchWordsByIds(wordIds),
@@ -1087,18 +1107,19 @@ async function listFavorites(openid, event) {
     items: rows
       .map(progress => mapWord(wordMap[progress.wordId], progress, learningContentMap[progress.wordId]))
       .filter(item => item.wordId && item.word),
+    cursor: rows.length === limit && offset + rows.length < MAX_FAVORITES_SCAN_ROWS
+      ? String(offset + rows.length)
+      : '',
     total: rows.length
   });
 }
 
-async function removeRows(collectionName, openid, scope) {
+async function removeRows(collectionName, openid) {
   let removed = 0;
 
   while (true) {
-    const query = scope === 'all'
-      ? db.collection(collectionName)
-      : db.collection(collectionName).where({ userId: openid });
-    const result = await query
+    const result = await db.collection(collectionName)
+      .where({ userId: openid })
       .limit(RESET_BATCH_SIZE)
       .get();
     const rows = result.data || [];
@@ -1115,7 +1136,7 @@ async function removeRows(collectionName, openid, scope) {
   return removed;
 }
 
-async function resetUsers(openid, scope) {
+async function resetUser(openid) {
   const patch = {
     onboarded: false,
     activeBookId: '',
@@ -1124,29 +1145,8 @@ async function resetUsers(openid, scope) {
     updatedAt: db.serverDate()
   };
 
-  if (scope !== 'all') {
-    await db.collection('users').doc(openid).update({ data: patch }).catch(() => null);
-    return 1;
-  }
-
-  let updated = 0;
-  for (let offset = 0; ; offset += RESET_BATCH_SIZE) {
-    const result = await db.collection('users')
-      .skip(offset)
-      .limit(RESET_BATCH_SIZE)
-      .get();
-    const rows = result.data || [];
-    if (!rows.length) break;
-
-    await Promise.all(rows.map(row => (
-      db.collection('users').doc(row._id).update({ data: patch }).catch(() => null)
-    )));
-    updated += rows.length;
-
-    if (rows.length < RESET_BATCH_SIZE) break;
-  }
-
-  return updated;
+  await db.collection('users').doc(openid).update({ data: patch });
+  return 1;
 }
 
 async function resetProgress(openid, event) {
@@ -1154,21 +1154,21 @@ async function resetProgress(openid, event) {
     return fail('CONFIRM_REQUIRED', 'Missing confirm token.');
   }
 
-  const scope = event.scope === 'all' ? 'all' : 'currentUser';
-  if (scope !== 'all' && !openid) {
-    return fail('AUTH_REQUIRED', '缺少用户身份，请从小程序端调用。');
+  if (event.scope && event.scope !== 'currentUser') {
+    return fail('FORBIDDEN_SCOPE', '仅允许清除当前用户的学习进度。');
   }
+
   const removedByCollection = {};
   for (const collectionName of RESET_PROGRESS_COLLECTIONS) {
-    removedByCollection[collectionName] = await removeRows(collectionName, openid, scope).catch(() => 0);
+    removedByCollection[collectionName] = await removeRows(collectionName, openid);
   }
   const removed = Object.values(removedByCollection).reduce((sum, value) => sum + value, 0);
 
   const resetUserProfile = event.resetUserProfile === true;
-  const usersUpdated = resetUserProfile ? await resetUsers(openid, scope) : 0;
+  const usersUpdated = resetUserProfile ? await resetUser(openid) : 0;
 
   return ok({
-    scope,
+    scope: 'currentUser',
     removed,
     removedByCollection,
     resetUserProfile,
@@ -1269,10 +1269,6 @@ exports.main = async (event, context) => {
   const { action } = event;
 
   try {
-    if (action === 'resetProgress' && event.scope === 'all') {
-      return await resetProgress(OPENID, event);
-    }
-
     if (!OPENID) {
       return fail('AUTH_REQUIRED', '缺少用户身份，请从小程序端调用。');
     }

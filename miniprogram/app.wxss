@@ -9,12 +9,19 @@ page {
     var(--surface-canvas-bottom) 100%
   );
   color: var(--color-ink);
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", Helvetica, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, "PingFang SC", sans-serif !important;
+  font-synthesis: none !important;
+  -webkit-font-smoothing: antialiased;
   font-size: var(--font-body);
   line-height: 1.6;
 }
 
-view, text { box-sizing: border-box; }
+view, text, button, input, textarea, label, picker {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, "PingFang SC", sans-serif !important;
+  font-synthesis: none !important;
+  -webkit-font-smoothing: antialiased;
+}
 
 .page {
   min-height: 100vh;

@@ -92,11 +92,11 @@ page {
   flex: 0 0 auto;
   --color-ink: var(--text-primary);
   --study-progress-track: rgba(29, 29, 27, 0.16);
-  --study-progress-fill: var(--learn-accent-deep);
-  --study-progress-glow: rgba(154, 85, 18, 0.22);
+  --study-progress-fill: var(--learn-accent);
+  --study-progress-glow: rgba(199, 121, 36, 0.32);
 }
 .learn.is-review-mode > study-hero {
-  --study-progress-glow: rgba(162, 62, 52, 0.24);
+  --study-progress-glow: rgba(196, 97, 82, 0.34);
 }
 .learn__meta {
   min-width: 0;
@@ -145,7 +145,7 @@ page {
 }
 .learn__state-actions {
   width: 90rpx;
-  height: 72rpx;
+  height: 88rpx;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -164,6 +164,11 @@ page {
   justify-content: center;
   box-shadow: none;
   flex-shrink: 0;
+}
+
+.learn__icon-button:active {
+  opacity: 0.74;
+  transform: scale(0.92);
 }
 .learn__icon-button.is-active {
   color: var(--learn-accent-deep);
@@ -511,4 +516,142 @@ page {
 .learn__button--press {
   opacity: 0.86;
   box-shadow: 0 8rpx 20rpx rgba(35, 34, 32, 0.13);
+}
+
+/* Radiant v2: focused learning surface */
+.learn {
+  --page-accent: var(--amber-500);
+  --page-accent-deep: var(--amber-700);
+  --page-accent-wash: rgba(199, 121, 36, 0.12);
+  background:
+    radial-gradient(circle at 50% 0%, rgba(241, 181, 143, 0.22), transparent 38%),
+    var(--surface-canvas);
+}
+
+.learn.is-review-mode {
+  --page-accent: var(--coral-500);
+  --page-accent-deep: var(--coral-700);
+  --page-accent-wash: rgba(196, 97, 82, 0.12);
+  background:
+    radial-gradient(circle at 50% 0%, rgba(220, 155, 143, 0.20), transparent 38%),
+    var(--surface-canvas);
+}
+
+.learn > study-hero {
+  --study-hero-bar-height: 88rpx;
+  --study-hero-progress-top: 78rpx;
+  --study-hero-progress-width: 240rpx;
+  --study-hero-heading-margin-top: 22rpx;
+  --study-hero-heading-padding-x: 24rpx;
+  --study-hero-heading-padding-bottom: 22rpx;
+  --study-hero-heading-justify: center;
+  --word-heading-align: center;
+  --word-heading-title-justify: center;
+  --word-heading-word-size: 68rpx;
+  --word-heading-pron-align: center;
+  --word-heading-width: 100%;
+  --word-heading-text-align: center;
+}
+
+.learn__meta {
+  height: 88rpx;
+  gap: 10rpx;
+}
+
+.learn__mode-label {
+  color: rgba(29, 29, 27, 0.5);
+  font-size: 20rpx;
+  font-weight: 600;
+}
+
+.learn__meta-divider {
+  width: 4rpx;
+  height: 4rpx;
+  flex: 0 0 4rpx;
+  border-radius: 50%;
+  background: rgba(29, 29, 27, 0.28);
+}
+
+.learn__progress-text {
+  color: #C97863;
+  font-size: 22rpx;
+  /* font-weight: 700; */
+}
+
+.learn__card-wrap {
+  padding: 0 4rpx;
+}
+
+.learn .word-card__quiz {
+  gap: 16rpx;
+  margin-top: 32rpx;
+}
+
+.learn .word-card__option,
+.learn .word-card__option.is-detail {
+  height: 136rpx;
+  min-height: 136rpx;
+  border-radius: var(--radius-card);
+  background: rgba(255, 252, 247, 0.90);
+  border-color: var(--color-border);
+  box-shadow: var(--shadow-soft);
+}
+
+.learn .word-card__option:active {
+  transform: scale(0.985);
+  border-color: var(--page-accent);
+}
+
+.learn .word-card__option.is-selected {
+  background: var(--page-accent-wash);
+  border-color: var(--page-accent);
+}
+
+.learn .word-card__option.is-correct {
+  background: var(--color-success-bg);
+  border-color: rgba(54, 116, 85, 0.34);
+}
+
+.learn .word-card__option.is-wrong {
+  background: var(--color-error-bg);
+  border-color: rgba(163, 70, 61, 0.34);
+}
+
+.learn__actions {
+  left: 32rpx;
+  right: 32rpx;
+  bottom: calc(env(safe-area-inset-bottom) + 32rpx);
+}
+
+.learn__answer-button,
+.learn__view-button {
+  min-height: var(--button-height);
+  border-radius: var(--button-radius);
+  box-shadow: 0 14rpx 30rpx rgba(44, 42, 38, 0.12);
+}
+
+.learn__answer-button {
+  background: var(--surface-paper);
+  border-color: var(--color-border-strong);
+}
+
+.learn__view-button {
+  background: var(--button-primary-bg);
+}
+
+.learn__empty {
+  padding-left: 4rpx;
+  padding-right: 4rpx;
+}
+
+.learn__completion-head,
+.learn__stats,
+.learn__history-item {
+  border-radius: var(--radius-card);
+}
+
+.learn__stats {
+  background: rgba(255, 252, 247, 0.88);
+  border-color: var(--color-border);
+  box-shadow: var(--shadow-soft);
 }
