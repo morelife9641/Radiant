@@ -74,10 +74,6 @@
         "type": "folder"
       },
       {
-        "value": "assets/mascot",
-        "type": "folder"
-      },
-      {
         "value": "assets/大学英语四级词汇带音标-乱序版.pdf",
         "type": "file"
       },
@@ -88,22 +84,6 @@
       {
         "value": "assets/.DS_Store",
         "type": "file"
-      },
-      {
-        "value": "pages/chat",
-        "type": "folder"
-      },
-      {
-        "value": "pages/profile",
-        "type": "folder"
-      },
-      {
-        "value": "custom-tab-bar",
-        "type": "folder"
-      },
-      {
-        "value": "components/chat-bubble",
-        "type": "folder"
       }
     ],
     "include": []

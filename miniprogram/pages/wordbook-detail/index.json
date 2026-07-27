@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText": "词书详情",
-  "usingComponents": {
-    "r-navbar": "/components/r-navbar/index",
-    "r-tag": "/components/r-tag/index"
-  }
-}

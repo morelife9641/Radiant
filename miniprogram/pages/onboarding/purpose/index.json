@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText": "选择目的",
-  "usingComponents": {
-    "r-button": "/components/r-button/index",
-    "r-navbar": "/components/r-navbar/index"
-  }
-}

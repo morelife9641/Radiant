@@ -1,9 +1,0 @@
-<view class="bubble bubble--{{role}} r-fade-in">
-  <view class="bubble__body">
-    <text>{{content}}</text>
-  </view>
-  <view wx:if="{{suggestion}}" class="bubble__suggestion" bindtap="onApplySuggestion">
-    <text class="bubble__suggestion-tag">更地道</text>
-    <text class="bubble__suggestion-text">{{suggestion}}</text>
-  </view>
-</view>

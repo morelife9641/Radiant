@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText": "兴趣场景",
-  "usingComponents": {
-    "r-button": "/components/r-button/index",
-    "r-navbar": "/components/r-navbar/index"
-  }
-}

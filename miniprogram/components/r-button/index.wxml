@@ -1,9 +1,0 @@
-<view
-  class="r-btn r-btn--{{type}} r-btn--{{size}} {{block ? 'r-btn--block' : ''}} {{disabled ? 'is-disabled' : ''}}"
-  bindtap="onTap"
-  hover-class="r-btn--press"
-  hover-stay-time="60"
->
-  <text wx:if="{{loading}}" class="r-btn__spinner">…</text>
-  <slot />
-</view>

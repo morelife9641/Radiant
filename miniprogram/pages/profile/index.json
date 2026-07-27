@@ -1,6 +1,0 @@
-{
-  "navigationBarTitleText": "我的",
-  "usingComponents": {
-    "r-navbar": "/components/r-navbar/index"
-  }
-}

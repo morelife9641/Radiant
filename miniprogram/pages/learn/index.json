@@ -2,7 +2,6 @@
   "navigationBarTitleText": "学习",
   "usingComponents": {
     "word-card": "/components/word-card/index",
-    "study-hero": "/components/study-hero/index",
-    "r-button": "/components/r-button/index"
+    "study-hero": "/components/study-hero/index"
   }
 }

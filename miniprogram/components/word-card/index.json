@@ -2,7 +2,6 @@
   "component": true,
   "styleIsolation": "shared",
   "usingComponents": {
-    "r-button": "../r-button/index",
     "word-heading": "../word-heading/index"
   }
 }
